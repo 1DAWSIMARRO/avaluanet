@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row vh-100 justify-content-center align-items-center">
+ <form action="index.php?module=Alumne&function=alta" method="post">
+    <div>
+        <nav class="navbar navbar-dark bg-secundary">
+        <h1>Formulario para crear alumnos</h1>
+        </nav>
+    </div>
+    <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label  for="NIA" class="form-label" for="form6Example1">NIA</label>
+            <input type="number" id="form6Example1" class="form-control" />
+        
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form6Example2">Nom</label>
+            <input type="text" id="form6Example2" class="form-control" />
+          </div>
+        </div>
+      </div>
+    
+      <!-- Text input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example3">Cognoms</label>
+        <input type="text" id="form6Example3" class="form-control" />
+        
+      </div>
+    
+      <!-- Text input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Tel</label>
+        <input type="text" id="form6Example4" class="form-control" />
+        
+      </div>
+    
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example5">Email</label>
+        <input type="email" id="form6Example5" class="form-control" />
+        
+      </div>
+    
+      <!-- Number input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example6">Grup</label>
+        <input type="number" id="form6Example6" class="form-control" />
+        
+      </div>
+    <input class="btn btn-success btn-block mb-4" type="submit" value="Añadir Alumnos" id="send">
+</div>
+</div>    
+
+
+
+  
+<script>
+    document.getElementById("send").onclick=function(){
+        // var req = new XMLHttpRequest();
+        // console.log(document.getElementsByName("NIA")[0].value);
+        // // req.open("POST", "http://192.168.1.40/1DAW/Avaluanet/modules/alumne/controller/AlumneController.php");
+        // req.open("POST", "http://192.168.1.40/1DAW/Avaluanet/index.php?module=Alumne&function=alta");
+        // // req.open("GET", "http://192.168.1.40/1DAW/Avaluanet/index.php?module=Alumne&function=alta");
+
+
+
+        // req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        // array={
+        //     "NIA":document.getElementsByName("NIA")[0].value,
+        //     "nom":document.getElementsByName("nom")[0].value,
+        //     "cognoms":document.getElementsByName("cognoms")[0].value,
+        //     "tel":document.getElementsByName("tel")[0].value,
+        //     "email":document.getElementsByName("email")[0].value,
+        //     "grup":document.getElementsByName("grup")[0].value
+        //     }
+        // // req.send();
+        // // data="module=Alumne&function=alta&data="+array;
+        // data="data=sfgd";
+        // req.send(data);
+
+        // req.onreadystatechange = function () {
+        //     if (req.readyState == 4) {
+        //         console.log(req.responseText);
+        //         // location.href = "index.php";
+
+        //     }
+        // }
+    }
+</script>

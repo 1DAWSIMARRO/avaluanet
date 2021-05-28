@@ -1,0 +1,51 @@
+<form action="index.php?module=Alumne&function=alta" method="post">
+    <label for="NIA">NIA</label>
+    <input type="text" name="NIA">
+    <label for="nom">nom</label>
+    <input type="text" name="nom">
+    <label for="cognoms">cognoms</label>
+    <input type="text" name="cognoms">
+    <label for="tel">tel</label>
+    <input type="tel" name="tel">
+    <label for="email">email</label>
+    <input type="email" name="email">
+    <label for="grup">grup</label>
+    <input type="text" name="grup">
+    <input type="button" value="Send" id="send">
+</form>
+
+<script>
+    document.getElementById("send").onclick=function(evt){
+        evt.preventDefault();
+
+        var req = new XMLHttpRequest();
+        req.open("POST", "index.php?module=Alumne&function=alta");
+
+
+        req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        array={
+            "NIA":document.getElementsByName("NIA")[0].value,
+            "nom":document.getElementsByName("nom")[0].value,
+            "cognoms":document.getElementsByName("cognoms")[0].value,
+            "tel":document.getElementsByName("tel")[0].value,
+            "email":document.getElementsByName("email")[0].value,
+            "grup":document.getElementsByName("grup")[0].value
+        }
+
+
+        array=JSON.stringify(array)
+
+        // // req.send();
+        // // data="module=Alumne&function=alta&data="+array;
+        // data="data=array";
+        data="data="+array;
+        req.send(data);
+
+        req.onreadystatechange = function () {
+            if (req.readyState == 4) {
+                location.href = "index.php";
+            }
+        }
+    }
+</script>

@@ -1,0 +1,43 @@
+<form action="index.php?module=Asignatura&function=alta" method="post">
+    <label for="nom">nom</label>
+    <input type="text" name="nom" id="nom">
+    <label for="grup">grup</label>
+    <input type="text" name="grup">
+    <label for="hores">hores</label>
+    <input type="number" name="hores">
+    <input type="submit" value="Send" id="send">
+</form>
+
+<script>
+    document.getElementById("send").onclick = function() {
+        // var req = new XMLHttpRequest();
+        // console.log(document.getElementsByName("NIA")[0].value);
+        // // req.open("POST", "http://192.168.1.40/1DAW/Avaluanet/modules/alumne/controller/AlumneController.php");
+        // req.open("POST", "http://192.168.1.40/1DAW/Avaluanet/index.php?module=Alumne&function=alta");
+        // // req.open("GET", "http://192.168.1.40/1DAW/Avaluanet/index.php?module=Alumne&function=alta");
+
+
+
+        // req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        // array={
+        //     "NIA":document.getElementsByName("NIA")[0].value,
+        //     "nom":document.getElementsByName("nom")[0].value,
+        //     "cognoms":document.getElementsByName("cognoms")[0].value,
+        //     "tel":document.getElementsByName("tel")[0].value,
+        //     "email":document.getElementsByName("email")[0].value,
+        //     "grup":document.getElementsByName("grup")[0].value
+        //     }
+        // // req.send();
+        // // data="module=Alumne&function=alta&data="+array;
+        // data="data=sfgd";
+        // req.send(data);
+
+        // req.onreadystatechange = function () {
+        //     if (req.readyState == 4) {
+        //         console.log(req.responseText);
+        //         // location.href = "index.php";
+
+        //     }
+        // }
+    }
+</script>

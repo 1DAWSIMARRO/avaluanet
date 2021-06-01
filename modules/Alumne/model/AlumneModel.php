@@ -14,5 +14,29 @@ class AlumneModel{
         $stmt=$this->DB->prepare($sql);
         $stmt->execute([$data['NIA'], $data['nom'], $data['cognoms'],$data['tel'],$data['email'],$data['grup']]);
     }
+
+    public function findM($data){
+        $sql='SELECT * FROM alumne WHERE NIA LIKE '. $data;
+        return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function deleteM($data){
+        $stmt = $this->DB->prepare( "DELETE FROM alumne WHERE NIA =:NIA" );
+        $stmt->bindParam(':NIA', $data);
+        $stmt->execute();
+    }
+
+    function registrarM(){
+        $sql = "INSERT INTO professor (dni,nom,cognoms,login,password,email) VALUES (?,?,?,?,?,?)";
+        $stmt=$this->DB->prepare($sql);
+        $stmt->execute(["0324","Samu","Giner","123","123","123@gmail.com"]);
+ 
+    }
+
+    function editM($data){
+        $sql = "UPDATE alumne SET nom=?, cognoms=?, tel=?, email=?, codi_grup=? WHERE NIA=?";
+        $stmt=$this->DB->prepare($sql);
+        $stmt->execute([$data['nom'], $data['cognoms'],$data['tel'],$data['email'],$data['grup'],$data['NIA']]);
+    }
 }
 ?>

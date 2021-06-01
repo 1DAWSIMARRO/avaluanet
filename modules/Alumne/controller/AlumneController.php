@@ -11,22 +11,44 @@ class AlumneController{
     }
 
     public function alta(){
-            
         if (isset($_POST['data'])) {
-             $array=json_decode($_POST['data'], true);
+            $array=json_decode($_POST['data'], true);
             $data=[];
             foreach ($array as $key => $value) {
                 $data[$key] = $value;
             }
             $this->model->altaM($data);
-            header('Location: index.php');
         } else {
-            include_once(VIEW_ALUMNE.'/AlumneAlta.html');
+            if ($_GET['NIA']) { // Take data for edit
+                $data=$this->model->findM($_GET['NIA']);
+            }
+            echo '<script src="'.VIEW_ALUMNE.'comprobar.js"></script>';
+            include_once(VIEW_ALUMNE.'AlumneAlta.php');
         }
         
     }
-    public function get_grup(){
-        
+
+    public function regProf(){
+        echo "enter Professor";
+        $this->model->registrarM();
     }
+
+    public function delete(){
+        $this->model->deleteM($_GET['NIA']);
+        header('Location: index.php');
+    }
+
+    public function edit(){
+        $array=json_decode($_POST['data'], true);
+        $data=[];
+        foreach ($array as $key => $value) {
+            $data[$key] = $value;
+        }
+        $this->model->editM($data);
+    }
+
+    // public function get_grup(){
+        
+    // }
 }
 ?>

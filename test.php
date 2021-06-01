@@ -7,6 +7,7 @@
 // echo $data;
 
 $json = $_POST['data'];
+print_r($_POST['data']);
 $obj=json_decode($json, true);
 echo $obj['NIA'];
 

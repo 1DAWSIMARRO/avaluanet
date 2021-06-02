@@ -5,18 +5,34 @@ class ProfessorController{
         $this->model=new ProfessorModel();
     }
 
-    function registrar(){
-        //(dni, nom, cognoms, login, password, email)
-        $this->model->registrarM();
+    public function registrar(){
+        $dni = $_POST['dni'];
+        $nom = $_POST['nom'];
+        $cognoms = $_POST['cognoms'];
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+
+        $data= array("dni" => $dni,
+            "nom" => $nom,
+            "cognoms" => $cognoms,
+            "login" => $login,
+            "password" => $password,
+            "email" =>$email);
+
+        $this->model->registrarM($data);
     }
 
+    public function acceder(){
+        $login = $_POST['login'];
+        $password = $_POST['password'];
 
+        $data= array(
+            "login" => $login,
+            "password" => $password);
 
+        $this->model->accederM($data);
 
-
-
+    }
 
 }
-
-echo "ASD";
-?>

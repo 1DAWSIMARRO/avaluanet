@@ -11,7 +11,7 @@
         <div class="col">
           <div class="form-outline">
             <label class="form-label" for="NIA">NIA</label>
-            <input type="text" id="NIA" class="form-control" name="NIA" value="<?php echo $data['NIA'];?>"
+            <input type="text" id="NIA" class="form-control" name="NIA" value="<?php echo (isset($data)) ? $data['NIA'] : ""; ?>"
             <?php
               if (isset($data)) {
                 echo "disabled";
@@ -25,7 +25,7 @@
         <div class="col">
           <div class="form-outline">
             <label class="form-label" for="nom">Nom</label>
-            <input type="text" id="nom" class="form-control" name="nom" value="<?php echo $data['nom'];?>"/>
+            <input type="text" id="nom" class="form-control" name="nom" value="<?php echo (isset($data)) ? $data['nom'] : ""; ?>"/>
             <p id="ValidarNom" class="text-danger"></p>
           </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="col">
           <div class="form-outline">
             <label  class="form-label" for="Cognoms">Cognoms</label>
-            <input type="text" id="cognoms" class="form-control" name="cognoms" value="<?php echo $data['cognoms'];?>"/>
+            <input type="text" id="cognoms" class="form-control" name="cognoms" value="<?php echo (isset($data)) ? $data['cognoms'] : ""; ?>"/>
             <p id="ValidarCognom" class="text-danger"></p>
       
           </div>
@@ -43,7 +43,7 @@
         <div class="col">
           <div class="form-outline">
             <label class="form-label" for="tel">Tel</label>
-            <input type="text" id="tel" class="form-control" name="tel" value="<?php echo $data['tel'];?>"/>
+            <input type="text" id="tel" class="form-control" name="tel" value="<?php echo (isset($data)) ? $data['tel'] : ""; ?>"/>
             <p id="ValidarTel" class="text-danger"></p>
           </div>
         </div>
@@ -52,7 +52,7 @@
       <!-- Email input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="email">Email</label>
-        <input type="text" id="email" class="form-control" name="email" value="<?php echo $data['email'];?>"/>
+        <input type="text" id="email" class="form-control" name="email" value="<?php echo (isset($data)) ? $data['email'] : ""; ?>"/>
         <p id="ValidarEmail" class="text-danger"></p>
       </div>
     

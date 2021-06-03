@@ -13,9 +13,10 @@ function defaultPage(){
 }
 
 if(isset($_GET['module'])) {
-    require_once('modules/'.$_GET['module'].'/controller/'.$_GET['module'].'Controller.php');
-
+    
     $controllerClass = $_GET['module'] . 'Controller';
+    
+    require_once('modules/'.$_GET['module'].'/controller/'.$_GET['module'].'Controller.php');
     $obj=new $controllerClass;
 
     if(isset($_GET['function'])) {

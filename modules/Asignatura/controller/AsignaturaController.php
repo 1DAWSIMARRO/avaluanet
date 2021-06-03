@@ -17,6 +17,9 @@ class AsignaturaController {
         echo "Insertado OK";
     }
 
+    public function agregar_alumne() {
+        include_once(VIEW_ASIGNATURA."AlumneAgregar.php");
+    }
 
 }
 ?>

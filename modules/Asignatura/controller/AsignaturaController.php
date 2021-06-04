@@ -1,11 +1,13 @@
 <?php
 
 require_once(MODEL_ASIGNATURA."AsignaturaModel.php");
+require_once(MODEL_ALUMNE.'AlumneModel.php');
 
 class AsignaturaController {
 
     function __construct() {
         $this->model = new AsignaturaModel();
+        $this->modelAl = new AlumneModel();
     }
 
     public function llistar() {
@@ -18,6 +20,7 @@ class AsignaturaController {
     }
 
     public function agregar_alumne() {
+        $list=$this->modelAl->llistarM();
         include_once(VIEW_ASIGNATURA."AlumneAgregar.php");
     }
 

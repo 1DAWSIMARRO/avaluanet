@@ -17,16 +17,16 @@
   <tbody>
   <?php
     
-    // foreach ($list as $key => $value) {
-    //   echo '<tr>';
-    //   foreach ($value as $key2 => $value2) {
-    //     echo '<td>'.$value2.'</td>';
-    //   }
+    foreach ($list as $key => $value) {
+      echo '<tr>';
+      foreach ($value as $key2 => $value2) {
+        echo '<td>'.$value2.'</td>';
+      }
       
-    //   echo '<td><a class="btn btn-warning" href="index.php?module=Alumne&function=alta&NIA='.$value['NIA'].'">Edit</a></td>';
-    //   echo '<td><a class="btn btn-danger" href="index.php?module=Alumne&function=delete&NIA='.$value['NIA'].'">Delete</a></td>';
-    //   echo '</tr>';
-    // }
+      echo '<td><a class="btn btn-warning" href="index.php?module=Alumne&function=alta&NIA='.$value['NIA'].'">Edit</a></td>';
+      echo '<td><a class="btn btn-danger" href="index.php?module=Alumne&function=delete&NIA='.$value['NIA'].'">Delete</a></td>';
+      echo '</tr>';
+    }
   ?>
   </tbody>
 </table>

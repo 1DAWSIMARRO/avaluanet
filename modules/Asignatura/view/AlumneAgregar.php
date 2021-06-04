@@ -52,7 +52,7 @@
 </div>
 <div class="row align-items-center" style="margin-top: 3%;">
   <div class="col-4 align-self-end">
-<a class="btn btn-success" href="index.php?module=Alumne&function=alta">Nuevo alumno</a>
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Agregar Alumne
@@ -65,6 +65,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Llista Alumne</h5>
+        <input class="mx-auto" type="text" name="buscar" id="buscar" placeholder="Buscar"></input>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -81,27 +82,21 @@
   </tr>
   </thead>
   <?php
-    // foreach ($list as $key => $value) {
-    //   echo '<tr>';
-    //   foreach ($value as $key2 => $value2) {
-    //     echo '<td>'.$value2.'</td>';
-    //   }
-    //  echo '</tr>';
-    echo '<tr>';
-    echo '<td><button type="button" class="btn btn-light">+</button></td>';
-    echo '<td>12345678</td>';
-    echo '<td>David</td>';
-    echo '<td>López Palop</td>';
-    echo '<td>123456789</td>';
-    echo '<td>davidmola@gmail.com</td>';
-    echo '<td></td>';
-    echo '</tr>';
-    // }
+    foreach ($list as $key => $value) {
+      echo '<tr>';
+      echo '<td><button type="button" class="btn btn-light">+</button></td>';
+      foreach ($value as $key2 => $value2) {
+        echo '<td>'.$value2.'</td>';
+      }
+     echo '</tr>';
+     }
   ?>
 </table>
 </div>
       <div class="modal-footer">
+      <button type="button" class="btn btn-success" >Nuevo alumno</button>
         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+        
       </div>
     </div>
   </div>

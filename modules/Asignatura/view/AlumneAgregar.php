@@ -53,7 +53,61 @@
 <div class="row align-items-center" style="margin-top: 3%;">
   <div class="col-4 align-self-end">
 <a class="btn btn-success" href="index.php?module=Alumne&function=alta">Nuevo alumno</a>
-<a class="btn btn-success">Agregar alumno</a>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Agregar Alumne
+</button>
+
+<!-- Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Llista Alumne</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <table class="table" style="margin-top: 2%;">
+  <thead class="thead-dark"> 
+  <tr>
+  <th></th>
+    <th scope="col">NIA</th>
+    <th>NOM</th>
+    <th>COGNOMS</th>
+    <th>TELEFON</th>
+    <th>EMAIL</th>
+    <th>codiGrup</th>
+  </tr>
+  </thead>
+  <?php
+    // foreach ($list as $key => $value) {
+    //   echo '<tr>';
+    //   foreach ($value as $key2 => $value2) {
+    //     echo '<td>'.$value2.'</td>';
+    //   }
+    //  echo '</tr>';
+    echo '<tr>';
+    echo '<td><button type="button" class="btn btn-light">+</button></td>';
+    echo '<td>12345678</td>';
+    echo '<td>David</td>';
+    echo '<td>López Palop</td>';
+    echo '<td>123456789</td>';
+    echo '<td>davidmola@gmail.com</td>';
+    echo '<td></td>';
+    echo '</tr>';
+    // }
+  ?>
+</table>
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>     

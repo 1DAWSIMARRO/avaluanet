@@ -23,7 +23,6 @@ class ProfessorModel
             }
         } else {
             echo "El usuario introducido no existe. Registrate antes de acceder.";
-            header("location: http://localhost/AVALUANET/modules/Professor/view/registrar.html");
         }
     }
 }

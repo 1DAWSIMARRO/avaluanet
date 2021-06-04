@@ -10,31 +10,24 @@ class AsignaturaModel {
         return $this->DB->query($consulta)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getEditar($codi) {
+        $consulta = "SELECT * FROM asignatures WHERE codi=$codi";
+        return $this->DB->query($consulta)->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function altaM($data){
         $consulta="INSERT INTO asignatures (nom,grup,hores) VALUES (?,?,?)";
         $stmt=$this->DB->prepare($consulta);
         $stmt->execute([$data['nom'], $data['grup'], $data['hores']]);
-        
     }
 
-    public function modificarM($data) {
+    public function modificarM($data) {;
         $codi=$data['codi'];
         $nom=$data['nom'];
         $grup=$data['grup'];
         $hores=$data['hores'];
-
-        if (!empty($nom)) {
-            $sql = "UPDATE asignatures SET nom='$nom' WHERE codi=$codi";
-            $this->DB->query($sql);
-        }
-        if (!empty($grup)) {
-            $sql = "UPDATE asignatures SET grup='$grup' WHERE codi=$codi";
-            $this->DB->query($sql);
-        }
-        if (!empty($hores)) {
-            $sql = "UPDATE asignatures SET hores=$hores WHERE codi=$codi";
-            $this->DB->query($sql);
-        }       
+        $sql = "UPDATE asignatures SET nom='$nom', grup='$grup', hores='$hores' WHERE codi=$codi";
+        $this->DB->query($sql);
     }
 
     public function baixaM($data) {

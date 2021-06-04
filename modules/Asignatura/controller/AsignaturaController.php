@@ -29,28 +29,36 @@ class AsignaturaController {
     }
 
     public function modificar(){
-        if (!empty($_POST['codi'])) {
-            $data=[];
-            foreach ($_POST as $key => $value) {
-                $data[$key] = $value;
-            }
-            $this->model->modificarM($data);
-            header('Location: index.php');
-        } else {
-            include_once(VIEW_ASIGNATURA.'AsignaturaModificar.html');
-        }      
-    }
-
-    public function baixa(){
         if (isset($_POST['codi'])) {
             $data=[];
             foreach ($_POST as $key => $value) {
                 $data[$key] = $value;
             }
+            $this->model->modificarM($data);
+            echo "HOLA";
+            header('Location: index.php'); 
+        } else {
+            include_once(VIEW_ASIGNATURA.'AsignaturaModificar.php'); 
+        }      
+    }
+
+    public function editar() {
+        if (isset($_GET['codi'])) {
+            $array = $this->model->getEditar($_GET['codi']);
+            include_once(VIEW_ASIGNATURA.'AsignaturaModificar.php');
+        } 
+    }
+
+    public function baixa(){
+        if (isset($_GET['codi'])) {
+            $data=[];
+            foreach ($_GET as $key => $value) {
+                $data[$key] = $value;
+            }
             $this->model->baixaM($data);
             header('Location: index.php');
         } else {
-            include_once(VIEW_ASIGNATURA.'AsignaturaBaixa.html');
+            include_once(VIEW_ASIGNATURA.'AsignaturaBaixa.php');
         }      
     }
 }

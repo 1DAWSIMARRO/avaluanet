@@ -1,11 +1,14 @@
 <?php
 require_once('modules/Professor/model/ProfessorModel.php');
-class ProfessorController{
-    function __construct(){
-        $this->model=new ProfessorModel();
+class ProfessorController
+{
+    function __construct()
+    {
+        $this->model = new ProfessorModel();
     }
 
-    public function registrar(){
+    public function registrar()
+    {
         $dni = $_POST['dni'];
         $nom = $_POST['nom'];
         $cognoms = $_POST['cognoms'];
@@ -13,26 +16,28 @@ class ProfessorController{
         $password = $_POST['password'];
         $email = $_POST['email'];
 
-        $data= array("dni" => $dni,
+        $data = array(
+            "dni" => $dni,
             "nom" => $nom,
             "cognoms" => $cognoms,
             "login" => $login,
             "password" => $password,
-            "email" =>$email);
+            "email" => $email
+        );
 
         $this->model->registrarM($data);
     }
 
-    public function acceder(){
+    public function acceder()
+    {
         $login = $_POST['login'];
         $password = $_POST['password'];
 
-        $data= array(
+        $data = array(
             "login" => $login,
-            "password" => $password);
+            "password" => $password
+        );
 
         $this->model->accederM($data);
-
     }
-
 }

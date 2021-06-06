@@ -29,7 +29,16 @@ class AsignaturaController {
             'asig' => $_SESSION['asig']
         ];
         $this->model->altaAlum($data);
-        header('Location: index.php?module=Asignatura&function=agregar_alumne&asig=1');
+        header('Location: index.php?module=Asignatura&function=agregar_alumne&asig='.$_SESSION['asig']);
+    }
+
+    public function remove(){
+        $data=[
+            'NIA' => $_GET['NIA'],
+            'asig' => $_SESSION['asig']
+        ];
+        $this->model->baixaAlum($data);
+        header('Location: index.php?module=Asignatura&function=agregar_alumne&asig='.$_SESSION['asig']);
     }
 
 }

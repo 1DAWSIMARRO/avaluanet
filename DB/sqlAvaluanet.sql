@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS grup (
     n_alumnes INT NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS asignatures (
+CREATE TABLE IF NOT EXISTS asignatura (
 	codi int PRIMARY KEY AUTO_INCREMENT,
 	nom varchar(50) NOT NULL,
 	grup varchar(10),
@@ -28,10 +28,10 @@ CREATE TABLE IF NOT EXISTS asignatures (
 
 CREATE TABLE IF NOT EXISTS impartir(
 	dni VARCHAR(9) NOT NULL,
-	codi_asignatures INT NOT NULL,
+	codi_asignatura INT NOT NULL,
 	codi_grup INT NOT NULL,
 		FOREIGN KEY (dni) references professor(dni),
-		FOREIGN KEY (codi_asignatures) REFERENCES asignatures (codi),
+		FOREIGN KEY (codi_asignatura) REFERENCES asignatura (codi),
 		FOREIGN KEY (codi_grup) REFERENCES grup (codi)
 );
 
@@ -57,23 +57,23 @@ CREATE TABLE IF NOT EXISTS qualiflicacio (
 	nota int NOT NULL,
 	id int NOT NULL,
 	NIA int(8) NOT NULL,
-	codi_asignatures int NOT NULL,
-	primary key(id,NIA,codi_asignatures),
+	codi_asignatura int NOT NULL,
+	primary key(id,NIA,codi_asignatura),
 		foreign key(NIA) references alumne(NIA),
-		foreign key(codi_asignatures) references asignatures(codi),
+		foreign key(codi_asignatura) references asignatura(codi),
 		foreign key(id) references avaluable(id)
 );
 
 CREATE TABLE IF NOT EXISTS matricula (
 	NIA int(8) NOT NULL,
-	codi_asignatures int NOT NULL,
-	primary key(NIA,codi_asignatures),
+	codi_asignatura int NOT NULL,
+	primary key(NIA,codi_asignatura),
 		foreign key(NIA) references alumne(NIA),
-		foreign key(codi_asignatures) references asignatures(codi)
+		foreign key(codi_asignatura) references asignatura(codi)
 );
 
 insert into grup (codi,nom,curs,aula,n_alumnes)
 VALUES ('01', '1DAW', 'GS', '20', '15');
 insert into alumne (NIA,nom,cognoms,tel,email,codi_grup)
 VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '01');
-insert into asignatures (nom,grup,hores) VALUE ('info', '1DAW', '20')
+insert into asignatura (nom,grup,hores) VALUE ('info', '1DAW', '20')

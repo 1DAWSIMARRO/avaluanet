@@ -33,7 +33,7 @@
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }
-      echo '<td><a class="btn btn-danger" href="index.php?module=Alumne&function=delete&NIA='.$value['NIA'].'">Delete</a></td>';
+      echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA='.$value['NIA'].'">Delete</a></td>';
       echo '</tr>';
     }
   ?>
@@ -92,9 +92,9 @@
   </tr>
   </thead>
   <?php
-    foreach ($list as $key => $value) {
+    foreach ($list2 as $key => $value) {
       echo '<tr>';
-      echo '<td><a class="text-dark" href="" style="text-decoration: none;">+</a></td>';
+      echo '<td><a class="text-dark" href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" style="text-decoration: none;">+</a></td>';
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }

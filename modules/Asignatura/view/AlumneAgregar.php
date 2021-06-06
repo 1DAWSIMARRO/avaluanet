@@ -65,10 +65,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Llista Alumne</h5>
-        <input class="mx-auto" type="text" name="buscar" id="buscar" placeholder="Buscar"></input>
+        
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+      <input class="mx-auto" type="text" name="buscar" id="buscar" placeholder="Buscar"></input>
       <table class="table" style="margin-top: 2%;">
   <thead class="thead-dark"> 
   <tr>
@@ -84,7 +85,7 @@
   <?php
     foreach ($list2 as $key => $value) {
       echo '<tr>';
-      echo '<td><a href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" class="btn btn-light">+</a></td>';
+      echo '<td><a class="text-dark" href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" style="text-decoration: none;">+</a></td>';
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }

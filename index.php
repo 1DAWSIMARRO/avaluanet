@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('DB/connexio.php');
 require_once('paths.php');
 include_once(VIEW_D.'header.html');

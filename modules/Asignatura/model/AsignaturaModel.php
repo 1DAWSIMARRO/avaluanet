@@ -18,6 +18,20 @@ class AsignaturaModel {
         }else {
             echo "ERROR";
         }
+    }
 
+    public function altaAlum($data){
+        $sql="INSERT INTO matricula (NIA,codi_asignatures) VALUES (?,?)";
+        $stmt=$this->DB->prepare($sql);
+        $stmt->execute([$data['NIA'], $data['asig']]);
+    }
+
+    public function llistarAl($asig){
+        $sql='SELECT * FROM alumne WHERE NIA IN(SELECT NIA FROM matricula WHERE codi_asignatures='.$asig.')';
+        return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function llistarAl2($asig){
+        $sql='SELECT * FROM alumne WHERE NIA NOT IN(SELECT NIA FROM matricula WHERE codi_asignatures='.$asig.')';
+        return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 }

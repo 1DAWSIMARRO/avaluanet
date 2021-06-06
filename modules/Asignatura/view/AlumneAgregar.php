@@ -82,9 +82,9 @@
   </tr>
   </thead>
   <?php
-    foreach ($list as $key => $value) {
+    foreach ($list2 as $key => $value) {
       echo '<tr>';
-      echo '<td><button type="button" class="btn btn-light">+</button></td>';
+      echo '<td><a href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" class="btn btn-light">+</a></td>';
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }

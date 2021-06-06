@@ -1,6 +1,16 @@
 <div class="container mt-5">
 
-    <h1>Alumnos disponibles</h1> 
+<div class = "row">
+  <div class="col-5">
+    <h1>Llenguatge de marques</h1> 
+  </div>
+  <div class="col-1">
+    <button type="button" class="btn btn-success" >Editar </button>
+  </div>
+  <div class="col-1">
+    <button type="button" class="btn btn-success" >Eliminar</button>
+  </div>
+</div>
 <div class="row justify-content-between">
 <div class="col-5">
 <table class="table" style="margin-top: 2%;">
@@ -12,6 +22,7 @@
     <th scope="col">TELEFON</th>
     <th scope="col">EMAIL</th>
     <th scope="col">codiGrup</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -22,9 +33,7 @@
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }
-      
-      echo '<td><a class="btn btn-warning" href="index.php?module=Alumne&function=alta&NIA='.$value['NIA'].'">Edit</a></td>';
-      echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA='.$value['NIA'].'">Delete</a></td>';
+      echo '<td><a class="btn btn-danger" href="index.php?module=Alumne&function=delete&NIA='.$value['NIA'].'">Delete</a></td>';
       echo '</tr>';
     }
   ?>
@@ -83,9 +92,9 @@
   </tr>
   </thead>
   <?php
-    foreach ($list2 as $key => $value) {
+    foreach ($list as $key => $value) {
       echo '<tr>';
-      echo '<td><a class="text-dark" href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" style="text-decoration: none;">+</a></td>';
+      echo '<td><a class="text-dark" href="" style="text-decoration: none;">+</a></td>';
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }
@@ -96,7 +105,7 @@
 </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-success" >Nuevo alumno</button>
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+      <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
         
       </div>
     </div>
@@ -106,4 +115,4 @@
 </div>
 </div>
 </div>
-</div>     
+</div>

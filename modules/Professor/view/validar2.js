@@ -2,6 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("formulario").addEventListener('submit', validarFormulario);
 });
 
+/*document.getElementById("loginbtn").click(function (evento) {
+    evento.preventDefault();
+    validarUsuari();
+});*/
+
 function validarFormulario(evento) {
     evento.preventDefault();
     let valid = true;
@@ -25,5 +30,29 @@ function validarFormulario(evento) {
     }
 
     if (valid)
-        this.submit();
+        //this.submit();
+        validarUsuari();
+}
+
+function validarUsuari() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "../../../index2.php", true);
+    let params = 'login='+document.getElementById('login').value;
+	params += '&password='+document.getElementById('password').value;
+    xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xhttp.send(params);
+
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            //alert(xhttp.responseText);
+            let json = JSON.parse(xhttp.responseText);
+
+            if(json.msg != 'ok') {
+                document.getElementById("error").innerHTML = "ERROR USUARIO NO EXISTE";
+            }else {
+                document.getElementById("error").innerHTML = "";
+            }
+        }
+    };
 }

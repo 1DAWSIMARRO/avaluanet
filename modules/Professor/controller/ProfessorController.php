@@ -37,7 +37,7 @@ class ProfessorController
             "login" => $login,
             "password" => $password
         );
-
-        $this->model->accederM($data);
+        //"valor:".$this->model->accederM($data);
+        return $this->model->accederM($data);
     }
 }

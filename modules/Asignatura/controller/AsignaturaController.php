@@ -61,5 +61,38 @@ class AsignaturaController {
             include_once(VIEW_ASIGNATURA.'AsignaturaBaixa.php');
         }      
     }
+
+        print_r($this->model->llistarAsig());
+    }
+
+    public function afegir() {
+        $this->model->altaAsig();
+    }
+
+    public function agregar_alumne() {
+        $_SESSION['asig']=$_GET['asig'];
+        $list=$this->model->llistarAl($_SESSION['asig']);
+        $list2=$this->model->llistarAl2($_SESSION['asig']);
+        include_once(VIEW_ASIGNATURA."AlumneAgregar.php");
+    }
+
+    public function inAlu(){
+        $data=[
+            'NIA' => $_GET['NIA'],
+            'asig' => $_SESSION['asig']
+        ];
+        $this->model->altaAlum($data);
+        header('Location: index.php?module=Asignatura&function=agregar_alumne&asig='.$_SESSION['asig']);
+    }
+
+    public function remove(){
+        $data=[
+            'NIA' => $_GET['NIA'],
+            'asig' => $_SESSION['asig']
+        ];
+        $this->model->baixaAlum($data);
+        header('Location: index.php?module=Asignatura&function=agregar_alumne&asig='.$_SESSION['asig']);
+    }
+
 }
 ?>

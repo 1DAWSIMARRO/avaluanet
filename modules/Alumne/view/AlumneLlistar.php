@@ -8,6 +8,8 @@
     <th>TELEFON</th>
     <th>EMAIL</th>
     <th>codiGrup</th>
+    <th></th>
+    <th></th>
   </tr>
   </thead>
   <?php

@@ -73,6 +73,36 @@ function validarFormulario(evento) {
         document.getElementById("mal6").innerHTML = "";
     }
 
-    if (valid)
-        this.submit();
+    if (valid){
+        //this.submit();
+        registrarUsuari();
+    }
+}
+
+function registrarUsuari() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "../../../index.php", true);
+    let params = 'nombre='+document.getElementById('nombre').value;
+	params += '&apellidos='+document.getElementById('apellidos').value;
+    params += '&email='+document.getElementById('email').value;
+    params += '&login='+document.getElementById('login').value;
+    params += '&password='+document.getElementById('password').value;
+    xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xhttp.send(params);
+
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert(xhttp.responseText);
+            let json = JSON.parse(xhttp.responseText);
+
+            if(json.msg != "ok") {
+                //alert(xhttp.responseText);
+                document.getElementById("error").innerHTML = "ERROR USUARIO YA EXISTE";
+            }else {
+                alert(xhttp.responseText);
+                document.getElementById("error").innerHTML = "";
+            }
+        }
+    };
 }

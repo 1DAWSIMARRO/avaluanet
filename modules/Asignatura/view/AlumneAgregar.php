@@ -66,6 +66,7 @@
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Agregar Alumne
 </button>
+<a class="btn btn-success">Añadir avaluable</a>
 
 <!-- Modal -->
 

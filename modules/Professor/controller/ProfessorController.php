@@ -25,7 +25,7 @@ class ProfessorController
             "email" => $email
         );
 
-        $this->model->registrarM($data);
+        return $this->model->registrarM($data);
     }
 
     public function acceder()

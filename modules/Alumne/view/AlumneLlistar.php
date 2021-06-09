@@ -17,3 +17,9 @@
     }
   ?>
 </table>
+<div class="row align-items-center" style="margin-top: 3%;">
+  <div class="col-4 align-self-end">
+<a class="btn btn-success" href="index.php?module=Alumne&function=alta">Nuevo alumno</a>
+</div>
+</div>
+</div>

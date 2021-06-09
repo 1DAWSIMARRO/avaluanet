@@ -3,9 +3,16 @@
 define('VIEW_D','utils/view/');
 
 //PATTERN
-//COM FUNCIONA -> pattern(nom_modul_majuscules,nom_modul_primera_lletra_majuscula);
-//RUTES AL CONTROLLER -> CONTROLLER_NOMMODULMAJUSCULA
-//igual per al model i vista
+
+//Primero, crear el "pattern" para nuestro modulo:
+//pattern(nom_modul_majuscules,nom_modul_primera_lletra_majuscula);
+
+//EJEMPLO PARA EL CONTROLLER
+
+//Para el caso del controller de Asignatura, substituir
+//require_once("../Model/AsignaturaModel.php");
+//Por
+//require_once(MODEL_ASIGNATURA."AsignaturaModel.php");
 
 function pattern ($module_u, $module){
     define('CONTROLLER_' . $module_u,'modules/'.$module.'/controller/');
@@ -15,8 +22,6 @@ function pattern ($module_u, $module){
 
 //ALUMNE MODULE
 pattern('ALUMNE','Alumne');
-pattern('PROFESSOR','Professor');
 pattern('ASIGNATURA','Asignatura');
-
 
 ?>

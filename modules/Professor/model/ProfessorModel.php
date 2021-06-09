@@ -11,13 +11,16 @@ class ProfessorModel
         $result = mysqli_query(mysqli_connect("localhost", "userava", "userava", "avaluanet"), $sql1);
         if ($result) {
             $row = mysqli_num_rows($result);
-            if (!$row) {
+            if ($row == 0) {
                 $sql = "INSERT INTO professor (dni,nom,cognoms,login,password,email) VALUES (?,?,?,?,?,?)";
                 $stmt = $this->DB->prepare($sql);
                 $stmt->execute([$data['dni'], $data['nom'], $data['cognoms'], $data['login'], $data['password'], $data['email']]);
+                return "false";
+            } else {
+                return "true";
             }
         } else {
-            echo '<script></script>';
+            return "ERROR mysqli_query";
         }
     }
 

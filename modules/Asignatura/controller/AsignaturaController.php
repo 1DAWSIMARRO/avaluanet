@@ -16,11 +16,13 @@ class AsignaturaController {
         $this->model->altaAsig();
     }
 
-    public function agregar_alumne() {
+    public function add_alumne() {
         $_SESSION['asig']=$_GET['asig'];
         $list=$this->model->llistarAl($_SESSION['asig']);
         $list2=$this->model->llistarAl2($_SESSION['asig']);
-        include_once(VIEW_ASIGNATURA."AlumneAgregar.php");
+        
+        include_once(VIEW_ASIGNATURA."AsignaturaInfo.php");
+        echo '<script src="'.VIEW_ASIGNATURA.'AsignaturaInfo.js"></script>';
     }
 
     public function inAlu(){
@@ -29,7 +31,7 @@ class AsignaturaController {
             'asig' => $_SESSION['asig']
         ];
         $this->model->altaAlum($data);
-        header('Location: index.php?module=Asignatura&function=agregar_alumne&asig='.$_SESSION['asig']);
+        header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_SESSION['asig']);
     }
 
     public function remove(){
@@ -38,7 +40,7 @@ class AsignaturaController {
             'asig' => $_SESSION['asig']
         ];
         $this->model->baixaAlum($data);
-        header('Location: index.php?module=Asignatura&function=agregar_alumne&asig='.$_SESSION['asig']);
+        header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_SESSION['asig']);
     }
 
 }

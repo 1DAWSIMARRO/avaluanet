@@ -2,7 +2,7 @@
 
 <div class = "row">
   <div class="col-5">
-    <h1>Llenguatge de marques</h1> 
+    <h1>Llenguatge de marques</h1>
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
     <button type="button" class="btn btn-success">Editar </button>

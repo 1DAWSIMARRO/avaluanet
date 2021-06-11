@@ -10,7 +10,7 @@
     function llistar() {
 
       $list = $this->Model->llistarM(); 
-      return $list;
+      include_once(VIEW_GRUP.'GrupLlistar.php');
     }
 
     function alta() {
@@ -53,7 +53,6 @@
 
     function modificacio() {
 
-      
       if (isset($_REQUEST['codi'])) {
         
         $data=[];

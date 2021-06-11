@@ -1,5 +1,4 @@
 <?php
-require_once('../Grup/connexio.php');
     class GrupModel {
 
     function __construct(){

@@ -82,8 +82,9 @@ function validarFormulario(evento) {
 function registrarUsuari() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "../../../index.php", true);
-    let params = 'nombre='+document.getElementById('nombre').value;
-	params += '&apellidos='+document.getElementById('apellidos').value;
+    let params = 'dni='+document.getElementById('dni').value; 
+    params += '&nom='+document.getElementById('nombre').value;
+	params += '&cognoms='+document.getElementById('apellidos').value;
     params += '&email='+document.getElementById('email').value;
     params += '&login='+document.getElementById('login').value;
     params += '&password='+document.getElementById('password').value;
@@ -93,15 +94,15 @@ function registrarUsuari() {
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert(xhttp.responseText);
+            //alert(xhttp.responseText);
             let json = JSON.parse(xhttp.responseText);
 
             if(json.msg != "ok") {
                 //alert(xhttp.responseText);
-                document.getElementById("error").innerHTML = "ERROR USUARIO YA EXISTE";
+                document.getElementById("error").innerHTML = "ERROR, EL USUARIO YA EXISTE";
             }else {
-                alert(xhttp.responseText);
-                document.getElementById("error").innerHTML = "";
+                //alert(xhttp.responseText);
+                document.getElementById("error").innerHTML = "<p style='color:green'>REGISTRADO CORRECTAMENTE</p>";
             }
         }
     };

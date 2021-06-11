@@ -1,5 +1,5 @@
 <?php
-  require_once('../Grup/model/GrupModel.php');
+  require_once(MODEL_GRUP.'GrupModel.php');
   class GrupController {
 
     function __construct(){
@@ -28,7 +28,7 @@
 
       } else {
 
-        include_once("../Grup/view/GrupAlta.html");
+        include_once(MODEL_GRUP.'/GrupAlta.html');
       }
 
     }
@@ -47,7 +47,7 @@
 
       } else {
 
-        include_once("../Grup/view/GrupBaixa.html");
+        include_once(MODEL_GRUP."/GrupBaixa.html");
       }
     }
 
@@ -64,13 +64,13 @@
         $this->Model->modificacioM($data);
         header('Location: index.php');
       }
-      include_once("../Grup/view/GrupModificar.php");
+      include_once(MODEL_GRUP."/GrupModificar.php");
     }
 
     function viewEditar() {
 
         $data = $this->Model->obtindreGrupM($_REQUEST['codi']);
-        include_once("../Grup/view/GrupModificar.php");
+        include_once(MODEL_GRUP."/GrupModificar.php");
     }
   }
 ?>

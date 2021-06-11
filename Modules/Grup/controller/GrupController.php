@@ -11,7 +11,6 @@
 
       $list = $this->Model->llistarM(); 
       include_once(VIEW_GRUP.'GrupLlistar.php');
-      echo "hol.a-";
     }
 
     function alta() {

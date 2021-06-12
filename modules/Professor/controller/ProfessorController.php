@@ -25,7 +25,6 @@
         
     // }
 //}
-//?>
 
 require_once('modules/Professor/model/ProfessorModel.php');
 class ProfessorController

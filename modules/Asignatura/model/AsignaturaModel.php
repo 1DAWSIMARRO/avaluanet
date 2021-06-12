@@ -41,17 +41,17 @@ class AsignaturaModel {
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     public function llistarM(){
-        $consulta='SELECT * FROM asignatures';
+        $consulta='SELECT * FROM asignatura';
         return $this->DB->query($consulta)->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getEditar($codi) {
-        $consulta = "SELECT * FROM asignatures WHERE codi=$codi";
+        $consulta = "SELECT * FROM asignatura WHERE codi=$codi";
         return $this->DB->query($consulta)->fetch(PDO::FETCH_ASSOC);
     }
 
     public function altaM($data){
-        $consulta="INSERT INTO asignatures (nom,grup,hores) VALUES (?,?,?)";
+        $consulta="INSERT INTO asignatura (nom,grup,hores) VALUES (?,?,?)";
         $stmt=$this->DB->prepare($consulta);
         $stmt->execute([$data['nom'], $data['grup'], $data['hores']]);
     }
@@ -61,12 +61,12 @@ class AsignaturaModel {
         $nom=$data['nom'];
         $grup=$data['grup'];
         $hores=$data['hores'];
-        $sql = "UPDATE asignatures SET nom='$nom', grup='$grup', hores='$hores' WHERE codi=$codi";
+        $sql = "UPDATE asignatura SET nom='$nom', grup='$grup', hores='$hores' WHERE codi=$codi";
         $this->DB->query($sql);
     }
 
     public function baixaM($data) {
-        $modificar = "DELETE FROM asignatures WHERE codi=".$data['codi'];
+        $modificar = "DELETE FROM asignatura WHERE codi=".$data['codi'];
         $this->DB->query($modificar);
     }
 

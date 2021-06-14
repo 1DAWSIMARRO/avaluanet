@@ -69,7 +69,7 @@
             <option value="5">5 Hores/Setmana</option>
             <option value="8">8 Hores/Setmana</option>
 
-          </select>
+        </select>
 
                         <div class="invalid-feedback">
                             Please select a valid state.

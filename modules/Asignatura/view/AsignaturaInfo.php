@@ -90,14 +90,9 @@
 <a class="btn btn-success">Añadir avaluable</a>
 
 <!-- Evitar cerrar el modal -->
-
 <?php
 if (isset($_REQUEST['modal'])) {
-  echo "<script type='text/javascript'> 
-  $(document).ready(function(){
-$('#modalagregaralumno').modal('show');
-});
-</script>";
+  echo '<script src="'.VIEW_ASIGNATURA.'/js/script_modal.js"></script>';
 }
 ?>
 
@@ -127,7 +122,7 @@ $('#modalagregaralumno').modal('show');
   <?php
     foreach ($list2 as $key => $value) {
       echo '<tr>';
-      echo '<td><a class="text-dark" href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" style="text-decoration: none;">+</a></td>';
+      echo '<td><a class="text-dark" href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" onclick="modalOpened()" style="text-decoration: none;">+</a></td>';
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }

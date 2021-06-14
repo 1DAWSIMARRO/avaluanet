@@ -10,7 +10,6 @@ class AsignaturaController {
 
     public function llistar() {
         $list=$this->model->llistar();
-        // echo '<script src='.VIEW_ASIGNATURA.'"js/script.js"></script>';
         include_once(VIEW_ASIGNATURA.'AsignaturaLlistar.php');
         
     }
@@ -27,7 +26,7 @@ class AsignaturaController {
         $list2=$this->model->llistarAl2($_SESSION['asig']);
         $asignatura=$this->model->getEditar($_SESSION['asig']);
         include_once(VIEW_ASIGNATURA."AsignaturaInfo.php");
-        echo '<script src="'.VIEW_ASIGNATURA.'AsignaturaInfo.js"></script>';
+        echo '<script src="'.VIEW_ASIGNATURA.'/js/AsignaturaInfo.js"></script>';
     }
 
     public function inAlu(){

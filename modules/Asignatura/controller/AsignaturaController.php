@@ -23,6 +23,7 @@ class AsignaturaController {
         $_SESSION['asig']=$_GET['asig'];
         $list=$this->model->llistarAl($_SESSION['asig']);
         $list2=$this->model->llistarAl2($_SESSION['asig']);
+        
         include_once(VIEW_ASIGNATURA."AsignaturaInfo.php");
         echo '<script src="'.VIEW_ASIGNATURA.'AsignaturaInfo.js"></script>';
     }

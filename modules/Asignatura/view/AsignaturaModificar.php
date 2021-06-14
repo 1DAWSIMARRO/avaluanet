@@ -42,10 +42,10 @@
 
                 </div>
                 <div>
-                <?php
-                echo '<a class="btn btn-outline-info" href="index.php?module=Asignatura&function=add_alumne&asig='.$array['codi'].'&nom='.$array['nom'].'">Tornar</a>';
-                ?>
-                    <a href=""> <button type="submit" class="btn btn-outline-success ms-2 mt-3">Modificar</button></a>
+               
+                <a class="btn btn-outline-info ms-2 mt-3" href="index.php?module=Asignatura&function=add_alumne">Tornar</a>
+
+                <a href=""> <button type="submit" class="btn btn-outline-success ms-2 mt-3">Modificar</button></a>
 
                 </div>
 

@@ -1,13 +1,13 @@
 <div class="container mt-5">
 
 <div class = "row">
-  <div class="col-5">
+  <div class="col-4">
     <h1><?php echo $asignatura['nom']?></h1>
   </div>
   <div class="col-1">
-  <td><a class="btn btn-warning" href="index.php?module=Asignatura&function=modificar&codi='<?php echo $_REQUEST['asig'] ?>'">Modificar</a></td>
+  <td><a class="btn btn-warning" href="index.php?module=Asignatura&function=modificar&codi='<?php echo $asignatura['codi'] ?>'">Modificar</a></td>
   </div>
-  <div class="col-1 ms-2">
+  <div class="col-1 ms-1">
   <td><a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modaleliminar">Eliminar</a></td>
   </div>
 </div>
@@ -25,7 +25,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-        <a type="button" href="index.php?module=Asignatura&function=baixa&codi='<?php echo $_REQUEST['asig'] ?>'" class="btn btn-primary">Eliminar</a>
+        <a type="button" href="index.php?module=Asignatura&function=baixa&codi='<?php echo $asignatura['codi'] ?>'" class="btn btn-primary">Eliminar</a>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }
-      echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA='.$value['NIA'].'">Eliminar</a></td>';
+      echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA='.$value['NIA'].'">X</a></td>';
       echo '</tr>';
     }
   ?>
@@ -69,10 +69,10 @@
     </tr>
 </thead>
     <tr>
-        <td>Horas semanales: 5</td>
+        <td>Hores: <?php echo $asignatura['hores']?></td>
         </tr>
         <tr>
-        <td>Aula: 1DAW</td>
+        <td>Grup: <?php echo $asignatura['grup']?></td>
         </tr>
         <tr>
         <td>Nivel: Grado Superior</td>
@@ -84,14 +84,25 @@
   <div class="col-4 align-self-end">
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalagregaralumno">
   Agregar Alumne
 </button>
 <a class="btn btn-success">Añadir avaluable</a>
 
-<!-- Modal -->
+<!-- Evitar cerrar el modal -->
 
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<?php
+if (isset($_REQUEST['modal'])) {
+  echo "<script type='text/javascript'> 
+  $(document).ready(function(){
+$('#modalagregaralumno').modal('show');
+});
+</script>";
+}
+?>
+
+<!-- Modal -->
+<div class="modal fade" id="modalagregaralumno" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalagregaralumnoLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">

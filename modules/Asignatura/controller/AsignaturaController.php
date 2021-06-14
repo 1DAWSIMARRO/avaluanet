@@ -36,7 +36,7 @@ class AsignaturaController {
             'asig' => $_SESSION['asig']
         ];
         $this->model->altaAlum($data);
-        header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_SESSION['asig']);
+        header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_SESSION['asig'].'&modal=true');
     }
 
     public function remove(){
@@ -68,7 +68,7 @@ class AsignaturaController {
                 $data[$key] = $value;
             }
             $this->model->editarM($data);
-            header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_POST['codi']); 
+            header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_SESSION['asig']); 
         } else {
             include_once(VIEW_ASIGNATURA.'AsignaturaModificar.php'); 
         }      

@@ -5,7 +5,7 @@
     <h1>Llenguatge de marques</h1>
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
-    <button type="button" class="btn btn-success">Editar </button>
+  <a class="btn btn-outline-info" href="index.php?module=Asignatura&function=editar&codi="<?php $value['asig']?>>Editar</a>
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
     <button type="button" class="btn btn-success">Eliminar</button>

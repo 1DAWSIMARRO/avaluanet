@@ -69,8 +69,7 @@
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }
-      echo '<td><a class="btn btn-outline-info" href="index.php?module=Asignatura&function=editar&codi='.$value['codi'].'">Editar</a></td>';
-      echo '<td><a class="btn btn-danger" id="eliminar" data-bs-toggle="modal" onclick="pasarParametro('.$value['codi'].')" data-bs-target="#alerta_eliminacion">Eliminar</a></td>';
+      echo '<td><a class="btn btn-outline-info" href="index.php?module=Asignatura&function=add_alumne&asig='.$value['codi'].'">Acceder</a></td>';
       echo '</tr>';
     }
   ?>

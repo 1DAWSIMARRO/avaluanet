@@ -2,7 +2,7 @@
 
 <div class = "row">
   <div class="col-5">
-    <h1><?php echo $_REQUEST['nom']?></h1>
+    <h1><?php echo $asignatura['nom']?></h1>
   </div>
   <div class="col-1">
   <td><a class="btn btn-warning" href="index.php?module=Asignatura&function=modificar&codi='<?php echo $_REQUEST['asig'] ?>'">Modificar</a></td>
@@ -21,11 +21,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Està vosté segur d'eliminar l'assignatura <?php echo $_REQUEST['nom']?> de la base de dades?</p>
+        <p>Està vosté segur d'eliminar l'assignatura <?php echo $asignatura['nom']?> de la base de dades?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-        <a type="button" href="index.php?module=Asignatura&function=modificar&codi='<?php echo $_REQUEST['asig'] ?>'" class="btn btn-primary">Eliminar</a>
+        <a type="button" href="index.php?module=Asignatura&function=baixa&codi='<?php echo $_REQUEST['asig'] ?>'" class="btn btn-primary">Eliminar</a>
       </div>
     </div>
   </div>

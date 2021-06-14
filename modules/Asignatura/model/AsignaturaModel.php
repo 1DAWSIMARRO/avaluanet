@@ -51,7 +51,7 @@ class AsignaturaModel {
         $this->DB->query($sql);
     }
 
-    public function baixa($data) {
+    public function baixaM($data) {
         $modificar = "DELETE FROM asignatura WHERE codi=".$data['codi'];
         $this->DB->query($modificar);
     }

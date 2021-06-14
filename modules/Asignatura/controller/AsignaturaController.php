@@ -20,9 +20,12 @@ class AsignaturaController {
     }
 
     public function add_alumne() {
-        $_SESSION['asig']=$_GET['asig'];
+        if (isset($_GET['asig'])) {
+            $_SESSION['asig']=$_GET['asig'];
+        }
         $list=$this->model->llistarAl($_SESSION['asig']);
         $list2=$this->model->llistarAl2($_SESSION['asig']);
+        $asignatura=$this->model->getEditar($_SESSION['asig']);
         include_once(VIEW_ASIGNATURA."AsignaturaInfo.php");
         echo '<script src="'.VIEW_ASIGNATURA.'AsignaturaInfo.js"></script>';
     }
@@ -65,7 +68,7 @@ class AsignaturaController {
                 $data[$key] = $value;
             }
             $this->model->editarM($data);
-            header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_POST['codi'].'&nom='.$_POST['nom']); 
+            header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_POST['codi']); 
         } else {
             include_once(VIEW_ASIGNATURA.'AsignaturaModificar.php'); 
         }      

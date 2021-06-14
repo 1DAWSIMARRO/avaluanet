@@ -2,15 +2,36 @@
 
 <div class = "row">
   <div class="col-5">
-    <h1>Llenguatge de marques</h1>
+    <h1><?php echo $_REQUEST['nom']?></h1>
   </div>
-  <div class="col-1" style="margin-top: 0.5%;">
-  <a class="btn btn-outline-info" href="index.php?module=Asignatura&function=editar&codi="<?php $value['asig']?>>Editar</a>
+  <div class="col-1">
+  <td><a class="btn btn-warning" href="index.php?module=Asignatura&function=modificar&codi='<?php echo $_REQUEST['asig'] ?>'">Modificar</a></td>
   </div>
-  <div class="col-1" style="margin-top: 0.5%;">
-    <button type="button" class="btn btn-success">Eliminar</button>
+  <div class="col-1 ms-2">
+  <td><a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modaleliminar">Eliminar</a></td>
   </div>
 </div>
+
+<!-- Modal for "eliminar" -->
+<div class="modal fade" id="modaleliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar asignatura</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Està vosté segur d'eliminar l'assignatura <?php echo $_REQUEST['nom']?> de la base de dades?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+        <a type="button" href="index.php?module=Asignatura&function=modificar&codi='<?php echo $_REQUEST['asig'] ?>'" class="btn btn-primary">Eliminar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end -->
+
 <div class="row justify-content-between">
 <div class="col-5">
 <table class="table" style="margin-top: 2%;">
@@ -33,7 +54,7 @@
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }
-      echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA='.$value['NIA'].'">Delete</a></td>';
+      echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA='.$value['NIA'].'">Eliminar</a></td>';
       echo '</tr>';
     }
   ?>

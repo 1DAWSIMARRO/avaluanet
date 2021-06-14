@@ -50,7 +50,7 @@
 
             <div>
 
-                <form action="index.php?module=Asignatura&function=modificar" method="post" class="row g-3 needs-validation ms-4" novalidate>
+                <form action="index.php?module=Asignatura&function=editar" method="post" class="row g-3 needs-validation ms-4" novalidate>
                 <input type="hidden" name="codi" value="<?php echo $array['codi']?>">
                     <div class="col-md-3">
                         <label for="denominacio" class="form-label">Denominació</label>
@@ -88,9 +88,10 @@
                         </div>
 
                     </div>
-
                     <div>
-                    <a href="./index.php"><button type="button" class="btn btn-outline-success mt-3">Tornar</button></a>
+                    <?php
+                    echo '<a class="btn btn-outline-info" href="index.php?module=Asignatura&function=add_alumne&asig='.$array['codi'].'&nom='.$array['nom'].'">Acceder</a>';
+                    ?>
                         <a href=""> <button type="submit" class="btn btn-outline-success ms-2 mt-3">Modificar</button></a>
  
                     </div>

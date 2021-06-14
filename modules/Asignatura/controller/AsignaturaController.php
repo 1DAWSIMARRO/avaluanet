@@ -9,14 +9,14 @@ class AsignaturaController {
     }
 
     public function llistar() {
-        $list=$this->model->llistarM();
+        $list=$this->model->llistar();
         // echo '<script src='.VIEW_ASIGNATURA.'"js/script.js"></script>';
         include_once(VIEW_ASIGNATURA.'AsignaturaLlistar.php');
         
     }
 
     public function afegir() {
-        $this->model->altaAsig();
+        include_once(VIEW_ASIGNATURA."AsignaturaAlta.html");
     }
 
     public function add_alumne() {
@@ -52,27 +52,26 @@ class AsignaturaController {
                 $data[$key] = $value;
             }
             $this->model->altaM($data);
-            header('Location: index.php');
+            header('Location: index.php?module=Asignatura&function=llistar');
         } else {
             include_once(VIEW_ASIGNATURA.'AsignaturaAlta.html');
         }      
     }
 
-    public function modificar(){
+    public function editar(){
         if (isset($_POST['codi'])) {
             $data=[];
             foreach ($_POST as $key => $value) {
                 $data[$key] = $value;
             }
-            $this->model->modificarM($data);
-            echo "HOLA";
-            header('Location: index.php'); 
+            $this->model->editarM($data);
+            header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_POST['codi'].'&nom='.$_POST['nom']); 
         } else {
             include_once(VIEW_ASIGNATURA.'AsignaturaModificar.php'); 
         }      
     }
 
-    public function editar() {
+    public function modificar() {
         if (isset($_GET['codi'])) {
             $array = $this->model->getEditar($_GET['codi']);
             include_once(VIEW_ASIGNATURA.'AsignaturaModificar.php');
@@ -86,7 +85,7 @@ class AsignaturaController {
                 $data[$key] = $value;
             }
             $this->model->baixaM($data);
-            header('Location: index.php');
+            header('Location: index.php?module=Asignatura&function=llistar');
         } else {
             include_once(VIEW_ASIGNATURA.'AsignaturaBaixa.php');
         }      

@@ -5,19 +5,9 @@ class AsignaturaModel {
         $this->DB=Database::connect(); 
     }
 
-    public function llistarAsig(){
+    public function llistar(){
         $sql='SELECT * FROM asignatura';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function altaAsig(){
-        $consulta="INSERT INTO asignatura (nom,nivell,curs,grup,hores) VALUES ('Entornos', 'DAW', '1ª', 'A', 56)";
-        $resultado=$this->DB->query($consulta);
-        if ($resultado) {
-            echo "OK";
-        }else {
-            echo "ERROR";
-        }
     }
 
     public function altaAlum($data){
@@ -40,10 +30,6 @@ class AsignaturaModel {
         $sql='SELECT * FROM alumne WHERE NIA NOT IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function llistarM(){
-        $consulta='SELECT * FROM asignatura';
-        return $this->DB->query($consulta)->fetchAll(PDO::FETCH_ASSOC);
-    }
 
     public function getEditar($codi) {
         $consulta = "SELECT * FROM asignatura WHERE codi=$codi";
@@ -56,7 +42,7 @@ class AsignaturaModel {
         $stmt->execute([$data['nom'], $data['grup'], $data['hores']]);
     }
 
-    public function modificarM($data) {;
+    public function editarM($data) {;
         $codi=$data['codi'];
         $nom=$data['nom'];
         $grup=$data['grup'];
@@ -65,7 +51,7 @@ class AsignaturaModel {
         $this->DB->query($sql);
     }
 
-    public function baixaM($data) {
+    public function baixa($data) {
         $modificar = "DELETE FROM asignatura WHERE codi=".$data['codi'];
         $this->DB->query($modificar);
     }

@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container mt-5">
+<h1>Alumnes</h1> 
 <table class="table" style="margin-top: 2%;">
   <thead class="thead-dark"> 
   <tr>

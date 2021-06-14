@@ -122,7 +122,7 @@ if (isset($_REQUEST['modal'])) {
   <?php
     foreach ($list2 as $key => $value) {
       echo '<tr>';
-      echo '<td><a class="text-dark" href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" onclick="modalOpened()" style="text-decoration: none;">+</a></td>';
+      echo '<td><a class="text-dark" href="index.php?module=Asignatura&function=inAlu&NIA='.$value['NIA'].'" style="text-decoration: none;">+</a></td>';
       foreach ($value as $key2 => $value2) {
         echo '<td>'.$value2.'</td>';
       }

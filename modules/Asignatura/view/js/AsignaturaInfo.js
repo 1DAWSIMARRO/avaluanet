@@ -4,4 +4,5 @@ window.onload = function() {
 
 function search() {
     console.log("keydown in searchbar");
+
 }

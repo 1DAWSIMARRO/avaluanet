@@ -5,7 +5,7 @@ class AsignaturaModel {
         $this->DB=Database::connect(); 
     }
 
-    public function llistar(){
+    public function llistarM(){
         $sql='SELECT * FROM asignatura';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -57,7 +57,11 @@ class AsignaturaModel {
     }
 
     public function searchM($data) {
-        $sql = 'SELECT * FROM alumne WHERE (NIA NOT IN(SELECT NIA FROM matricula WHERE codi_asignatura="'.$data['asig'].'") AND nom LIKE "'.$data['text'].'%") OR (NIA NOT IN(SELECT NIA FROM matricula WHERE codi_asignatura="'.$data['asig'].'") AND NIA LIKE "'.$data['text'].'%")';
+        $sql = 'SELECT * FROM alumne WHERE 
+        NIA NOT IN
+        (SELECT NIA FROM matricula WHERE codi_asignatura="'.$data['asig'].'")
+        AND (nom LIKE "'.$data['text'].'%" OR cognoms LIKE "'.$data['text'].'%" OR NIA LIKE "'.$data['text'].'%")';
+
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 

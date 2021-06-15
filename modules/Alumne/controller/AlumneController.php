@@ -12,6 +12,7 @@ class AlumneController{
     }
 
     public function alta(){
+        include_once(VIEW_D.'header.html');
         if (isset($_POST['data'])) {
             $array=json_decode($_POST['data'], true);
             $data=[];

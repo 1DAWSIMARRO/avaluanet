@@ -17,7 +17,9 @@ class AsignaturaController {
     }
 
     public function afegir() {
+        include_once(VIEW_D.'header.html');
         include_once(VIEW_ASIGNATURA."AsignaturaAlta.html");
+        include_once(VIEW_D.'footer.html');
     }
 
     public function add_alumne() {
@@ -89,7 +91,9 @@ class AsignaturaController {
     public function modificar() {
         if (isset($_GET['codi'])) {
             $array = $this->model->getEditar($_GET['codi']);
+            include_once(VIEW_D.'header.html');
             include_once(VIEW_ASIGNATURA.'AsignaturaModificar.php');
+            include_once(VIEW_D.'footer.html');
         } 
     }
 

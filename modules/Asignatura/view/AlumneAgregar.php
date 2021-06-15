@@ -5,10 +5,10 @@
     <h1>Llenguatge de marques</h1> 
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
-    <button type="button" class="btn btn-success">Editar </button>
+    <button type="button" class="btn btn-warning">Editar </button>
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
-    <button type="button" class="btn btn-success">Eliminar</button>
+    <button type="button" class="btn btn-danger">Eliminar</button>
   </div>
 </div>
 <div class="row justify-content-between">
@@ -18,7 +18,7 @@
     <button class="nav-link active text-dark" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Alumne</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link text-dark" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Qualificacion</button>
+    <button class="nav-link text-dark" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Qualificacions</button>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -29,7 +29,7 @@
   <th scope="col">NIA</th>
     <th scope="col">NOM</th>
     <th scope="col">COGNOMS</th>
-    <th scope="col">TELEFON</th>
+    <th scope="col">TELÈFON</th>
     <th scope="col">EMAIL</th>
     <th scope="col">codiGrup</th>
     <th></th>
@@ -158,7 +158,7 @@
     <th scope="col">NIA</th>
     <th>NOM</th>
     <th>COGNOMS</th>
-    <th>TELEFON</th>
+    <th>TELÈFON</th>
     <th>EMAIL</th>
     <th>codiGrup</th>
   </tr>

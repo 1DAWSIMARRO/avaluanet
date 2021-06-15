@@ -150,7 +150,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <input class="mx-auto" type="text" name="buscar" id="buscar" placeholder="Buscar"></input>
+      <input class="mx-auto" type="text" name="buscar" id="buscar" placeholder="Buscar" autocomplete="off"></input>
       <table class="table" style="margin-top: 2%;">
   <thead class="thead-dark"> 
   <tr>

@@ -34,10 +34,20 @@
 
 <div class="row justify-content-between">
 <div class="col-5">
-<table class="table" style="margin-top: 2%;">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active text-dark" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Alumne</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link text-dark" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Qualificacion</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <table class="table" style="margin-top: 2%;">
   <thead class="thead-dark"> 
   <tr>
-    <th scope="col">NIA</th>
+  <th scope="col">NIA</th>
     <th scope="col">NOM</th>
     <th scope="col">COGNOMS</th>
     <th scope="col">TELEFON</th>
@@ -60,6 +70,67 @@
   ?>
   </tbody>
 </table>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  <table class="table" style="margin-top: 2%;">
+  <thead class="thead-dark"> 
+  <tr>
+  <th scope="col">NIA</th>
+    <th scope="col">NOM</th>
+    <th scope="col">Avaluacio</th>
+    <th scope="col">Avaluable</th>
+    <th scope="col">Examen</th>
+    <th scope="col">Nota Final</th>
+    <th></th>
+    
+  </tr>
+  </thead>
+  <tbody>
+  <?php
+    
+    foreach ($list as $key => $value) {
+      echo '<tr>';
+      foreach ($value as $key2 => $value2) {
+        echo '<td>'.$value2.'</td>';
+      }
+      echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA='.$value['NIA'].'">Delete</a></td>';
+      echo '</tr>';
+    }
+  ?>
+  </tbody>
+</table>
+
+  </div>
+
+</div>
+
+
+<!-- <table class="table" style="margin-top: 2%;">
+  <thead class="thead-dark"> 
+  <tr>
+    <th scope="col">NIA</th>
+    <th scope="col">NOM</th>
+    <th scope="col">COGNOMS</th>
+    <th scope="col">TELEFON</th>
+    <th scope="col">EMAIL</th>
+    <th scope="col">codiGrup</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <?php
+    
+    // foreach ($list as $key => $value) {
+    //   echo '<tr>';
+    //   foreach ($value as $key2 => $value2) {
+    //     echo '<td>'.$value2.'</td>';
+    //   }
+    //   echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA='.$value['NIA'].'">Delete</a></td>';
+    //   echo '</tr>';
+    // }
+  ?>
+  </tbody>
+</table> -->
 </div>
 <div class="col-4">
 <table class="table" style="margin-top: 2%;">
@@ -106,7 +177,7 @@ if (isset($_REQUEST['modal'])) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <input class="mx-auto" type="text" name="buscar" id="buscar" placeholder="Buscar"></input>
+      <input class="mx-auto" type="text" name="buscar" id="buscar" placeholder="Buscar" autocomplete="off"></input>
       <table class="table" style="margin-top: 2%;">
   <thead class="thead-dark"> 
   <tr>

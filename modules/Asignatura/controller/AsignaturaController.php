@@ -9,9 +9,11 @@ class AsignaturaController {
     }
 
     public function llistar() {
-        $list=$this->model->llistar();
+        include_once(VIEW_D.'header.html');
+        $list=$this->model->llistarM();
+        // echo '<script src='.VIEW_ASIGNATURA.'"js/script.js"></script>';
         include_once(VIEW_ASIGNATURA.'AsignaturaLlistar.php');
-        
+        include_once(VIEW_D.'footer.html');
     }
 
     public function afegir() {
@@ -19,6 +21,7 @@ class AsignaturaController {
     }
 
     public function add_alumne() {
+        include_once(VIEW_D.'header.html');
         if (isset($_GET['asig'])) {
             $_SESSION['asig']=$_GET['asig'];
         }
@@ -27,6 +30,7 @@ class AsignaturaController {
         $asignatura=$this->model->getEditar($_SESSION['asig']);
         include_once(VIEW_ASIGNATURA."AsignaturaInfo.php");
         echo '<script src="'.VIEW_ASIGNATURA.'/js/AsignaturaInfo.js"></script>';
+        include_once(VIEW_D.'footer.html');
     }
 
     public function inAlu(){
@@ -45,6 +49,15 @@ class AsignaturaController {
         ];
         $this->model->baixaAlum($data);
         header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_SESSION['asig']);
+    }
+
+    public function search(){
+        $data=[
+            'text' => $_POST['text'],
+            'asig' => $_SESSION['asig']
+        ];
+        $list_al=$this->model->searchM($data);
+        echo json_encode($list_al);
     }
 
     public function alta(){

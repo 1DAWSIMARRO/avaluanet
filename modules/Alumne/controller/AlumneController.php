@@ -6,6 +6,7 @@ class AlumneController{
     }
 
     public function llistar(){
+        include_once(VIEW_D.'header.html');
         $list=$this->model->llistarM();
         include_once(VIEW_ALUMNE.'/AlumneLlistar.php');
     }

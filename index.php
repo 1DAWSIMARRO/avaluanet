@@ -2,7 +2,7 @@
 session_start();
 require_once('DB/connexio.php');
 require_once('paths.php');
-include_once(VIEW_D.'header.html');
+// include_once(VIEW_D.'header.html');
 
 function defaultPage(){
     // require_once('modules/login/controller/LoginController.php');
@@ -30,6 +30,6 @@ if(isset($_GET['module'])) {
     defaultPage();
 }
 
-include_once(VIEW_D.'footer.html');
+// include_once(VIEW_D.'footer.html');
 
 ?>

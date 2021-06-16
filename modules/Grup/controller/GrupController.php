@@ -43,7 +43,7 @@
 
       } else {
 
-        include_once(VIEW_GRUP."/GrupBaixa.php");
+        include_once(VIEW_GRUP."GrupBaixa.php");
       }
     }
 

@@ -1,4 +1,8 @@
-<form action="index.php" method="REQUEST">
+<?php 
+$url = "index.php?module=Grup&function=modificacio&codi=".$data['codi'];
+?>
+
+<form action="<?php echo $url ?>" method="POST">
     <input type="hidden" name="metode" value="modificacio">
     <label for="codi">Codi</label>
     <input type="text" name="codi" value="
@@ -38,8 +42,7 @@
             if (isset($data)) {
                 echo $data['n_alumnes'];
             }
-            $url = "index.php?module=Grup&function=modificacio&codi=".$data['codi'];
         ?>
     ">
-    <a href="<?php echo $url ?>"><input type="button" value="MODIFICAR"></a>
+    <a href="#"><input type="submit" value="MODIFICAR"></a>
 </form>

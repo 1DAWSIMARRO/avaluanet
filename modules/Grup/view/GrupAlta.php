@@ -1,4 +1,7 @@
-<form action="index.php" method="REQUEST">
+<?php 
+$url = "index.php?module=Grup&function=alta";
+?>
+<form action="<?php echo $url ?>" method="POST">
     <input type="hidden" name="metode" value="alta">
     <label for="nom">Nom</label>
     <input type="text" name="nom" value="<?php
@@ -25,5 +28,5 @@
             }
             $url = "index.php?module=Grup&function=alta";
         ?>">
-    <a href="<?php echo $url ?>"><input type="button" value="ALTA"></a>
+    <a href="#"><input type="submit" value="ALTA"></a>
 </form>

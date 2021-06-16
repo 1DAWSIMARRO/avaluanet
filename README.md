@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 # avaluanet hola
+>>>>>>> dev
+=======
 >>>>>>> dev
 # avaluanet
 ## 1.Actualizar BD.

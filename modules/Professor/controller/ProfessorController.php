@@ -25,8 +25,11 @@ class ProfessorController
             "email" => $email
         );
 
-        return $this->model->registrarM($data);
+        $this->model->registrarM($data);
+        
+
     }
+
 
     public function acceder()
     {
@@ -37,7 +40,21 @@ class ProfessorController
             "login" => $login,
             "password" => $password
         );
-        //"valor:".$this->model->accederM($data);
-        return $this->model->accederM($data);
+        //"valor:".$this->model->accederM($data); 
+
+        if($this->model->accederM($data) == "true") {
+            $response = array(
+                'msg' => "ok"
+            );
+        } else {
+            $response = array(
+                'msg' => "ko"
+            );
+        }
+        header('Content-Type: application/json; charset=utf-8');         
+        echo json_encode($response);
+
     }
+
+
 }

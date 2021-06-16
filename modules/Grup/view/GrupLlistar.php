@@ -16,7 +16,7 @@
         
       }
       echo '<td><a href="index.php?module=Grup&function=viewEditar&codi='.$value['codi'].'"><input type="button" value="EDITAR"></a></td>';
-      echo '<td><a href="index.php?module=Grup&function=viewBaixa&codi='.$value['codi'].'"><input type="button" value="BORRAR"></a></td>';
+      echo '<td><a href="index.php?module=Grup&function=baixa&codi='.$value['codi'].'"><input type="button" value="BORRAR"></a></td>';
       echo '</tr>';
     }
   ?>

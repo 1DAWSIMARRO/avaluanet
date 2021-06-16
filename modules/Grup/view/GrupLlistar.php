@@ -16,6 +16,7 @@
         
       }
       echo '<td><a href="index.php?module=Grup&function=viewEditar&codi='.$value['codi'].'"><input type="button" value="EDITAR"></a></td>';
+      echo '<td><a href="index.php?module=Grup&function=viewBaixa&codi='.$value['codi'].'"><input type="button" value="BORRAR"></a></td>';
       echo '</tr>';
     }
   ?>
@@ -23,9 +24,6 @@
 <div class="row align-items-center" style="margin-top: 3%;">
   <div class="col-4 align-self-end">
     <a class="btn btn-success" href="index.php?module=Grup&function=alta">Nuevo Grupo</a>
-  </div>
-  <div>
-    <a href=""></a>
   </div>
 </div>
 </div>

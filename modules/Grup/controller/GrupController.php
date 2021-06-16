@@ -39,7 +39,7 @@
           $data[$key] = $value;
         }
         $this->Model->baixaM($data);
-        header('Location: index.php');
+        header('Location: index.php?module=Grup&function=llistar');
 
       } else {
 

@@ -2,6 +2,7 @@
     class GrupModel {
 
     function __construct(){
+        
         $this->DB=Database::connect();        
     }
 
@@ -13,6 +14,7 @@
     }
 
     function obtindreGrupM($codi){
+        
         $sql = "SELECT * FROM grup where codi = ?";
         $q = $this->DB->prepare($sql);
         $q->execute(array($codi));

@@ -9,8 +9,10 @@
 
     function llistar() {
 
-      $list = $this->Model->llistarM(); 
+      $list = $this->Model->llistarM();
+      include_once(VIEW_D.'header.html');
       include_once(VIEW_GRUP.'GrupLlistar.php');
+      include_once(VIEW_D.'footer.html');
     }
 
     function alta() {
@@ -24,7 +26,9 @@
         header('Location: index.php?module=Grup&function=llistar');  // VUELVE A MOSTRAR EL PHP index.php
 
       } else {
+        include_once(VIEW_D.'header.html');
         include_once(VIEW_GRUP.'GrupAlta.php');
+        include_once(VIEW_D.'footer.html');
       }
 
     }
@@ -42,8 +46,9 @@
         header('Location: index.php?module=Grup&function=llistar');
 
       } else {
-
+        include_once(VIEW_D.'header.html');
         include_once(VIEW_GRUP."GrupBaixa.php");
+        include_once(VIEW_D.'footer.html');
       }
     }
 
@@ -57,13 +62,17 @@
         $this->Model->modificacioM($data);
         header('Location: index.php?module=Grup&function=llistar');
       }
+      include_once(VIEW_D.'header.html');
       include_once(VIEW_GRUP."GrupModificar.php");
+      include_once(VIEW_D.'footer.html');
     }
 
     function viewEditar() {
 
         $data = $this->Model->obtindreGrupM($_REQUEST['codi']);
+        include_once(VIEW_D.'header.html');
         include_once(VIEW_GRUP."GrupModificar.php");
+        include_once(VIEW_D.'footer.html');
     }
   }
 ?>

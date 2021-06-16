@@ -25,8 +25,19 @@ class ProfessorController
             "email" => $email
         );
 
-        $this->model->registrarM($data);
-        
+        if($this->model->registrarM($data) == "noexiste") {
+            //no existe
+            $response = array(
+                'msg' => "ok"
+            );
+        } else {
+            //existe
+            $response = array(
+                'msg' => "ko"
+            );
+        }
+        header('Content-Type: application/json; charset=utf-8');         
+        echo json_encode($response); 
 
     }
 

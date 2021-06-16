@@ -60,7 +60,11 @@
       <div class="form-outline mb-4">
         <label class="form-label" for="grup">Grup</label>
         <select name="grup" id="grup">
-          <option value="1">1</option>
+            <?php
+              foreach ($grups as $key => $value) {
+                echo '<option value='.$value['codi'].'>'.$value['codi'].'</option>';
+              }
+            ?>
           <!-- <option value="saab">Saab</option>
           <option value="mercedes">Mercedes</option>
           <option value="audi">Audi</option> -->

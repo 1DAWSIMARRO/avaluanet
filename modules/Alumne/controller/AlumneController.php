@@ -1,8 +1,10 @@
 <?php
 require_once(MODEL_ALUMNE.'AlumneModel.php');
+require_once(MODEL_GRUP.'GrupModel.php');
 class AlumneController{
     function __construct(){
         $this->model=new AlumneModel();
+        $this->modelG=new GrupModel();
     }
 
     public function llistar(){
@@ -25,6 +27,8 @@ class AlumneController{
                 $data=$this->model->findM($_GET['NIA']);
             }
             echo '<script src="'.VIEW_ALUMNE.'comprobar.js"></script>';
+            $grups=$this->modelG->llistarM();
+            print_r($grups[0]['codi']);
             include_once(VIEW_ALUMNE.'AlumneAlta.php');
         }
         

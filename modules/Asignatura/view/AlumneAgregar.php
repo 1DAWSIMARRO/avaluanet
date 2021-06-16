@@ -5,14 +5,22 @@
     <h1>Llenguatge de marques</h1> 
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
+<<<<<<< HEAD
     <button type="button" class="btn btn-warning">Editar </button>
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
     <button type="button" class="btn btn-danger">Eliminar</button>
+=======
+    <button type="button" class="btn btn-success" >Editar </button>
+  </div>
+  <div class="col-1" style="margin-top: 0.5%;">
+    <button type="button" class="btn btn-success" >Eliminar</button>
+>>>>>>> dev
   </div>
 </div>
 <div class="row justify-content-between">
 <div class="col-5">
+<<<<<<< HEAD
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active text-dark" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Alumne</button>
@@ -30,6 +38,15 @@
     <th scope="col">NOM</th>
     <th scope="col">COGNOMS</th>
     <th scope="col">TELÈFON</th>
+=======
+<table class="table" style="margin-top: 2%;">
+  <thead class="thead-dark"> 
+  <tr>
+    <th scope="col">NIA</th>
+    <th scope="col">NOM</th>
+    <th scope="col">COGNOMS</th>
+    <th scope="col">TELEFON</th>
+>>>>>>> dev
     <th scope="col">EMAIL</th>
     <th scope="col">codiGrup</th>
     <th></th>
@@ -49,6 +66,7 @@
   ?>
   </tbody>
 </table>
+<<<<<<< HEAD
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
   <table class="table" style="margin-top: 2%;">
@@ -110,6 +128,8 @@
   ?>
   </tbody>
 </table> -->
+=======
+>>>>>>> dev
 </div>
 <div class="col-4">
 <table class="table" style="margin-top: 2%;">
@@ -137,7 +157,10 @@
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Agregar Alumne
 </button>
+<<<<<<< HEAD
 <a class="btn btn-success">Añadir avaluable</a>
+=======
+>>>>>>> dev
 
 <!-- Modal -->
 
@@ -158,7 +181,11 @@
     <th scope="col">NIA</th>
     <th>NOM</th>
     <th>COGNOMS</th>
+<<<<<<< HEAD
     <th>TELÈFON</th>
+=======
+    <th>TELEFON</th>
+>>>>>>> dev
     <th>EMAIL</th>
     <th>codiGrup</th>
   </tr>

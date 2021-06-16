@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS professor (
 );
 
 CREATE TABLE IF NOT EXISTS grup (
-	codi INT PRIMARY KEY AUTO_INCREMENT,
+	codi INT PRIMARY KEY,
     nom VARCHAR (15) NOT NULL,
     curs VARCHAR(20) NOT NULL,
     aula VARCHAR(10) NOT NULL,
@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS alumne(
 	email VARCHAR(50) NOT NULL,
 	codi_grup int NOT NULL,
 		foreign key (codi_grup) references grup (codi)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS avaluable (

@@ -17,7 +17,6 @@ function pattern ($module_u, $module){
 pattern('ALUMNE','Alumne');
 pattern('PROFESSOR','Professor');
 pattern('ASIGNATURA','Asignatura');
-pattern('GRUP','Grup');
 
 
 ?>

@@ -3,8 +3,8 @@ class Database
 {
     private static $dbName = 'avaluanet' ;
     private static $dbHost = 'localhost';
-    private static $dbUsername = 'ivan';
-    private static $dbUserPassword = 'ivan';
+    private static $dbUsername = 'david';
+    private static $dbUserPassword = 'david';
      
     private static $cont  = null;
      

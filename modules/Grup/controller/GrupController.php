@@ -21,7 +21,7 @@
           $data[$key] = $value;
         }
         $this->Model->altaM($data);
-        //header('Location: index.php');  // VUELVE A MOSTRAR EL PHP index.php
+        header('Location: index.php?module=Grup&function=llistar');  // VUELVE A MOSTRAR EL PHP index.php
 
       } else {
         include_once(VIEW_GRUP.'GrupAlta.php');

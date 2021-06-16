@@ -21,9 +21,9 @@ class AlumneModel{
     }
 
     public function deleteM($data){
-        $stmt = $this->DB->prepare( "DELETE FROM alumne WHERE NIA =:NIA" );
-        $stmt->bindParam(':NIA', $data);
-        $stmt->execute();
+        $sql="DELETE FROM alumne WHERE NIA = ?";
+        $stmt=$this->DB->prepare($sql);
+        $stmt->execute([$data]);
     }
 
     function registrarM(){

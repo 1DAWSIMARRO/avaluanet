@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS professor (
 );
 
 CREATE TABLE IF NOT EXISTS grup (
-	codi INT PRIMARY KEY,
+	codi INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR (15) NOT NULL,
     curs VARCHAR(20) NOT NULL,
     aula VARCHAR(10) NOT NULL,
@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS matricula (
 	primary key(NIA,codi_asignatura),
 		foreign key(NIA) references alumne(NIA),
 		foreign key(codi_asignatura) references asignatura(codi)
+		ON DELETE CASCADE
 );
 
 insert into grup (codi,nom,curs,aula,n_alumnes)

@@ -6,11 +6,13 @@ class AlumneController{
     }
 
     public function llistar(){
+        include_once(VIEW_D.'header.html');
         $list=$this->model->llistarM();
         include_once(VIEW_ALUMNE.'/AlumneLlistar.php');
     }
 
     public function alta(){
+        include_once(VIEW_D.'header.html');
         if (isset($_POST['data'])) {
             $array=json_decode($_POST['data'], true);
             $data=[];
@@ -19,7 +21,7 @@ class AlumneController{
             }
             $this->model->altaM($data);
         } else {
-            if ($_GET['NIA']) { // Take data for edit
+            if (isset($_GET['NIA'])) { // Take data for edit and enjoy
                 $data=$this->model->findM($_GET['NIA']);
             }
             echo '<script src="'.VIEW_ALUMNE.'comprobar.js"></script>';

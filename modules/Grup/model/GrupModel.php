@@ -11,7 +11,6 @@
         $sql = "INSERT INTO grup (nom, curs, aula, n_alumnes) VALUES (?,?,?,?)";
         $stmt=$this->DB->prepare($sql);
         $stmt->execute([$data['nom'], $data['curs'], $data['aula'], $data['n_alumnes']]);
-        echo "hola";
     }
 
     function obtindreGrupM($codi){

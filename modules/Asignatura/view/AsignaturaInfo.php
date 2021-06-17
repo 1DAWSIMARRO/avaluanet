@@ -158,7 +158,7 @@
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalagregaralumno">
   Agregar Alumne
 </button>
-<a class="btn btn-success">Añadir avaluable</a>
+<a href="index.php?module=Avaluable&function=llistar" class="btn btn-success">Agregar avaluable</a>
 
 <!-- Evitar cerrar el modal -->
 <?php

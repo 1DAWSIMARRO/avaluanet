@@ -23,10 +23,13 @@ $url = "index.php?module=Grup&function=alta";
         ?>">
     <label for="n_alumnes">N_alumnes</label>
     <input type="text" name="n_alumnes" value="<?php
-            if (isset($data)) {
-                echo $data['n_alumnes'];
+            $cont = 0;
+            foreach ( $list as $key => $value ) { // RECORREMOS EL ARRAY DE LOS DATOS DE LOS ALUMNOS
+                if ( $value['codi'] == $data['codi']) { // SI LA POSICIÓN DEL ARRAY DEL CODIGO DE ALUMNO COINCIDE CON EL CODIGO DEL GRUPO SUMA
+                    $cont++;
+                }
             }
-            $url = "index.php?module=Grup&function=alta";
+            echo $data['n_alumnes'] = $cont; // AÑADIMOS LA SUMA A Nº ALUMNES
         ?>">
     <a href="#"><input type="submit" value="ALTA"></a>
 </form>

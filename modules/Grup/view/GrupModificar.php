@@ -28,11 +28,5 @@ $url = "index.php?module=Grup&function=modificacio&codi=".$data['codi'];
                 echo $data['aula'];
             }
         ?>">
-    <label for="n_alumnes">N_alumnes</label>
-    <input type="text" name="n_alumnes" value="<?php
-            if (isset($data)) {
-                echo $data['n_alumnes'];
-            }
-        ?>">
     <a href="#"><input type="submit" value="MODIFICAR"></a>
 </form>

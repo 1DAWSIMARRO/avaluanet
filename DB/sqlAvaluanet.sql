@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS grup (
     nom VARCHAR (15) NOT NULL,
     curs VARCHAR(20) NOT NULL,
     aula VARCHAR(10) NOT NULL,
-    n_alumnes INT NOT NULL
+    n_alumnes INT
 );
 
 CREATE TABLE IF NOT EXISTS asignatura (

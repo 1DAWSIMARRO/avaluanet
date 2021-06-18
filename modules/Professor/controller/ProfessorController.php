@@ -12,6 +12,11 @@ class ProfessorController
         echo '<script src="'.VIEW_PROFESSOR.'validar2.js"></script>';
     }
 
+    function editar(){
+        include_once(VIEW_PROFESSOR.'editar.html');
+        echo '<script src="'.VIEW_PROFESSOR.'validaciones.js"></script>';
+    }
+
     public function registrar()
     {
         $dni = $_POST['dni'];

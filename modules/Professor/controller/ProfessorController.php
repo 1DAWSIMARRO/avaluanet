@@ -44,7 +44,8 @@ class ProfessorController
 
     public function acceder()
     {
-        $login = $_POST['login'];
+        echo json_encode("enter");
+/*         $login = $_POST['login'];
         $password = $_POST['password'];
 
         $data = array(
@@ -63,7 +64,7 @@ class ProfessorController
             );
         }
         header('Content-Type: application/json; charset=utf-8');         
-        echo json_encode($response);
+        echo json_encode($response); */
 
     }
 

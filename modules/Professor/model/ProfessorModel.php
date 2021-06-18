@@ -34,7 +34,7 @@ class ProfessorModel
         if ($result) {
             $row = mysqli_num_rows($result);
             if ($row) {
-                //printf("Usuario con Login: " . $data['login'] . " Password: " . $data['password']);
+                header('Location: index.php?module=Asignatura&function=llistar');
                 return "true";
             }
         } else {

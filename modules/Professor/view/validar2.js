@@ -36,11 +36,12 @@ function validarFormulario(evento) {
 
 function validarUsuari() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "../../../index2.php", true);
-    let params = 'login='+document.getElementById('login').value;
-	params += '&password='+document.getElementById('password').value;
+    xhttp.open("GET", "index.php?module=Professor&function=acceder", true);
+   /*  let params = 'login='+document.getElementById('login').value;
+    params += '&password='+document.getElementById('password').value; */
     xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    xhttp.send(params);
+    /* xhttp.send(params); */
+    xhttp.send();
 
 
     xhttp.onreadystatechange = function () {

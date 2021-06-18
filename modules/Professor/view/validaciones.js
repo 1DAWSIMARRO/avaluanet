@@ -81,7 +81,7 @@ function validarFormulario(evento) {
 
 function registrarUsuari() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "../../../index.php", true);
+    xhttp.open("POST", "index.php?module=Professor&function=registrar", true);
     let params = 'dni='+document.getElementById('dni').value; 
     params += '&nom='+document.getElementById('nombre').value;
 	params += '&cognoms='+document.getElementById('apellidos').value;

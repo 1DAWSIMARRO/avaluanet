@@ -7,6 +7,11 @@ class ProfessorController
         $this->model = new ProfessorModel();
     }
 
+    function llistar(){
+        include_once(VIEW_PROFESSOR.'ProfessorLlistar.html');
+        echo '<script src="'.VIEW_PROFESSOR.'validar2.js"></script>';
+    }
+
     public function registrar()
     {
         $dni = $_POST['dni'];
@@ -44,8 +49,7 @@ class ProfessorController
 
     public function acceder()
     {
-        echo json_encode("enter");
-/*         $login = $_POST['login'];
+        $login = $_POST['login'];
         $password = $_POST['password'];
 
         $data = array(
@@ -54,7 +58,7 @@ class ProfessorController
         );
         //"valor:".$this->model->accederM($data); 
 
-        if($this->model->accederM($data) == "true") {
+        if($this->model->accederM($data) != false) {
             $response = array(
                 'msg' => "ok"
             );
@@ -64,7 +68,7 @@ class ProfessorController
             );
         }
         header('Content-Type: application/json; charset=utf-8');         
-        echo json_encode($response); */
+        echo json_encode($response);
 
     }
 

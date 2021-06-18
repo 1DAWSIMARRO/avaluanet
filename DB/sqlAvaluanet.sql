@@ -78,4 +78,5 @@ insert into grup (codi,nom,curs,aula,n_alumnes)
 VALUES ('01', '1DAW', 'GS', '20', '15');
 insert into alumne (NIA,nom,cognoms,tel,email,codi_grup)
 VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '01');
-insert into asignatura (nom,grup,hores) VALUE ('info', '1DAW', '20')
+insert into asignatura (nom,grup,hores) VALUE ('info', '1DAW', '20');
+INSERT INTO professor (dni,nom,cognoms,login,password,email) VALUES ('12345678A', 'Jorge', 'Nose', 'jorge', '123','jorge@hola.es');

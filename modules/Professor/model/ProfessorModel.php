@@ -29,16 +29,7 @@ class ProfessorModel
 
     function accederM($data)
     {
-        $sql = "SELECT professor.login, professor.password from professor where professor.login LIKE " . $data['login'] . " AND professor.password LIKE " . $data['password'];
-        $result = mysqli_query(mysqli_connect("localhost", "userava", "userava", "avaluanet"), $sql);
-        if ($result) {
-            $row = mysqli_num_rows($result);
-            if ($row) {
-                header('Location: index.php?module=Asignatura&function=llistar');
-                return "true";
-            }
-        } else {
-            return "false";
-        }
+        $sql = "SELECT * from professor where login LIKE '" . $data['login'] . "' AND password LIKE '" . $data['password']."';";
+        return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 }

@@ -7,8 +7,8 @@ require_once('paths.php');
 function defaultPage(){
     // require_once('modules/login/controller/LoginController.php');
     // $obj=new LoginController;
-    require_once(CONTROLLER_ALUMNE.'AlumneController.php');
-    $obj=new AlumneController;
+    require_once(CONTROLLER_PROFESSOR.'ProfessorController.php');
+    $obj=new ProfessorController;
     $obj->llistar();
 }
 

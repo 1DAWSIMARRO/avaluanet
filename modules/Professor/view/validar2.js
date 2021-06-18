@@ -36,23 +36,24 @@ function validarFormulario(evento) {
 
 function validarUsuari() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "index.php?module=Professor&function=acceder", true);
-   /*  let params = 'login='+document.getElementById('login').value;
-    params += '&password='+document.getElementById('password').value; */
+    xhttp.open("POST", "index.php?module=Professor&function=acceder", true);
+    let params = 'login='+document.getElementById('login').value;
+    params += '&password='+document.getElementById('password').value;
     xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    /* xhttp.send(params); */
-    xhttp.send();
+    xhttp.send(params);
 
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             //alert(xhttp.responseText);
             let json = JSON.parse(xhttp.responseText);
+            console.log(xhttp.responseText);
 
             if(json.msg != 'ok') {
                 document.getElementById("error").innerHTML = "ERROR USUARIO NO EXISTE";
             }else {
                 document.getElementById("error").innerHTML = "";
+                window.location.href = "index.php?module=Asignatura&function=llistar";
             }
         }
     };

@@ -62,7 +62,7 @@
         <select name="grup" id="grup">
             <?php
               foreach ($grups as $key => $value) {
-                echo '<option value='.$value['codi'].'>'.$value['codi'].'</option>';
+                echo '<option value='.$value['codi'].'>'.$value['nom'].'</option>';
               }
             ?>
           <!-- <option value="saab">Saab</option>

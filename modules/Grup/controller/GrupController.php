@@ -33,6 +33,36 @@
 
     }
 
+    public function add_grup() {
+      include_once(VIEW_D.'header.html');
+      if (isset($_GET['data'])) {
+          $_SESSION['data']=$_GET['data'];
+      }
+      $list=$this->model->llistarM($_SESSION['data']);
+      $grup=$this->model->getEditar($_SESSION['data']);
+      include_once(VIEW_GRUP."GrupInfo.php");
+      echo '<script src="'.VIEW_GRUP.'/js/GrupInfo.js"></script>';
+      include_once(VIEW_D.'footer.html');
+  }
+
+  public function inAlu(){
+    $grup=[
+        'codi' => $_GET['codi'],
+        'data' => $_SESSION['data']
+    ];
+    $this->model->altaM($data);
+    header('Location: index.php?module=Grup&function=add_grup&asig='.$_SESSION['data'].'&modal=true');
+}
+
+public function remove(){
+  $grup=[
+      'codi' => $_GET['codi'],
+      'data' => $_SESSION['data']
+  ];
+  $this->model->baixaAlum($grup);
+  header('Location: index.php?module=Grup&function=add_grup&asig='.$_SESSION['data']);
+}
+
     function baixa() {
       
       if (isset($_REQUEST['codi'])) {
@@ -48,6 +78,7 @@
       } else {
         include_once(VIEW_D.'header.html');
         include_once(VIEW_GRUP."GrupBaixa.php");
+        echo '<script src="'.VIEW_GRUP.'/js/GrupInfo.js"></script>';
         include_once(VIEW_D.'footer.html');
       }
     }
@@ -74,5 +105,10 @@
         include_once(VIEW_GRUP."GrupModificar.php");
         include_once(VIEW_D.'footer.html');
     }
+
+    // function comprobarGrupo(){
+
+
+    // }
   }
 ?>

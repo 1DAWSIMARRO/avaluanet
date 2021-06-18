@@ -24,8 +24,8 @@
         <p>Està vosté segur d'eliminar l'assignatura <?php echo $asignatura['nom']?> de la base de dades?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-        <a type="button" href="index.php?module=Asignatura&function=baixa&codi='<?php echo $asignatura['codi'] ?>'" class="btn btn-primary">Eliminar</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tornar</button>
+        <a type="button" href="index.php?module=Asignatura&function=baixa&codi='<?php echo $asignatura['codi'] ?>'" class="btn btn-success">Eliminar</a>
       </div>
     </div>
   </div>

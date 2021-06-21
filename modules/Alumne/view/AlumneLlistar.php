@@ -19,7 +19,7 @@
         echo '<td>'.$value2.'</td>';
       }
       echo '<td><a class="btn btn-outline-warning" href="index.php?module=Alumne&function=alta&NIA='.$value['NIA'].'">Editar</a></td>';
-      echo '<td><a class="btn btn-danger" href="index.php?module=Alumne&function=delete&NIA='.$value['NIA'].'">Delete</a></td>';
+      echo '<td><a class="btn btn-outline-danger" href="index.php?module=Alumne&function=delete&NIA='.$value['NIA'].'">Eliminar</a></td>';
       echo '</tr>';
     }
   ?>

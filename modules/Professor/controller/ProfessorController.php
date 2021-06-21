@@ -20,7 +20,6 @@ class ProfessorController
     public function registrar()
     {
         $dni = $_POST['dni'];
-        $nom = $_POST['nom'];
         $cognoms = $_POST['cognoms'];
         $login = $_POST['login'];
         $password = $_POST['password'];
@@ -28,7 +27,6 @@ class ProfessorController
 
         $data = array(
             "dni" => $dni,
-            "nom" => $nom,
             "cognoms" => $cognoms,
             "login" => $login,
             "password" => $password,

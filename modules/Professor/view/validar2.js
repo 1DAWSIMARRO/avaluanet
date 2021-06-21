@@ -13,7 +13,10 @@ function validarFormulario(evento) {
 
     var usuario = document.getElementById('login').value;
     if (usuario.length == 0) {
+        //PRUEBA PARA INTENTAR QUE PONGA "USUARIO NO EXISTE" DEBAJO DEL LOGIN
         document.getElementById("mal5").innerHTML = "ERROR LOGIN";
+        //ESTO ES LO QUE ESTABA ANTES
+        //document.getElementById("mal5").innerHTML = "ERROR LOGIN";
         //return;
         valid = false;
     } else {
@@ -50,9 +53,9 @@ function validarUsuari() {
             console.log(xhttp.responseText);
 
             if(json.msg != 'ok') {
-                document.getElementById("error").innerHTML = "ERROR USUARIO NO EXISTE";
+                document.getElementById("mal5").innerHTML = "ERROR USUARIO NO EXISTE";
             }else {
-                document.getElementById("error").innerHTML = "";
+                document.getElementById("mal5").innerHTML = "";
                 window.location.href = "index.php?module=Asignatura&function=llistar";
             }
         }

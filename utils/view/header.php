@@ -18,7 +18,7 @@
 </head>
 <body>
 <header class="navbar navbar-dark bg-success">
-    <?php if ($_SESSION['token']==true) { ?>
+    <?php if (isset($_SESSION['token'])) { ?>
         <h1 style="margin-left:2%;"><a class="display-1 remove">Avaluanet</a></h1>
         <div class="container mt-1">
             <a href="index.php?module=Asignatura&function=llistar" style="text-decoration: none;" class="text-dark"><h4>Asignatura</h4></a>

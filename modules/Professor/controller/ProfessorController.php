@@ -18,7 +18,9 @@ class ProfessorController
         header("Location: index.php?module=Asignatura&function=llistar");
     }
 
-    function editar(){
+    function editar(){ 
+        $_SESSION['login']=$_POST['login'];
+        //$array = $this->model->getEditar($_SESSION['login']);
         include_once(VIEW_PROFESSOR.'editar.html');
         echo '<script src="'.VIEW_PROFESSOR.'validaciones.js"></script>';
     }
@@ -94,6 +96,8 @@ class ProfessorController
         echo json_encode($response);
 
     }
+
+
 
 
 }

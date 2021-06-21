@@ -33,4 +33,9 @@ class ProfessorModel
         return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getEditar($login) {
+        $consulta = "SELECT * FROM professor WHERE login=$login";
+        return $this->DB->query($consulta)->fetch(PDO::FETCH_ASSOC);
+    }
+
 }

@@ -26,15 +26,6 @@ function validarFormulario(evento) {
     } 
 
 
-    if (document.getElementById('nombre').value.length < 2) {
-        document.getElementById("mal2").innerHTML = "ERROR NOMBRE";
-        valid = false;
-    } else {
-        document.getElementById("mal2").innerHTML = "";
-    }
-
-
-
     if (document.getElementById('apellidos').value.length < 2) {
         // todo_correcto = false;
         // alert("ERROR  APELLIDO")

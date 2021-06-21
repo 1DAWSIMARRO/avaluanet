@@ -1,36 +1,44 @@
 <body>
-    <h2 id="titol"> AVALUANET </h2>
-    <form action="index.php?module=Professor&function=acceder" method="post" id="formulario">
-        <div class="simple-login-container">
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h2 id="titol"> Log in </h2>
+        <form action="index.php?module=Professor&function=acceder" method="post" id="formulario">
+            <div class="simple-login-container">
 
-            <div class="row">
-                <div class="col-md-12 form-group">
-                    <input id="login" name="login" type="text" class="form-control" placeholder="Nombre de usuario">
-                    <p class="text-danger" id="mal5"></p>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input id="login" name="login" type="text" class="form-control" placeholder="Nombre de usuario">
+                        <p class="text-danger" id="mal5"></p>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12 form-group">
-                    <input id="password" name="password" type="password" placeholder="Contraseña" class="form-control">
-                    <p class="text-danger" id="mal6"></p>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input id="password" name="password" type="password" placeholder="Contraseña"
+                            class="form-control">
+                        <p class="text-danger" id="mal6"></p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 form-group">
-                    <button type="submit" class="btn btn-primary btn-block mt-3" id="loginbtn"
-                        onclick="">Acceder</button>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <button type="submit" class="btn btn-outline-success" id="loginbtn"
+                            onclick="">Acceder</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 form-group">
-                    <a href="index.php?module=Professor&function=vistaReg" class="btn btn-primary btn-block mt-3" id="regbtn">Registrarse</a>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <a href="index.php?module=Professor&function=vistaReg" class="btn btn-outline-info"
+                            id="regbtn">Registrarse</a>
 
+                    </div>
                 </div>
+                <p class="text-danger" id="error"></p>
             </div>
-            <p class="text-danger" id="error"></p>
-        </div>
-    </form>
-
+        </form>
+    </div>
 </body>
+
 </html>

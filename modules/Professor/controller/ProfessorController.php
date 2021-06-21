@@ -8,6 +8,8 @@ class ProfessorController
     }
 
     function llistar(){
+        session_destroy();
+        include_once(VIEW_D.'header.php');
         include_once(VIEW_PROFESSOR.'ProfessorLlistar.html');
         echo '<script src="'.VIEW_PROFESSOR.'validar2.js"></script>';
     }
@@ -59,6 +61,7 @@ class ProfessorController
         //"valor:".$this->model->accederM($data); 
 
         if($this->model->accederM($data) != false) {
+            $_SESSION['token']=true;
             $response = array(
                 'msg' => "ok"
             );
@@ -67,6 +70,7 @@ class ProfessorController
                 'msg' => "ko"
             );
         }
+
         header('Content-Type: application/json; charset=utf-8');         
         echo json_encode($response);
 

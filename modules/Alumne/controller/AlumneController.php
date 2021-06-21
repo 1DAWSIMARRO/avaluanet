@@ -8,9 +8,9 @@ class AlumneController{
     }
 
     public function llistar(){
-        include_once(VIEW_D.'header.html');
+        include_once(VIEW_D.'header.php');
         $list=$this->model->llistarM();
-        include_once(VIEW_ALUMNE.'/AlumneLlistar.php');
+        include_once(VIEW_ALUMNE.'AlumneLlistar.php');
     }
 
     public function alta(){

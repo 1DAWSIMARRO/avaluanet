@@ -9,7 +9,7 @@ class AsignaturaController {
     }
 
     public function llistar() {
-        include_once(VIEW_D.'header.html');
+        include_once(VIEW_D.'header.php');
         $list=$this->model->llistarM();
         // echo '<script src='.VIEW_ASIGNATURA.'"js/script.js"></script>';
         include_once(VIEW_ASIGNATURA.'AsignaturaLlistar.php');

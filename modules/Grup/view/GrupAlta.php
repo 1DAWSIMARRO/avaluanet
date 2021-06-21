@@ -1,10 +1,10 @@
+<?php
+    $url = "index.php?module=Grup&function=alta";
+?>
+<form action="<?php echo $url?>" method="POST">
 <div class="container mt-5">
 
     <h1>Crear Grup</h1>
-
-    <?php
-    $url = "index.php?module=Grup&function=alta";
-    ?>
 
     <div class="row mb-4">
 
@@ -45,6 +45,7 @@
 
     <a href="./index.php?module=Grup&function=llistar"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
 
-    <input class="btn btn-outline-success btn-block mb-4" type="button" value="Afegir Grup" id="send">
+    <a href="#"><input class="btn btn-outline-success btn-block mb-4" type="submit" value="Afegir Grup" id="send"></a>
 
 </div>
+</form>

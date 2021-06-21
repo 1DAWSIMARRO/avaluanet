@@ -68,7 +68,7 @@ class AsignaturaController {
             foreach ($_POST as $key => $value) {
                 $data[$key] = $value;
             }
-            $data['dni_prof']=$_SESSION['dni'];
+            $data['dni_prof']=$_SESSION['token'];
             $this->model->altaM($data);
             header('Location: index.php?module=Asignatura&function=llistar');
         } else {

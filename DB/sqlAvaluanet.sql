@@ -4,7 +4,6 @@ use avaluanet;
 
 CREATE TABLE IF NOT EXISTS professor (
 	dni VARCHAR(9) PRIMARY KEY,
-    nom VARCHAR (15) NOT NULL,
     cognoms VARCHAR(30) NOT NULL,
     login VARCHAR(10) NOT NULL,
     password VARCHAR(15) NOT NULL,

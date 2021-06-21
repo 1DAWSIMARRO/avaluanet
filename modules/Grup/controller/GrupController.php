@@ -10,7 +10,7 @@
     function llistar() {
 
       $list = $this->Model->llistarM();
-      include_once(VIEW_D.'header.html');
+      include_once(VIEW_D.'header.php');
       include_once(VIEW_GRUP.'GrupLlistar.php');
       include_once(VIEW_D.'footer.html');
     }

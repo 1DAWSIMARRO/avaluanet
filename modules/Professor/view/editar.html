@@ -29,12 +29,12 @@
     <br>
     <div class="container">
         <form class="form-horizontal" role="form" action="index.php?module=Professor&function=registrar" method="POST" id="formulario">
-            <h2>Registrar</h2>
+            <h2>Editar</h2>
 
             <div class="form-group">
                 <label for="firstName" class="col-sm-3 control-label">DNI</label>
                 <div class="col-sm-9">
-                    <input type="text" name="dni" placeholder="DNI" class="form-control" id="dni" autofocus>
+                    <input type="text" name="dni" placeholder="Nose puede cambiar" class="form-control" id="dni" disabled>
                     <p class="text-danger" id="mal1"></p>
 
                 </div>
@@ -63,7 +63,7 @@
             <div class="form-group">
                 <label for="firstName" class="col-sm-3 control-label">Username</label>
                 <div class="col-sm-9">
-                    <input type="text" name="login" placeholder="username" class="form-control" id="login" autofocus>
+                    <input type="text" name="login" placeholder="Username" class="form-control" id="login" autofocus>
                     <p class="text-danger" id="mal5"></p>
 
                 </div>
@@ -84,13 +84,15 @@
             <br>
             <div class="form-group">
                 <div class="col-sm-9 col-sm-offset-3">
-                    <button type="submit" class="btn btn-outline-success" id="registrar" onclick="">Registrar</button>
+                    <button type="submit" class="btn btn-outline-success" id="registrar" onclick="">Editar</button>
+                    <br>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-md-12 form-group">
-                    <a href="index.php?module=Professor&function=llistar" class="btn btn-outline-info" id="registrar">Atrás</a>
+                    
+                    <a href="index.php?module=Asignatura&function=llistar" class="btn btn-outline-info" id="registrar">Atrás</a>
 
                 </div>
                 

@@ -17,13 +17,13 @@ function validarFormulario(evento) {
         document.getElementById("mal1").innerHTML = "";
     }
 
-    if (dni.charAt(8) != letras[(dni.substring(0, 8)) % 23]) {
-        document.getElementById("mal1").innerHTML = "ERROR DNI";
-        valid = false;
-        //return;
-    } else{
-        document.getElementById("mal1").innerHTML = "";
-    } 
+    // if (dni.charAt(8) != letras[(dni.substring(0, 8)) % 23]) {
+    //     document.getElementById("mal1").innerHTML = "ERROR DNI";
+    //     valid = false;
+    //     //return;
+    // } else{
+    //     document.getElementById("mal1").innerHTML = "";
+    // } 
 
 
     if (document.getElementById('apellidos').value.length < 2) {
@@ -93,6 +93,7 @@ function registrarUsuari() {
             }else {
                 //alert(xhttp.responseText);
                 document.getElementById("error").innerHTML = "<p style='color:green'>REGISTRADO CORRECTAMENTE</p>";
+                window.location.href = "index.php";
             }
         }
     };

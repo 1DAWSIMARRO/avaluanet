@@ -54,10 +54,10 @@ class ProfessorController
         }
         header('Content-Type: application/json; charset=utf-8');         
         echo json_encode($response); 
-
     }
 
     function vistaReg(){
+        include_once(VIEW_D.'header.php');
         include_once(VIEW_PROFESSOR.'registrar.html');
         echo '<script src="'.VIEW_PROFESSOR.'validaciones.js"></script>';
     }
@@ -78,11 +78,10 @@ class ProfessorController
             "login" => $login,
             "password" => $password
         );
-        //"valor:".$this->model->accederM($data); 
+        $prof=$this->model->accederM($data);
 
-        if($this->model->accederM($data) != false) {
-            $_SESSION['token']=true;
-           
+        if($prof != false) {
+            $_SESSION['token']=$prof['dni'];
             $response = array(
                 'msg' => "ok"
             );

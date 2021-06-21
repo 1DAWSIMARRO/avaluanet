@@ -8,9 +8,9 @@
 
     function altaM($data){
 
-        $sql = "INSERT INTO grup (nom, curs, aula, n_alumnes) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO grup (nom, curs, aula) VALUES (?,?,?)";
         $stmt=$this->DB->prepare($sql);
-        $stmt->execute([$data['nom'], $data['curs'], $data['aula'], $data['n_alumnes']]);
+        $stmt->execute([$data['nom'], $data['curs'], $data['aula']]);
     }
 
     function obtindreGrupM($codi){
@@ -31,14 +31,17 @@
 
     function modificacioM($data){
         
-        $sql = "UPDATE grup SET nom = ?, curs = ?, aula = ?, n_alumnes = ? WHERE codi = ?";
+        $sql = "UPDATE grup SET nom = ?, curs = ?, aula = ? WHERE codi = ?";
         $stmt=$this->DB->prepare($sql);
-        $stmt->execute([$data['nom'], $data['curs'], $data['aula'], $data['n_alumnes'], $data['codi']]);  
+        $stmt->execute([$data['nom'], $data['curs'], $data['aula'], $data['codi']]);  
     }
 
     function llistarM(){
 
-        $sql="SELECT * FROM grup";
+        $sql="SELECT g.codi, g.nom, g.curs, g.aula, count(a.codi_grup)
+        FROM `grup` g left join `alumne` a
+        on g.codi = a.codi_grup
+        group by g.codi";
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
   }

@@ -28,7 +28,7 @@ class AlumneController{
             }
             echo '<script src="'.VIEW_ALUMNE.'comprobar.js"></script>';
             $grups=$this->modelG->llistarM();
-            print_r($grups[0]['codi']);
+            // print_r($grups[0]['codi']);
             include_once(VIEW_ALUMNE.'AlumneAlta.php');
         }
         

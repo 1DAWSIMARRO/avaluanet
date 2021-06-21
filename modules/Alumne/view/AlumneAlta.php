@@ -1,3 +1,4 @@
+
 <div class="container mt-5">
   <h1>Crear Alumno</h1>
   <?php
@@ -62,7 +63,7 @@
         <select name="grup" id="grup">
             <?php
               foreach ($grups as $key => $value) {
-                echo '<option value='.$value['codi'].'>'.$value['codi'].'</option>';
+                echo '<option value='.$value['codi'].'>'.$value['nom'].'</option>';
               }
             ?>
           <!-- <option value="saab">Saab</option>
@@ -70,6 +71,8 @@
           <option value="audi">Audi</option> -->
       </select>        
       </div>
-    <input class="btn btn-success btn-block mb-4" type="button" value="Añadir Alumnos" id="send">
+      <a href="./index.php"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
+
+      <input class="btn btn-outline-success btn-block mb-4" type="button" value="Afegir Alumne" id="send">
   </div>
 </div>

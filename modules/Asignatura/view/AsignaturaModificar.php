@@ -43,7 +43,7 @@
                 </div>
                 <div>
                
-                <a class="btn btn-outline-info ms-2 mt-3" href="index.php?module=Asignatura&function=add_alumne">Tornar</a>
+                <a class="btn btn-secondary ms-2 mt-3" href="index.php?module=Asignatura&function=add_alumne">Tornar</a>
 
                 <a href=""> <button type="submit" class="btn btn-outline-success ms-2 mt-3">Modificar</button></a>
 

@@ -30,48 +30,51 @@
     <div class="bg-success">
 
         <header
-            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-5 mb-4 navbar navbar-dark bg-success">
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 navbar navbar-dark bg-success">
 
             <nav class="navbar navbar-expand-lg ms-5">
 
                 <div class="container-fluid">
 
-                    <a class="navbar-brand fs-1" href="index.php">AVALUANET</a>
+                    <a class="display-3 text-decoration-none text-white" href="index.php">AVALUANET</a>
 
                     <div class="collapse navbar-collapse ps-5" id="navbarText">
 
-                        <ul class="navbar-nav me-auto fs-5 mt-2 mb-lg-0">
+                        <ul class="navbar-nav me-auto mt-2 mb-lg">
 
                             <li class="nav-item ps-5">
-                                <a class="btn btn-success"
-                                    href="index.php?module=Asignatura&function=llistar">ASSIGNATURES</a>
+                                <a href="index.php?module=Asignatura&function=llistar"><button
+                                        class="fs-5 btn btn-success">ASSIGNATURES</button></a>
                             </li>
 
                             <li class="nav-item ps-5">
-                                <a class="btn btn-success" href="index.php">ALUMNES</a>
+                                <a href="index.php"><button class="fs-5 btn btn-success">ALUMNES</button>
+                                </a>
                             </li>
 
                             <li class="nav-item ps-5">
-                                <a class="btn btn-success" href="index.php?module=Grup&function=llistar">GRUPS</a>
+                                <a href="index.php?module=Grup&function=llistar"><button
+                                        class="fs-5 btn btn-success">GRUPS</button></a>
                             </li>
 
                         </ul>
 
                     </div>
+                
+                </nav>
 
-                </div>
 
             </nav>
 
             <div class="dropdown me-5">
 
-                <a class="btn btn-success dropdown, text-white fs-6 me-5" id="dropdownMenuButton1"
+                <button class="btn btn-success dropdown, text-white fs-5 me-5" id="menuDesplagable"
                     style="text-decoration: none;" data-bs-toggle="dropdown" aria-expanded="false">PERFIL
 
-                </a>
+                </button>
 
 
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <ul class="dropdown-menu" aria-labelledby="menuDesplagable">
                     <li><a class="dropdown-item" href="#">Log out</a></li>
                     <li><a class="dropdown-item" href="#">Editar</a></li>
                 </ul>

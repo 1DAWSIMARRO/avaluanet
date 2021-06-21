@@ -48,7 +48,6 @@
       } else {
         include_once(VIEW_D.'header.html');
         include_once(VIEW_GRUP."GrupBaixa.php");
-        echo '<script src="'.VIEW_GRUP.'/js/GrupInfo.js"></script>';
         include_once(VIEW_D.'footer.html');
       }
     }

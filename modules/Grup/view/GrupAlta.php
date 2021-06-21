@@ -20,6 +20,7 @@ $url = "index.php?module=Grup&function=alta";
             if (isset($data)) {
                 echo $data['aula'];
             }
+            echo "hola";
         ?>">
     <a href="#"><input type="submit" value="ALTA"></a>
 </form>

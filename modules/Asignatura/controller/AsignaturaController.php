@@ -10,20 +10,20 @@ class AsignaturaController {
 
     public function llistar() {
         include_once(VIEW_D.'header.php');
-        $list=$this->model->llistarM();
+        $list=$this->model->llistarM($_SESSION['token']);
         // echo '<script src='.VIEW_ASIGNATURA.'"js/script.js"></script>';
         include_once(VIEW_ASIGNATURA.'AsignaturaLlistar.php');
         include_once(VIEW_D.'footer.html');
     }
 
     public function afegir() {
-        include_once(VIEW_D.'header.html');
+        include_once(VIEW_D.'header.php');
         include_once(VIEW_ASIGNATURA."AsignaturaAlta.html");
         include_once(VIEW_D.'footer.html');
     }
 
     public function add_alumne() {
-        include_once(VIEW_D.'header.html');
+        include_once(VIEW_D.'header.php');
         if (isset($_GET['asig'])) {
             $_SESSION['asig']=$_GET['asig'];
         }
@@ -68,6 +68,7 @@ class AsignaturaController {
             foreach ($_POST as $key => $value) {
                 $data[$key] = $value;
             }
+            $data['dni_prof']=$_SESSION['dni'];
             $this->model->altaM($data);
             header('Location: index.php?module=Asignatura&function=llistar');
         } else {
@@ -91,7 +92,7 @@ class AsignaturaController {
     public function modificar() {
         if (isset($_GET['codi'])) {
             $array = $this->model->getEditar($_GET['codi']);
-            include_once(VIEW_D.'header.html');
+            include_once(VIEW_D.'header.php');
             include_once(VIEW_ASIGNATURA.'AsignaturaModificar.php');
             include_once(VIEW_D.'footer.html');
         } 

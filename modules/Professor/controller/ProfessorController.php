@@ -68,10 +68,10 @@ class ProfessorController
             "login" => $login,
             "password" => $password
         );
-        //"valor:".$this->model->accederM($data); 
+        $prof=$this->model->accederM($data);
 
-        if($this->model->accederM($data) != false) {
-            $_SESSION['token']=true;
+        if($prof != false) {
+            $_SESSION['token']=$prof['dni'];
             $response = array(
                 'msg' => "ok"
             );

@@ -15,7 +15,7 @@ function defaultPage(){
     }
 }
 
-if($_SESSION['token']==true){
+if(isset($_SESSION['token'])){
     if(isset($_GET['module'])) {
     
         $controllerClass = $_GET['module'] . 'Controller';

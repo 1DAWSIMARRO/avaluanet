@@ -55,6 +55,7 @@ class ProfessorController
     }
 
     function vistaReg(){
+        include_once(VIEW_D.'header.php');
         include_once(VIEW_PROFESSOR.'registrar.html');
         echo '<script src="'.VIEW_PROFESSOR.'validaciones.js"></script>';
     }

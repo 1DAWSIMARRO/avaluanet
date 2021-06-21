@@ -8,8 +8,14 @@ class ProfessorController
     }
 
     function llistar(){
+        include_once(VIEW_D.'header.php');
         include_once(VIEW_PROFESSOR.'ProfessorLlistar.html');
         echo '<script src="'.VIEW_PROFESSOR.'validar2.js"></script>';
+    }
+
+    function logout(){
+        session_destroy();
+        header("Location: index.php?module=Asignatura&function=llistar");
     }
 
     function editar(){
@@ -54,9 +60,15 @@ class ProfessorController
         echo '<script src="'.VIEW_PROFESSOR.'validaciones.js"></script>';
     }
 
+    public function perfil(){
+        $login = $_POST['login'];
+        return $login;
+    }
+
 
     public function acceder()
     {
+        $_SESSION['login']=$_POST['login'];
         $login = $_POST['login'];
         $password = $_POST['password'];
 
@@ -67,6 +79,8 @@ class ProfessorController
         //"valor:".$this->model->accederM($data); 
 
         if($this->model->accederM($data) != false) {
+            $_SESSION['token']=true;
+           
             $response = array(
                 'msg' => "ok"
             );
@@ -75,6 +89,7 @@ class ProfessorController
                 'msg' => "ko"
             );
         }
+
         header('Content-Type: application/json; charset=utf-8');         
         echo json_encode($response);
 

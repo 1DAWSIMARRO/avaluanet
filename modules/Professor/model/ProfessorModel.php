@@ -32,4 +32,5 @@ class ProfessorModel
         $sql = "SELECT * from professor where login LIKE '" . $data['login'] . "' AND password LIKE '" . $data['password']."';";
         return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
+
 }

@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS alumne(
 	email VARCHAR(50) NOT NULL,
 	codi_grup int NOT NULL,
 		foreign key (codi_grup) references grup (codi)
+	ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS avaluable (

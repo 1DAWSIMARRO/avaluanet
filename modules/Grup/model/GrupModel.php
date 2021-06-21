@@ -38,7 +38,10 @@
 
     function llistarM(){
 
-        $sql="SELECT * FROM grup";
+        $sql="SELECT g.codi, g.nom, g.curs, g.aula, count(a.codi_grup)
+        FROM `grup` g left join `alumne` a
+        on g.codi = a.codi_grup
+        group by g.codi";
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
   }

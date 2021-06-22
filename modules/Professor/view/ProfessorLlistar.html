@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h2 id="titol"> Log in </h2>
+        <form action="index.php?module=Professor&function=acceder" method="post" id="formulario">
+            <div class="simple-login-container">
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input id="login" name="login" type="text" class="form-control" placeholder="Nombre de usuario">
+                        <p class="text-danger" id="mal5" style="margin-left:2%;"></p>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input id="password" name="password" type="password" placeholder="Contraseña"
+                            class="form-control">
+                        <p class="text-danger" id="mal6" style="margin-left:2%;"></p>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <button type="submit" class="btn btn-outline-success" id="loginbtn"
+                            onclick="">Acceder</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <a href="index.php?module=Professor&function=vistaReg" class="btn btn-outline-info"
+                            id="regbtn">Registrarse</a>
+
+                    </div>
+                </div>
+                <p class="text-danger" id="error" style="margin-left:2%;"></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

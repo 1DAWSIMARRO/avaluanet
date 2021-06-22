@@ -4,11 +4,18 @@ use avaluanet;
 
 CREATE TABLE IF NOT EXISTS professor (
 	dni VARCHAR(9) PRIMARY KEY,
+<<<<<<< HEAD
     nom VARCHAR (15) NOT NULL,
     cognoms VARCHAR(30) NOT NULL,
     login VARCHAR(10) NOT NULL,
     password VARCHAR(15) NOT NULL,
 	email VARCHAR(30) NOT NULL
+=======
+    username VARCHAR(10) NOT NULL,
+    cognoms VARCHAR(30) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+    password VARCHAR(15) NOT NULL
+>>>>>>> equip1
 );
 
 CREATE TABLE IF NOT EXISTS grup (
@@ -23,16 +30,9 @@ CREATE TABLE IF NOT EXISTS asignatura (
 	codi int PRIMARY KEY AUTO_INCREMENT,
 	nom varchar(50) NOT NULL,
 	grup varchar(10),
-	hores int NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS impartir(
-	dni VARCHAR(9) NOT NULL,
-	codi_asignatura INT NOT NULL,
-	codi_grup INT NOT NULL,
-		FOREIGN KEY (dni) references professor(dni),
-		FOREIGN KEY (codi_asignatura) REFERENCES asignatura (codi),
-		FOREIGN KEY (codi_grup) REFERENCES grup (codi)
+	hores int NOT NULL,
+	dni_prof VARCHAR(9),
+	foreign key (dni_prof) references professor (dni)
 );
 
 CREATE TABLE IF NOT EXISTS alumne(
@@ -78,4 +78,5 @@ insert into grup (codi,nom,curs,aula,n_alumnes)
 VALUES ('01', '1DAW', 'GS', '20', '15');
 insert into alumne (NIA,nom,cognoms,tel,email,codi_grup)
 VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '01');
-insert into asignatura (nom,grup,hores) VALUE ('info', '1DAW', '20')
+INSERT INTO professor (dni,username,cognoms,email,password) VALUES ('12345678A', 'Jorge', 'Nose','jorge@hola.es', '123');
+insert into asignatura (nom,grup,hores,dni_prof) VALUE ('info', '1DAW', '20','12345678A');

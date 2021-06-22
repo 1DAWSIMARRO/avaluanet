@@ -8,9 +8,9 @@ class AlumneController{
     }
 
     public function llistar(){
-        include_once(VIEW_D.'header.html');
+        include_once(VIEW_D.'header.php');
         $list=$this->model->llistarM();
-        include_once(VIEW_ALUMNE.'/AlumneLlistar.php');
+        include_once(VIEW_ALUMNE.'AlumneLlistar.php');
     }
 
     public function alta(){
@@ -34,11 +34,6 @@ class AlumneController{
         
     }
 
-    public function regProf(){
-        echo "enter Professor";
-        $this->model->registrarM();
-    }
-
     public function delete(){
         $this->model->deleteM($_GET['NIA']);
         header('Location: index.php');
@@ -53,8 +48,5 @@ class AlumneController{
         $this->model->editM($data);
     }
 
-    // public function get_grup(){
-        
-    // }
 }
 ?>

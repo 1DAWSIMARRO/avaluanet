@@ -17,22 +17,13 @@ function validarFormulario(evento) {
         document.getElementById("mal1").innerHTML = "";
     }
 
-    if (dni.charAt(8) != letras[(dni.substring(0, 8)) % 23]) {
-        document.getElementById("mal1").innerHTML = "ERROR DNI";
-        valid = false;
-        //return;
-    } else{
-        document.getElementById("mal1").innerHTML = "";
-    } 
-
-
-    if (document.getElementById('nombre').value.length < 2) {
-        document.getElementById("mal2").innerHTML = "ERROR NOMBRE";
-        valid = false;
-    } else {
-        document.getElementById("mal2").innerHTML = "";
-    }
-
+    // if (dni.charAt(8) != letras[(dni.substring(0, 8)) % 23]) {
+    //     document.getElementById("mal1").innerHTML = "ERROR DNI";
+    //     valid = false;
+    //     //return;
+    // } else{
+    //     document.getElementById("mal1").innerHTML = "";
+    // } 
 
 
     if (document.getElementById('apellidos').value.length < 2) {
@@ -81,9 +72,8 @@ function validarFormulario(evento) {
 
 function registrarUsuari() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "../../../index.php", true);
+    xhttp.open("POST", "index.php?module=Professor&function=registrar", true);
     let params = 'dni='+document.getElementById('dni').value; 
-    params += '&nom='+document.getElementById('nombre').value;
 	params += '&cognoms='+document.getElementById('apellidos').value;
     params += '&email='+document.getElementById('email').value;
     params += '&login='+document.getElementById('login').value;
@@ -96,6 +86,7 @@ function registrarUsuari() {
         if (this.readyState == 4 && this.status == 200) {
             //alert(xhttp.responseText);
             let json = JSON.parse(xhttp.responseText);
+            console.log(json);
 
             if(json.msg != "ok") {
                 //alert(xhttp.responseText);
@@ -103,6 +94,7 @@ function registrarUsuari() {
             }else {
                 //alert(xhttp.responseText);
                 document.getElementById("error").innerHTML = "<p style='color:green'>REGISTRADO CORRECTAMENTE</p>";
+                window.location.href = "index.php";
             }
         }
     };

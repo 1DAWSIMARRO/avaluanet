@@ -5,8 +5,8 @@ class AsignaturaModel {
         $this->DB=Database::connect(); 
     }
 
-    public function llistarM(){
-        $sql='SELECT * FROM asignatura';
+    public function llistarM($data){
+        $sql='SELECT codi, nom, grup, hores FROM asignatura WHERE dni_prof LIKE "'.$data.'";';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -37,9 +37,9 @@ class AsignaturaModel {
     }
 
     public function altaM($data){
-        $consulta="INSERT INTO asignatura (nom,grup,hores) VALUES (?,?,?)";
+        $consulta="INSERT INTO asignatura (nom,grup,hores,dni_prof) VALUES (?,?,?,?)";
         $stmt=$this->DB->prepare($consulta);
-        $stmt->execute([$data['nom'], $data['grup'], $data['hores']]);
+        $stmt->execute([$data['nom'], $data['grup'], $data['hores'], $data['dni_prof']]);
     }
 
     public function editarM($data) {;

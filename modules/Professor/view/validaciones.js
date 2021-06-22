@@ -86,6 +86,7 @@ function registrarUsuari() {
         if (this.readyState == 4 && this.status == 200) {
             //alert(xhttp.responseText);
             let json = JSON.parse(xhttp.responseText);
+            console.log(json);
 
             if(json.msg != "ok") {
                 //alert(xhttp.responseText);

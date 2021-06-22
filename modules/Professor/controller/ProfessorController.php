@@ -18,11 +18,11 @@ class ProfessorController
         header("Location: index.php?module=Asignatura&function=llistar");
     }
 
-    function editar(){ 
-        $_SESSION['login']=$_POST['login'];
-        //$array = $this->model->getEditar($_SESSION['login']);
-        include_once(VIEW_PROFESSOR.'editar.html');
-        echo '<script src="'.VIEW_PROFESSOR.'validaciones.js"></script>';
+    function view_editar(){ 
+        $data=$this->model->getProf($_SESSION['token']);
+        include_once(VIEW_D.'header.php');
+        include_once(VIEW_PROFESSOR.'editar.php');
+        echo '<script src="'.VIEW_PROFESSOR.'js/ProfessorEditar.js"></script>';
     }
 
     public function registrar()
@@ -70,7 +70,7 @@ class ProfessorController
 
     public function acceder()
     {
-        $_SESSION['login']=$_POST['login'];
+        $_SESSION['username']=$_POST['login'];
         $login = $_POST['login'];
         $password = $_POST['password'];
 
@@ -94,6 +94,16 @@ class ProfessorController
         header('Content-Type: application/json; charset=utf-8');         
         echo json_encode($response);
 
+    }
+
+    public function editar(){
+        $data=[];
+        $_SESSION['username']=$_POST['username'];
+        foreach ($_POST as $key => $value) {
+            $data[$key] = $value;
+        }
+        $this->model->editarM($data);
+        header('Location: index.php?module=Asignatura&function=llistar');
     }
 
 

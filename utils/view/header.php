@@ -35,11 +35,11 @@
                 <div class="dropdown">
                     <a class="btn btn-success dropdown, text-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 
-                        <h4><?php echo $_SESSION['login'] ?></h4>
+                        <h4><?php echo $_SESSION['username'] ?></h4>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="index.php?module=Professor&function=logout">Log out</a></li>
-                        <li><a class="dropdown-item" href="index.php?module=Professor&function=editar">Editar</a></li>
+                        <li><a class="dropdown-item" href="index.php?module=Professor&function=view_editar">Editar</a></li>
                     </ul>
                 </div>
             </div>

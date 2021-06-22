@@ -26,13 +26,6 @@ class AlumneModel{
         $stmt->execute([$data]);
     }
 
-    function registrarM(){
-        $sql = "INSERT INTO professor (dni,nom,cognoms,login,password,email) VALUES (?,?,?,?,?,?)";
-        $stmt=$this->DB->prepare($sql);
-        $stmt->execute(["0324","Samu","Giner","123","123","123@gmail.com"]);
- 
-    }
-
     function editM($data){
         $sql = "UPDATE alumne SET nom=?, cognoms=?, tel=?, email=?, codi_grup=? WHERE NIA=?";
         $stmt=$this->DB->prepare($sql);

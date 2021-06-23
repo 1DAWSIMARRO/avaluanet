@@ -4,18 +4,10 @@ use avaluanet;
 
 CREATE TABLE IF NOT EXISTS professor (
 	dni VARCHAR(9) PRIMARY KEY,
-<<<<<<< HEAD
-    nom VARCHAR (15) NOT NULL,
-    cognoms VARCHAR(30) NOT NULL,
-    login VARCHAR(10) NOT NULL,
-    password VARCHAR(15) NOT NULL,
-	email VARCHAR(30) NOT NULL
-=======
     username VARCHAR(10) NOT NULL,
     cognoms VARCHAR(30) NOT NULL,
 	email VARCHAR(30) NOT NULL,
     password VARCHAR(15) NOT NULL
->>>>>>> equip1
 );
 
 CREATE TABLE IF NOT EXISTS grup (

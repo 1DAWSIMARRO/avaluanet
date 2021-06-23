@@ -29,7 +29,7 @@ class ProfessorModel
 
     function accederM($data)
     {
-        $sql = "SELECT * from professor where username LIKE '" . $data['login'] . "' AND password LIKE '" . $data['password']."';";
+        $sql = "SELECT * from professor where username collate utf8mb4_0900_as_cs LIKE '" . $data['login'] . "' AND password LIKE '" . $data['password']."';";
         return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 

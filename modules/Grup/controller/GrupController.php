@@ -3,7 +3,6 @@
   class GrupController {
 
     function __construct(){
-      
       $this->Model = new GrupModel();
     }
 
@@ -26,6 +25,7 @@
         header('Location: index.php?module=Grup&function=llistar');  // VUELVE A MOSTRAR EL PHP index.php
 
       } else {
+        $cursos=['Grau_Superior','Grau_Mitja','ESO'];
         include_once(VIEW_D.'header.php');
         include_once(VIEW_GRUP.'GrupAlta.php');
         include_once(VIEW_D.'footer.html');
@@ -36,7 +36,6 @@
     function baixa() {
       
       if (isset($_REQUEST['codi'])) {
-        
         $data=[];
         foreach ($_REQUEST as $key => $value) {
           
@@ -53,7 +52,6 @@
     }
 
     function modificacio() {
-
       if (isset($_REQUEST['codi'])) {
         $data=[];
         foreach ($_REQUEST as $key => $value) {
@@ -62,23 +60,15 @@
         $this->Model->modificacioM($data);
         header('Location: index.php?module=Grup&function=llistar');
       }
+    }
+
+    function viewEditar() {
+      $cursos=['Grau_Superior','Grau_Mitja','ESO'];
+      $data = $this->Model->obtindreGrupM($_REQUEST['codi']);
       include_once(VIEW_D.'header.php');
-      echo '<script src="'.VIEW_GRUP.'/js/GrupInfo.js"></script>';
       include_once(VIEW_GRUP."GrupModificar.php");
       include_once(VIEW_D.'footer.html');
     }
 
-    function viewEditar() {
-
-        $data = $this->Model->obtindreGrupM($_REQUEST['codi']);
-        include_once(VIEW_D.'header.php');
-        include_once(VIEW_GRUP."GrupModificar.php");
-        include_once(VIEW_D.'footer.html');
-    }
-
-    // function comprobarGrupo(){
-
-
-    // }
   }
 ?>

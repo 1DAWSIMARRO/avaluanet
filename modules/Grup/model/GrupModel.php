@@ -31,9 +31,9 @@
 
         function modificacioM($data){
             
-            $sql = "UPDATE grup SET nom = ?, curs = ?, aula = ? WHERE codi = ?";
+            $sql = "UPDATE grup SET nom = ?, curs = ? WHERE codi = ?";
             $stmt=$this->DB->prepare($sql);
-            $stmt->execute([$data['nom'], $data['curs'], $data['aula'], $data['codi']]);  
+            $stmt->execute([$data['nom'], $data['curs'], $data['codi']]);  
         }
 
         function llistarM(){

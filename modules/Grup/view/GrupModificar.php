@@ -22,9 +22,15 @@ $url = "index.php?module=Grup&function=modificacio&codi=".$data['codi'];
             <div class="form-outline">
                 <label class="form-label" for="curs">Curs</label>
                 <select class="form-select" name="curs" id="curs">
-                    <option value="GS">Grau Superior</option>
-                    <option value="GM">Grau Mitja</option>
-                    <option value="ESO">ESO</option>
+                <?php
+                    foreach ($cursos as $key => $value) {
+                        if ($value==$data['curs']) {
+                        echo '<option value='.$value.' selected>'.$value.'</option>';
+                        }else{
+                        echo '<option value='.$value.'>'.$value.'</option>';
+                        }
+                    }
+                ?>
                 </select>
                 <p id="ValidarCurs" class="text-danger"></p>
             </div>
@@ -32,9 +38,8 @@ $url = "index.php?module=Grup&function=modificacio&codi=".$data['codi'];
 
     </div>
 
-    <a href="index.php?module=Grup&function=llistar"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
-
     <input class="btn btn-outline-success btn-block mb-4" type="submit" value="Modificar" id="send">
+    <a href="index.php?module=Grup&function=llistar"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
 
 </div>
 </form>

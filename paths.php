@@ -25,6 +25,7 @@ pattern('ALUMNE','Alumne');
 pattern('PROFESSOR','Professor');
 pattern('ASIGNATURA','Asignatura');
 pattern('GRUP','Grup');
+pattern('AVALUABLE','Avaluable');
 
 
 ?>

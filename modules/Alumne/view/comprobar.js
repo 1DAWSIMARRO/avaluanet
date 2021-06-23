@@ -6,7 +6,9 @@ function validarFormulario(evento) {
     evento.preventDefault();
     var valorValido = /^[0-9]{8}$/;
     var valorTel = /^[0-9]{9}$/;
-    var testValido = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    var testValido =/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+
+
     var emailValido = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     var NIA = document.getElementById("NIA").value;
     var Nom = document.getElementById("nom").value;

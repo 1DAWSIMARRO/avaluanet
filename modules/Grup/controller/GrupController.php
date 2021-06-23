@@ -63,6 +63,7 @@
         header('Location: index.php?module=Grup&function=llistar');
       }
       include_once(VIEW_D.'header.html');
+      echo '<script src="'.VIEW_GRUP.'/js/GrupInfo.js"></script>';
       include_once(VIEW_GRUP."GrupModificar.php");
       include_once(VIEW_D.'footer.html');
     }
@@ -74,5 +75,10 @@
         include_once(VIEW_GRUP."GrupModificar.php");
         include_once(VIEW_D.'footer.html');
     }
+
+    // function comprobarGrupo(){
+
+
+    // }
   }
 ?>

@@ -5,7 +5,7 @@ class AlumneModel{
     }
 
     public function llistarM(){
-        $sql='SELECT * FROM alumne';
+        $sql='SELECT a.NIA, a.nom, a.cognoms, a.tel, a.email, g.nom nom_g FROM alumne a, grup g WHERE a.codi_grup=g.codi';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     

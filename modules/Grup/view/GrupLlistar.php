@@ -7,9 +7,7 @@
       <tr>
         <th>CODI</th>
         <th>NOM</th>
-        <th>AULA</th>
         <th>CURS</th>
-        <th>Nº ALUMNES</th>
         <th></th>
         <th></th>
       </tr>

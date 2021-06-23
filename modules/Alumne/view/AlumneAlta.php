@@ -50,28 +50,38 @@
         </div>
       </div>
     
-      <!-- Email input -->
-      <div class="form-outline mb-4">
-        <label class="form-label" for="email">Email</label>
-        <input type="text" id="email" class="form-control" name="email" value="<?php echo (isset($data)) ? $data['email'] : ""; ?>"/>
-        <p id="ValidarEmail" class="text-danger"></p>
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="email">Email</label>
+            <input type="text" id="email" class="form-control" name="email" value="<?php echo (isset($data)) ? $data['email'] : ""; ?>"/>
+            <p id="ValidarEmail" class="text-danger"></p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="grup">Grup</label>
+            <select class="form-select" name="grup" id="grup">
+                <?php
+                if (isset($data)) {
+                  foreach ($grups as $key => $value) {
+                    if ($value['codi']==$data['codi_grup']) {
+                      echo '<option value='.$value['codi'].' selected>'.$value['nom'].'</option>';
+                    }else{
+                      echo '<option value='.$value['codi'].'>'.$value['nom'].'</option>';
+                    }
+                  }
+                }else{
+                  foreach ($grups as $key => $value) {
+                    echo '<option value='.$value['codi'].'>'.$value['nom'].'</option>';
+                  }
+                }
+                ?>
+            </select>
+          </div>
+        </div>
       </div>
-    
-      <!-- Grup input -->
-      <div class="form-outline mb-4">
-        <label class="form-label" for="grup">Grup</label>
-        <select name="grup" id="grup">
-            <?php
-              foreach ($grups as $key => $value) {
-                echo '<option value='.$value['codi'].'>'.$value['nom'].'</option>';
-              }
-            ?>
-          <!-- <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option> -->
-      </select>        
-      </div>
-      <a href="./index.php"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
+      <a href="index.php?module=Alumne&function=llistar"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
 
       <input class="btn btn-outline-success btn-block mb-4" type="button" value="Afegir Alumne" id="send">
   </div>

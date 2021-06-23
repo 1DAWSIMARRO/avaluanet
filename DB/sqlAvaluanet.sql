@@ -13,8 +13,7 @@ CREATE TABLE IF NOT EXISTS professor (
 CREATE TABLE IF NOT EXISTS grup (
 	codi INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR (15) NOT NULL,
-    curs VARCHAR(20) NOT NULL,
-    aula VARCHAR(10) NOT NULL
+    curs VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS asignatura (
@@ -24,6 +23,16 @@ CREATE TABLE IF NOT EXISTS asignatura (
 	hores int NOT NULL,
 	dni_prof VARCHAR(9),
 	foreign key (dni_prof) references professor (dni)
+);
+
+CREATE TABLE IF NOT EXISTS impartix (
+    dni_prof VARCHAR(9),
+    codi_grup INT,
+    codi_asignatura int,
+	primary key(dni_prof,codi_grup,codi_asignatura),
+		foreign key(dni_prof) references professor(dni),
+		foreign key(codi_grup) references grup(codi),
+		foreign key(codi_asignatura) references asignatura(codi)
 );
 
 CREATE TABLE IF NOT EXISTS alumne(
@@ -65,7 +74,7 @@ CREATE TABLE IF NOT EXISTS matricula (
 		ON DELETE CASCADE
 );
 
-insert into grup (codi,nom,curs,aula,n_alumnes) VALUES ('01', '1DAW', 'GS', '20', '15');
+insert into grup (codi,nom,curs) VALUES ('01', '1DAW', 'GS');
 insert into alumne (NIA,nom,cognoms,tel,email,codi_grup) VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '01');
 INSERT INTO professor (dni,username,cognoms,email,password) VALUES ('12345678A', 'Jorge', 'Nose','jorge@hola.es', '123');
 insert into asignatura (nom,grup,hores,dni_prof) VALUE ('info', '1DAW', '20','12345678A');

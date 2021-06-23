@@ -77,7 +77,7 @@ function validarFormulario(evento) {
             req.onreadystatechange = function () {
                 if (req.readyState == 4) {
                     console.log(req.responseText);
-                    location.href = "index.php";
+                    location.href = "index.php?module=Alumne&function=llistar";
                 }
             }
         }

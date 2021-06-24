@@ -25,7 +25,21 @@
         header('Location: index.php?module=Grup&function=llistar');  // VUELVE A MOSTRAR EL PHP index.php
 
       } else {
-        $cursos=['Grau_Superior','Grau_Mitja','ESO'];
+        // $cursos=['Grau_Superior','Grau_Mitja','ESO'];
+        $cursos = array(
+          array(
+            "code"=>"GS",
+            "name"=>"Grau Superior",
+          ),
+          array(
+            "code"=>"GM",
+            "name"=>"Grau Mitja",
+          ),
+          array(
+            "code"=>"ESO",
+            "name"=>"ESO",
+          )
+        );
         include_once(VIEW_D.'header.php');
         include_once(VIEW_GRUP.'GrupAlta.php');
         include_once(VIEW_D.'footer.html');
@@ -63,7 +77,20 @@
     }
 
     function viewEditar() {
-      $cursos=['Grau_Superior','Grau_Mitja','ESO'];
+      $cursos = array(
+        array(
+          "code"=>"GS",
+          "name"=>"Grau Superior",
+        ),
+        array(
+          "code"=>"GM",
+          "name"=>"Grau Mitja",
+        ),
+        array(
+          "code"=>"ESO",
+          "name"=>"ESO",
+        )
+      );
       $data = $this->Model->obtindreGrupM($_REQUEST['codi']);
       include_once(VIEW_D.'header.php');
       include_once(VIEW_GRUP."GrupModificar.php");

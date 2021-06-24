@@ -6,7 +6,7 @@ class AsignaturaModel {
     }
 
     public function llistarM($data){
-        $sql='SELECT codi, nom, grup, hores FROM asignatura WHERE dni_prof LIKE "'.$data.'";';
+        $sql='SELECT codi, nom, hores FROM asignatura WHERE dni_prof LIKE "'.$data.'";';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -23,11 +23,11 @@ class AsignaturaModel {
     }
 
     public function llistarAl($asig){
-        $sql='SELECT * FROM alumne WHERE NIA IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
+        $sql='SELECT a.NIA, a.nom, a.cognoms, a.tel, a.email, g.nom gnom  FROM alumne a, grup g WHERE a.codi_grup=g.codi AND NIA IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     public function llistarAl2($asig){
-        $sql='SELECT * FROM alumne WHERE NIA NOT IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
+        $sql='SELECT a.NIA, a.nom, a.cognoms, a.tel, a.email, g.nom gnom  FROM alumne a, grup g WHERE a.codi_grup=g.codi AND NIA NOT IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -37,17 +37,16 @@ class AsignaturaModel {
     }
 
     public function altaM($data){
-        $consulta="INSERT INTO asignatura (nom,grup,hores,dni_prof) VALUES (?,?,?,?)";
+        $consulta="INSERT INTO asignatura (nom,hores,dni_prof) VALUES (?,?,?,?)";
         $stmt=$this->DB->prepare($consulta);
-        $stmt->execute([$data['nom'], $data['grup'], $data['hores'], $data['dni_prof']]);
+        $stmt->execute([$data['nom'], $data['hores'], $data['dni_prof']]);
     }
 
     public function editarM($data) {;
         $codi=$data['codi'];
         $nom=$data['nom'];
-        $grup=$data['grup'];
         $hores=$data['hores'];
-        $sql = "UPDATE asignatura SET nom='$nom', grup='$grup', hores='$hores' WHERE codi=$codi";
+        $sql = "UPDATE asignatura SET nom='$nom', hores='$hores' WHERE codi=$codi";
         $this->DB->query($sql);
     }
 

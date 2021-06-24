@@ -82,7 +82,6 @@
         </div>
       </div>
       <a href="index.php?module=Alumne&function=llistar"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
-
       <input class="btn btn-outline-success btn-block mb-4" type="button" value="Afegir Alumne" id="send">
   </div>
 </div>

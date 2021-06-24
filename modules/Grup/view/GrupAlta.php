@@ -23,7 +23,7 @@
                     <option value="0" selected="selected" disabled>--Selecciona un curs--</option>
                     <?php
                         foreach ($cursos as $key => $value) {
-                            echo '<option value='.$value.'>'.$value.'</option>';
+                            echo '<option value='.$value['code'].'>'.$value['name'].'</option>';
                         }
                     ?>
                 </select>
@@ -32,8 +32,8 @@
         </div>
     </div>
 
-    <input class="btn btn-outline-success btn-block mb-4" type="submit" value="Crear" id="send">
     <a href="index.php?module=Grup&function=llistar"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
+    <input class="btn btn-outline-success btn-block mb-4" type="submit" value="Crear" id="send">
 
 </div>
 </form>

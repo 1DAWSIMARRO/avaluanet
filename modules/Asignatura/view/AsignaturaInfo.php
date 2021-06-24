@@ -52,7 +52,7 @@
                 <th scope="col">COGNOMS</th>
                 <th scope="col">TELEFON</th>
                 <th scope="col">EMAIL</th>
-                <th scope="col">codiGrup</th>
+                <th scope="col">GRUP</th>
                 <th></th>
               </tr>
             </thead>
@@ -203,7 +203,7 @@
               </table>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success">Afegir</button>
+              <a href="index.php?module=Alumne&function=alta"><button type="button" class="btn btn-success">Crear alumne</button></a>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
             </div>

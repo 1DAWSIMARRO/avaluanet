@@ -19,7 +19,6 @@ CREATE TABLE IF NOT EXISTS grup (
 CREATE TABLE IF NOT EXISTS asignatura (
 	codi int PRIMARY KEY AUTO_INCREMENT,
 	nom varchar(50) NOT NULL,
-	grup varchar(10),
 	hores int NOT NULL,
 	dni_prof VARCHAR(9),
 	foreign key (dni_prof) references professor (dni)
@@ -77,5 +76,5 @@ CREATE TABLE IF NOT EXISTS matricula (
 insert into grup (codi,nom,curs) VALUES ('01', '1DAW', 'GS');
 insert into alumne (NIA,nom,cognoms,tel,email,codi_grup) VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '01');
 INSERT INTO professor (dni,username,cognoms,email,password) VALUES ('12345678A', 'Jorge', 'Nose','jorge@hola.es', '123');
-insert into asignatura (nom,grup,hores,dni_prof) VALUE ('info', '1DAW', '20','12345678A');
+insert into asignatura (nom,hores,dni_prof) VALUE ('info', '20','12345678A');
 INSERT INTO avaluable (nom, data_lliurament, tipus, avaluacio) VALUES ("ex1", STR_TO_DATE("03-04-21","%d-%m-%y"), "activitat","3");

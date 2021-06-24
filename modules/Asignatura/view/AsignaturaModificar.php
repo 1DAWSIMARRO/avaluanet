@@ -31,21 +31,9 @@
                     </div>
 
                 </div>
-
-                <div class="col-md-3">
-                    <label for="grup" class="form-label">Grup</label>
-                    <input type="text" name="grup" class="form-control" id="grup" value="<?php echo $array['grup']?>" required>
-
-                    <div class="invalid-feedback">
-                        Please provide a valid zip.
-                    </div>
-
-                </div>
-                <div>
                
                 <a class="btn btn-secondary ms-2 mt-3" href="index.php?module=Asignatura&function=add_alumne">Tornar</a>
-
-                <a href=""> <button type="submit" class="btn btn-outline-success ms-2 mt-3">Modificar</button></a>
+                <button type="submit" class="btn btn-outline-success ms-2 mt-3">Modificar</button>
 
                 </div>
 

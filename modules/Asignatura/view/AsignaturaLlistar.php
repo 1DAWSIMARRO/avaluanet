@@ -6,8 +6,8 @@
       <tr>
         <th scope="col">Codi</th>
         <th scope="col">Nom de l'assignatura</th>
-        <th scope="col">Grup</th>
         <th scope="col">Hores Setmanals</th>
+        <th></th>
 
       </tr>
     <tbody>

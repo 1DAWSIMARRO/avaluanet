@@ -31,5 +31,10 @@ class AlumneModel{
         $stmt=$this->DB->prepare($sql);
         $stmt->execute([$data['nom'], $data['cognoms'],$data['tel'],$data['email'],$data['grup'],$data['NIA']]);
     }
+
+    public function validarNIAM($data){
+        $sql='SELECT * FROM alumne WHERE NIA LIKE "'.$data.'"';
+        return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>

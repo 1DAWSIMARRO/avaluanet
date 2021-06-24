@@ -48,5 +48,9 @@ class AlumneController{
         $this->model->editM($data);
     }
 
+    public function validarNIA(){
+        echo json_encode($this->model->validarNIAM($_POST['NIA']));
+    }
+
 }
 ?>

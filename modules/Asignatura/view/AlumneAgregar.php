@@ -5,7 +5,7 @@
     <h1>Llenguatge de marques</h1> 
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
-    <button type="button" class="btn btn-warning">Editar </button>
+    <button type="button" class="btn btn-warning">Editar</button>
   </div>
   <div class="col-1" style="margin-top: 0.5%;">
     <button type="button" class="btn btn-danger">Eliminar</button>

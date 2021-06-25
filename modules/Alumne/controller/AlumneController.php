@@ -21,6 +21,7 @@ class AlumneController{
             foreach ($array as $key => $value) {
                 $data[$key] = $value;
             }
+            print_r($data);
             $this->model->altaM($data);
         } else {
             if (isset($_GET['NIA'])) { // Take data for edit and enjoy
@@ -36,7 +37,7 @@ class AlumneController{
 
     public function delete(){
         $this->model->deleteM($_GET['NIA']);
-        header('Location: index.php');
+        header('Location: index.php?module=Alumne&function=llistar');
     }
 
     public function edit(){

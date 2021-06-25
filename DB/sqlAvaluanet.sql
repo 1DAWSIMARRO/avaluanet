@@ -13,7 +13,9 @@ CREATE TABLE IF NOT EXISTS professor (
 CREATE TABLE IF NOT EXISTS grup (
 	codi INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR (15) NOT NULL,
-    curs VARCHAR(20) NOT NULL
+    curs VARCHAR(20) NOT NULL,
+	dni_prof VARCHAR(9),
+	foreign key (dni_prof) references professor (dni)
 );
 
 CREATE TABLE IF NOT EXISTS asignatura (
@@ -24,15 +26,15 @@ CREATE TABLE IF NOT EXISTS asignatura (
 	foreign key (dni_prof) references professor (dni)
 );
 
-CREATE TABLE IF NOT EXISTS impartix (
-    dni_prof VARCHAR(9),
-    codi_grup INT,
-    codi_asignatura int,
-	primary key(dni_prof,codi_grup,codi_asignatura),
-		foreign key(dni_prof) references professor(dni),
-		foreign key(codi_grup) references grup(codi),
-		foreign key(codi_asignatura) references asignatura(codi)
-);
+-- CREATE TABLE IF NOT EXISTS impartix (
+--     dni_prof VARCHAR(9),
+--     codi_grup INT,
+--     codi_asignatura int,
+-- 	primary key(dni_prof,codi_grup,codi_asignatura),
+-- 		foreign key(dni_prof) references professor(dni),
+-- 		foreign key(codi_grup) references grup(codi),
+-- 		foreign key(codi_asignatura) references asignatura(codi)
+-- );
 
 CREATE TABLE IF NOT EXISTS alumne(
 	NIA INT PRIMARY KEY,

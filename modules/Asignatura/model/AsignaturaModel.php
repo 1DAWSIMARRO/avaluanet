@@ -37,7 +37,7 @@ class AsignaturaModel {
     }
 
     public function altaM($data){
-        $consulta="INSERT INTO asignatura (nom,hores,dni_prof) VALUES (?,?,?,?)";
+        $consulta="INSERT INTO asignatura (nom,hores,dni_prof) VALUES (?,?,?)";
         $stmt=$this->DB->prepare($consulta);
         $stmt->execute([$data['nom'], $data['hores'], $data['dni_prof']]);
     }

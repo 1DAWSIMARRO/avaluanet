@@ -7,7 +7,6 @@
     }
 
     function llistar() {
-
       $list = $this->Model->llistarM();
       include_once(VIEW_D.'header.php');
       include_once(VIEW_GRUP.'GrupLlistar.php');
@@ -21,6 +20,8 @@
         foreach ($_REQUEST as $key => $value) {
           $data[$key] = $value;
         }
+        $data['dni_prof']=$_SESSION['token'];
+        // print_r($data);
         $this->Model->altaM($data);
         header('Location: index.php?module=Grup&function=llistar');  // VUELVE A MOSTRAR EL PHP index.php
 

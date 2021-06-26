@@ -23,6 +23,7 @@
         $data['dni_prof']=$_SESSION['token'];
         // print_r($data);
         $this->Model->altaM($data);
+        $this->Model->add_grupM($data);
         header('Location: index.php?module=Grup&function=llistar');  // VUELVE A MOSTRAR EL PHP index.php
 
       } else {
@@ -41,11 +42,17 @@
             "name"=>"ESO",
           )
         );
+
+        $grups=$this->Model->getGrups();
         include_once(VIEW_D.'header.php');
         include_once(VIEW_GRUP.'GrupAlta.php');
         include_once(VIEW_D.'footer.html');
       }
 
+    }
+
+    function add_grup(){
+      $this->Model->add_grupM($_POST['curs']);
     }
 
     function baixa() {

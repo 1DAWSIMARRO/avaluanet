@@ -5,12 +5,12 @@ class AlumneModel{
     }
 
     public function llistarM(){
-        $sql='SELECT a.NIA, a.nom, a.cognoms, a.tel, a.email, g.nom nom_g FROM alumne a, grup g WHERE a.codi_grup=g.codi AND a.codi_grup IN(SELECT codi FROM grup WHERE dni_prof LIKE "'.$_SESSION['token'].'");';
+        $sql='SELECT a.NIA, a.nom, a.cognoms, a.tel, a.email FROM alumne a WHERE a.nom_grup IN(SELECT nom FROM grup WHERE nom IN(SELECT nom_grup FROM asignat WHERE dni_prof LIKE "11111111A"))';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     
     public function altaM($data){
-        $sql = "INSERT INTO alumne (NIA,nom,cognoms,tel,email,codi_grup) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO alumne (NIA,nom,cognoms,tel,email,nom_grup) VALUES (?,?,?,?,?,?)";
         $stmt=$this->DB->prepare($sql);
         $stmt->execute([$data['NIA'], $data['nom'], $data['cognoms'],$data['tel'],$data['email'],$data['grup']]);
     }
@@ -27,7 +27,7 @@ class AlumneModel{
     }
 
     function editM($data){
-        $sql = "UPDATE alumne SET nom=?, cognoms=?, tel=?, email=?, codi_grup=? WHERE NIA=?";
+        $sql = "UPDATE alumne SET nom=?, cognoms=?, tel=?, email=?, nom_grup=? WHERE NIA=?";
         $stmt=$this->DB->prepare($sql);
         $stmt->execute([$data['nom'], $data['cognoms'],$data['tel'],$data['email'],$data['grup'],$data['NIA']]);
     }

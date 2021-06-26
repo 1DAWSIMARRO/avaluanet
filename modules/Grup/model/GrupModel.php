@@ -7,9 +7,15 @@
         }
 
         function altaM($data){
-            $sql = "INSERT INTO grup (nom, curs, dni_prof) VALUES (?,?,?)";
+            $sql = "INSERT INTO grup (nom, curs) VALUES (?,?)";
             $stmt=$this->DB->prepare($sql);
-            $stmt->execute([$data['nom'], $data['curs'], $data['dni_prof']]);
+            $stmt->execute([$data['nom'], $data['curs']]);
+        }
+
+        function add_grupM($data){
+            $sql = "INSERT INTO asignat (nom_grup, dni_prof) VALUES (?,?)";
+            $stmt=$this->DB->prepare($sql);
+            $stmt->execute([$data['nom'], $_SESSION['token']]);
         }
 
         function obtindreGrupM($codi){
@@ -40,7 +46,14 @@
             // FROM `grup` g left join `alumne` a
             // on g.codi = a.codi_grup
             // group by g.codi";
-            $sql='SELECT codi, nom, curs FROM grup WHERE dni_prof LIKE "'.$_SESSION['token'].'";';
+
+            $sql='SELECT * FROM grup WHERE nom IN(SELECT nom_grup FROM asignat WHERE dni_prof LIKE "'.$_SESSION['token'].'");';
+            return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        function getGrups(){
+            // $sql='SELECT nom FROM grup WHERE dni_prof NOT LIKE "'.$_SESSION['token'].'";';
+            $sql='SELECT nom FROM grup WHERE nom NOT IN(SELECT nom_grup FROM asignat WHERE dni_prof LIKE "'.$_SESSION['token'].'");';
             return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         }
 

@@ -65,15 +65,15 @@
                 <?php
                 if (isset($data)) {
                   foreach ($grups as $key => $value) {
-                    if ($value['codi']==$data['codi_grup']) {
-                      echo '<option value='.$value['codi'].' selected>'.$value['nom'].'</option>';
+                    if ($value['nom']==$data['nom_grup']) {
+                      echo '<option value='.$value['nom'].' selected>'.$value['nom'].'</option>';
                     }else{
-                      echo '<option value='.$value['codi'].'>'.$value['nom'].'</option>';
+                      echo '<option value='.$value['nom'].'>'.$value['nom'].'</option>';
                     }
                   }
                 }else{
                   foreach ($grups as $key => $value) {
-                    echo '<option value='.$value['codi'].'>'.$value['nom'].'</option>';
+                    echo '<option value='.$value['nom'].'>'.$value['nom'].'</option>';
                   }
                 }
                 ?>

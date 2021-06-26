@@ -11,10 +11,15 @@ CREATE TABLE IF NOT EXISTS professor (
 );
 
 CREATE TABLE IF NOT EXISTS grup (
+    nom VARCHAR (15) PRIMARY KEY,
+    curs VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS asignat (
 	codi INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR (15) NOT NULL,
-    curs VARCHAR(20) NOT NULL,
-	dni_prof VARCHAR(9),
+    nom_grup VARCHAR (15) NOT NULL,
+	dni_prof VARCHAR(9) NOT NULL,
+	foreign key (nom_grup) references grup (nom),
 	foreign key (dni_prof) references professor (dni)
 );
 
@@ -42,8 +47,8 @@ CREATE TABLE IF NOT EXISTS alumne(
 	cognoms VARCHAR(40) NOT NULL,
 	tel INT NOT NULL,
 	email VARCHAR(50) NOT NULL,
-	codi_grup int NOT NULL,
-		foreign key (codi_grup) references grup (codi)
+	nom_grup VARCHAR (15) NOT NULL,
+		foreign key (nom_grup) references grup (nom)
 		ON DELETE CASCADE
 );
 
@@ -75,8 +80,8 @@ CREATE TABLE IF NOT EXISTS matricula (
 		ON DELETE CASCADE
 );
 
-insert into grup (codi,nom,curs) VALUES ('01', '1DAW', 'GS');
-insert into alumne (NIA,nom,cognoms,tel,email,codi_grup) VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '01');
 INSERT INTO professor (dni,username,cognoms,email,password) VALUES ('12345678A', 'Jorge', 'Nose','jorge@hola.es', '123');
 insert into asignatura (nom,hores,dni_prof) VALUE ('info', '20','12345678A');
+insert into grup (nom,curs) VALUES ('1DAW', 'GS');
+insert into alumne (NIA,nom,cognoms,tel,email,nom_grup) VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '1DAW');
 INSERT INTO avaluable (nom, data_lliurament, tipus, avaluacio) VALUES ("ex1", STR_TO_DATE("03-04-21","%d-%m-%y"), "activitat","3");

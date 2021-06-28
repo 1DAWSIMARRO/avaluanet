@@ -15,7 +15,7 @@
         function add_grupM($data){
             $sql = "INSERT INTO asignat (nom_grup, dni_prof) VALUES (?,?)";
             $stmt=$this->DB->prepare($sql);
-            $stmt->execute([$data['nom'], $_SESSION['token']]);
+            $stmt->execute([$data, $_SESSION['token']]);
         }
 
         function obtindreGrupM($codi){

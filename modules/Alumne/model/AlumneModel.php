@@ -5,7 +5,7 @@ class AlumneModel{
     }
 
     public function llistarM(){
-        $sql='SELECT a.NIA, a.nom, a.cognoms, a.tel, a.email FROM alumne a WHERE a.nom_grup IN(SELECT nom FROM grup WHERE nom IN(SELECT nom_grup FROM asignat WHERE dni_prof LIKE "11111111A"))';
+        $sql='SELECT * FROM alumne WHERE nom_grup IN(SELECT nom_grup FROM asignat WHERE dni_prof LIKE "'.$_SESSION['token'].'");';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     

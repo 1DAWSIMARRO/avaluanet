@@ -53,6 +53,7 @@
 
     function add_grup(){
       $this->Model->add_grupM($_POST['curs']);
+      header('Location: index.php?module=Grup&function=llistar');
     }
 
     function baixa() {

@@ -57,21 +57,8 @@
     }
 
     function baixa() {
-      
-      if (isset($_REQUEST['codi'])) {
-        $data=[];
-        foreach ($_REQUEST as $key => $value) {
-          
-          $data[$key] = $value;
-        }
-        $this->Model->baixaM($data);
-        header('Location: index.php?module=Grup&function=llistar');
-
-      } else {
-        include_once(VIEW_D.'header.php');
-        include_once(VIEW_GRUP."GrupBaixa.php");
-        include_once(VIEW_D.'footer.html');
-      }
+      $this->Model->baixaM($_GET['nom']);
+      header('Location: index.php?module=Grup&function=llistar');
     }
 
     function modificacio() {

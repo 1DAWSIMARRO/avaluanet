@@ -2,8 +2,7 @@
     class GrupModel {
 
         function __construct(){
-            
-            $this->DB=Database::connect();        
+            $this->DB=Database::connect();
         }
 
         function altaM($data){
@@ -28,17 +27,15 @@
         }
 
         function baixaM($data){
-
-            $sql = "DELETE FROM grup WHERE codi = ?";
+            $sql = 'DELETE FROM asignat WHERE nom_grup LIKE ? AND dni_prof LIKE ?';
             $stmt=$this->DB->prepare($sql);
-            $stmt->execute([$data['codi']]);  
+            $stmt->execute([$data, $_SESSION['token']]);
         }
 
         function modificacioM($data){
-            
             $sql = "UPDATE grup SET nom = ?, curs = ? WHERE codi = ?";
             $stmt=$this->DB->prepare($sql);
-            $stmt->execute([$data['nom'], $data['curs'], $data['codi']]);  
+            $stmt->execute([$data['nom'], $data['curs'], $data['codi']]);
         }
 
         function llistarM(){

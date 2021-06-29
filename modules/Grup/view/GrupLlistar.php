@@ -22,8 +22,8 @@
         echo '<td>' . $value2 . '</td>';
       }
 
-      echo '<td><a href="index.php?module=Grup&function=viewEditar&codi=' . $value['codi'] . '"><input type="button" class="btn btn-outline-warning" value="Editar"></a></td>';
-      echo '<td><a href="index.php?module=Grup&function=baixa&codi=' . $value['codi'] . '"><input type="button" class="btn btn-outline-danger" value="Eliminar"></a></td>';
+      echo '<td><a href="index.php?module=Grup&function=viewEditar&nom=' . $value['nom'] . '"><input type="button" class="btn btn-outline-warning" value="Editar"></a></td>';
+      echo '<td><a href="index.php?module=Grup&function=baixa&nom=' . $value['nom'] . '"><input type="button" class="btn btn-outline-danger" value="Eliminar"></a></td>';
       echo '</tr>';
     }
 

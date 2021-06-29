@@ -23,11 +23,11 @@ class AsignaturaModel {
     }
 
     public function llistarAl($asig){
-        $sql='SELECT a.NIA, a.nom, a.cognoms, a.tel, a.email, g.nom gnom  FROM alumne a, grup g WHERE a.codi_grup=g.codi AND NIA IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
+        $sql='SELECT * from alumne WHERE nom_grup IN (SELECT nom FROM grup WHERE nom IN(SELECT nom_grup FROM asignat WHERE dni_prof LIKE "'.$_SESSION['token'].'")) AND NIA IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     public function llistarAl2($asig){
-        $sql='SELECT a.NIA, a.nom, a.cognoms, a.tel, a.email, g.nom gnom  FROM alumne a, grup g WHERE a.codi_grup=g.codi AND NIA NOT IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
+        $sql='SELECT * from alumne WHERE nom_grup IN (SELECT nom FROM grup WHERE nom IN(SELECT nom_grup FROM asignat WHERE dni_prof LIKE "'.$_SESSION['token'].'")) AND NIA NOT IN(SELECT NIA FROM matricula WHERE codi_asignatura='.$asig.')';
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 

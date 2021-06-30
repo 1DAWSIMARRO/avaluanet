@@ -18,6 +18,7 @@ class AsignaturaController {
 
     public function afegir() {
         include_once(VIEW_D.'header.php');
+        echo '<script src='.VIEW_ASIGNATURA.'js/AsignaturaAlta.js></script>';
         include_once(VIEW_ASIGNATURA."AsignaturaAlta.html");
         include_once(VIEW_D.'footer.html');
     }

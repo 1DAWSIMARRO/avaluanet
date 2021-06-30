@@ -50,31 +50,29 @@
 
         <div>
 
-            <form action="index.php?module=Asignatura&function=alta" method="post" class="row g-3 needs-validation ms-4" novalidate>
+            <form action="index.php?module=Asignatura&function=alta" method="post" id="alta" class="row g-3 needs-validation ms-4">
 
                 <div class="col-md-3">
-                    <label for="denominacio" class="form-label">Denominació</label>
-                    <input type="text" class="form-control" name="nom" id="denominacio" placeholder="Nom de la assignatura" required>
+                    <label for="nom" class="form-label">Denominació</label>
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom de la assignatura" required>
 
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
+                    <div id="nom_e" class="text-danger"></div>
 
                 </div>
 
                 <div class="col-md-2">
                     <label for="hores" class="form-label">Hores Setmanals</label>
 
-                    <select class="form-select" name="hores" id="hores" required>
+                <select class="form-select" name="hores" id="hores" required>
 
-            <option selected disabled value="">Selecciona</option>
-            <option value="3">3 Hores/Setmana</option>
-            <option value="5">5 Hores/Setmana</option>
-            <option value="8">8 Hores/Setmana</option>
+                    <option selected disabled value="0">Selecciona</option>
+                    <option value="3">3 Hores/Setmana</option>
+                    <option value="5">5 Hores/Setmana</option>
+                    <option value="8">8 Hores/Setmana</option>
 
-          </select>
+                </select>
 
-                    <!--                     <div class="invalid-feedback">
+                <!-- <div class="invalid-feedback">
                         Please select a valid state.
                     </div>
 
@@ -83,17 +81,15 @@
                 <div class="col-md-2">
                     <label for="grup" class="form-label">Curs</label>
                     <select class="form-select" id="grup" name="grup" required>
-            <option selected disabled value="">Tria'n un</option>
-            <option value="1">ESO</option>
-            <option value="2">BACHILLER</option>
-            <option value="3">FPBASICA</option>
-            <option value="4">CFGM</option>
-            <option value="5">CFGS</option>
-          </select> -->
+                    <option selected disabled value="">Tria'n un</option>
+                    <option value="1">ESO</option>
+                    <option value="2">BACHILLER</option>
+                    <option value="3">FPBASICA</option>
+                    <option value="4">CFGM</option>
+                    <option value="5">CFGS</option>
+                </select> -->
 
-                    <div class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
+                <div id="hores_e" class="text-danger"></div>
 
                 </div>
 
@@ -109,7 +105,7 @@
 
                 <div>
                     <a href="index.php"><button type="button" class="btn btn-secondary mt-3">Tornar</button></a>
-                    <button type="submit" class="btn btn-outline-success ms-2 mt-3">Guardar Dades</button>
+                    <button type="submit" id="submitb" class="btn btn-outline-success ms-2 mt-3">Guardar Dades</button>
 
                 </div>
 

@@ -4,11 +4,16 @@ use avaluanet;
 
 CREATE TABLE IF NOT EXISTS professor (
 	dni VARCHAR(9) PRIMARY KEY,
-    username VARCHAR(10) NOT NULL,
+    username VARCHAR(15) NOT NULL,
     cognoms VARCHAR(30) NOT NULL,
 	email VARCHAR(30) NOT NULL,
     password VARCHAR(15) NOT NULL
 );
+
+ALTER TABLE professor
+MODIFY username VARCHAR(15)
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_0900_as_cs;
 
 CREATE TABLE IF NOT EXISTS grup (
     nom VARCHAR (15) PRIMARY KEY,

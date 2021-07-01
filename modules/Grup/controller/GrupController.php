@@ -23,8 +23,8 @@
         $data['dni_prof']=$_SESSION['token'];
         // print_r($data);
         $this->Model->altaM($data);
-        $this->Model->add_grupM($data);
-        header('Location: index.php?module=Grup&function=llistar');  // VUELVE A MOSTRAR EL PHP index.php
+        // $this->Model->add_grupM($data);
+        header('Location: index.php?module=Grup&function=alta');  // VUELVE A MOSTRAR EL PHP index.php
 
       } else {
         // $cursos=['Grau_Superior','Grau_Mitja','ESO'];

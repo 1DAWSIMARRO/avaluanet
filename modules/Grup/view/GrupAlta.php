@@ -32,7 +32,6 @@
         </div>
     </div>
 
-    <a href="index.php?module=Grup&function=llistar"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
     <input class="btn btn-outline-success btn-block mb-4" type="submit" value="Crear" id="send">
 
 </div>
@@ -41,7 +40,7 @@
 <div class="container mt-5">
     <form action="index.php?module=Grup&function=add_grup" method="POST">
 
-        <h1>Agregar Grup Existent</h1>
+        <h1>Afegir Grup Existent</h1>
 
         <div class="row mb-4">
 

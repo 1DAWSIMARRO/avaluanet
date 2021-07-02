@@ -63,5 +63,9 @@
             group by g.codi";
             return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         }
+        function validarNomM($data){
+            $sql='SELECT * FROM grup WHERE nom LIKE "'.$data.'"';
+            return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
+        }
     }
 ?>

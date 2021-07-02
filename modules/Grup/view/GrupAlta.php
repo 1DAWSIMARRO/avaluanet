@@ -1,42 +1,40 @@
 <?php
     $url = "index.php?module=Grup&function=alta";
 ?>
-<form action="<?php echo $url?>" method="POST">
 <div class="container mt-5">
 
     <h1>Crear Grup</h1>
+    <form action="index.php?module=Grup&function=alta" id="alta" method="POST">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="nom">Nom</label>
+                    <input type="text" id="nom" class="form-control" name="nom" required/>
+                    <div id="nom_e" class="text-danger"></div>
 
-    <div class="row mb-4">
-        <div class="col">
-            <div class="form-outline">
-                <label class="form-label" for="nom">Nom</label>
-                <input type="text" id="nom" class="form-control" name="nom" required/>
-                <p id="ValidarNom" class="text-danger"></p>
+                </div>
+            </div>
 
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="curs">Curs</label>
+                    <select class="form-select" name="curs" id="curs">
+                        <option value="0" selected="selected" disabled>--Selecciona un curs--</option>
+                        <?php
+                            foreach ($cursos as $key => $value) {
+                                echo '<option value='.$value['code'].'>'.$value['name'].'</option>';
+                            }
+                        ?>
+                    </select>
+                    <div id="curs_e" class="text-danger"></div>
+                </div>
             </div>
         </div>
 
-        <div class="col">
-            <div class="form-outline">
-                <label class="form-label" for="curs">Curs</label>
-                <select class="form-select" name="curs" id="curs">
-                    <option value="0" selected="selected" disabled>--Selecciona un curs--</option>
-                    <?php
-                        foreach ($cursos as $key => $value) {
-                            echo '<option value='.$value['code'].'>'.$value['name'].'</option>';
-                        }
-                    ?>
-                </select>
-                <p id="ValidarCurs" class="text-danger"></p>
-            </div>
-        </div>
-    </div>
+        <input class="btn btn-outline-success btn-block mb-4" type="submit" value="Crear" id="send1">
 
-    <input class="btn btn-outline-success btn-block mb-4" type="submit" value="Crear" id="send">
-
+    </form>
 </div>
-</form>
-
 <div class="container mt-5">
     <form action="index.php?module=Grup&function=add_grup" method="POST">
 

@@ -3,11 +3,11 @@
   class GrupController {
 
     function __construct(){
-      $this->Model = new GrupModel();
+      $this->model = new GrupModel();
     }
 
     function llistar() {
-      $list = $this->Model->llistarM();
+      $list = $this->model->llistarM();
       include_once(VIEW_D.'header.php');
       include_once(VIEW_GRUP.'GrupLlistar.php');
       include_once(VIEW_D.'footer.html');
@@ -22,8 +22,8 @@
         }
         $data['dni_prof']=$_SESSION['token'];
         // print_r($data);
-        $this->Model->altaM($data);
-        // $this->Model->add_grupM($data);
+        $this->model->altaM($data);
+        // $this->model->add_grupM($data);
         header('Location: index.php?module=Grup&function=alta');  // VUELVE A MOSTRAR EL PHP index.php
 
       } else {
@@ -43,8 +43,9 @@
           )
         );
 
-        $grups=$this->Model->getGrups();
+        $grups=$this->model->getGrups();
         include_once(VIEW_D.'header.php');
+        echo '<script src='.VIEW_GRUP.'js/GrupAlta.js></script>';
         include_once(VIEW_GRUP.'GrupAlta.php');
         include_once(VIEW_D.'footer.html');
       }
@@ -52,12 +53,12 @@
     }
 
     function add_grup(){
-      $this->Model->add_grupM($_POST['curs']);
+      $this->model->add_grupM($_POST['curs']);
       header('Location: index.php?module=Grup&function=llistar');
     }
 
     function baixa() {
-      $this->Model->baixaM($_GET['nom']);
+      $this->model->baixaM($_GET['nom']);
       header('Location: index.php?module=Grup&function=llistar');
     }
 
@@ -67,7 +68,7 @@
         foreach ($_REQUEST as $key => $value) {
           $data[$key] = $value;
         }
-        $this->Model->modificacioM($data);
+        $this->model->modificacioM($data);
         header('Location: index.php?module=Grup&function=llistar');
       }
     }
@@ -87,10 +88,14 @@
           "name"=>"ESO",
         )
       );
-      $data = $this->Model->obtindreGrupM($_REQUEST['codi']);
+      $data = $this->model->obtindreGrupM($_REQUEST['codi']);
       include_once(VIEW_D.'header.php');
       include_once(VIEW_GRUP."GrupModificar.php");
       include_once(VIEW_D.'footer.html');
+    }
+
+    function checkNom(){
+      echo json_encode($this->model->validarNomM($_POST['nom']));
     }
 
   }

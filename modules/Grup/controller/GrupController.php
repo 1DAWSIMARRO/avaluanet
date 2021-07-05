@@ -53,13 +53,13 @@
     }
 
     function add_grup(){
-      $this->model->add_grupM($_POST['curs']);
+      $this->model->add_grupM($_POST['data']);
       header('Location: index.php?module=Grup&function=llistar');
     }
 
     function baixa() {
       $this->model->baixaM($_GET['nom']);
-      header('Location: index.php?module=Grup&function=llistar');
+      // header('Location: index.php?module=Grup&function=llistar');
     }
 
     function modificacio() {
@@ -96,6 +96,11 @@
 
     function checkNom(){
       echo json_encode($this->model->validarNomM($_POST['nom']));
+    }
+
+    function delete(){
+      $this->model->deleteM($_POST['data']);
+      echo json_encode($_POST['data']);
     }
 
   }

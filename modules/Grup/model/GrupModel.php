@@ -67,5 +67,11 @@
             $sql='SELECT * FROM grup WHERE nom LIKE "'.$data.'"';
             return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
         }
+
+        function deleteM($data){
+            $sql = 'DELETE FROM grup WHERE nom LIKE ?';
+            $stmt=$this->DB->prepare($sql);
+            $stmt->execute([$data]);
+        }
     }
 ?>

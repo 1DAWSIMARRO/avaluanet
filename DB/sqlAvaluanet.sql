@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS professor (
 ALTER TABLE professor
 MODIFY username VARCHAR(15)
 CHARACTER SET utf8mb4
-COLLATE utf8mb4_0900_as_cs;
+COLLATE utf8mb4_bin;
 
 CREATE TABLE IF NOT EXISTS grup (
     nom VARCHAR (15) PRIMARY KEY,
@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS asignat (
 	codi INT PRIMARY KEY AUTO_INCREMENT,
     nom_grup VARCHAR (15) NOT NULL,
 	dni_prof VARCHAR(9) NOT NULL,
-	foreign key (nom_grup) references grup (nom),
-	foreign key (dni_prof) references professor (dni)
+	foreign key (nom_grup) references grup (nom) ON DELETE CASCADE,
+	foreign key (dni_prof) references professor (dni) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS asignatura (
@@ -84,6 +84,10 @@ CREATE TABLE IF NOT EXISTS matricula (
 		foreign key(codi_asignatura) references asignatura(codi)
 		ON DELETE CASCADE
 );
+
+DROP USER 'userava'@'localhost';
+CREATE USER 'userava'@'localhost' IDENTIFIED BY 'userava';
+GRANT ALL PRIVILEGES ON avaluanet.* TO 'userava'@'localhost';
 
 INSERT INTO professor (dni,username,cognoms,email,password) VALUES ('12345678A', 'Jorge', 'Nose','jorge@hola.es', '123');
 insert into asignatura (nom,hores,dni_prof) VALUE ('info', '20','12345678A');

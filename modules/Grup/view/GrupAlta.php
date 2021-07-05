@@ -45,7 +45,7 @@
             <div class="col">
                 <div class="form-outline">
                     <label class="form-label" for="curs">Curs</label>
-                    <select class="form-select" name="curs" id="curs">
+                    <select class="form-select" name="curs">
                         <option value="0" selected="selected" disabled>--Selecciona un grup--</option>
                         <?php
                             foreach ($grups as $key => $value) {
@@ -53,13 +53,14 @@
                             }
                         ?>
                     </select>
-                    <p id="ValidarGrup" class="text-danger"></p>
+                    <div id="curs_e2" class="text-danger"></div>
                 </div>
             </div>
         </div>
 
         <a href="index.php?module=Grup&function=llistar"><button type="button" class="btn btn-secondary mb-4">Tornar</button></a>
         <input class="btn btn-outline-success btn-block mb-4" type="submit" value="Agregar" id="send">
+        <input class="btn btn-outline-danger btn-block mb-4" type="button" value="Borrar" id="delete">
 
     </form>
 </div>

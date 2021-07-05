@@ -37,4 +37,52 @@ window.onload = function () {
             }
         }
     }
+
+    document.getElementById("send").onclick=function (e) {
+        e.preventDefault();
+        document.getElementById("curs_e2").innerHTML="";
+        curs=document.getElementsByName("curs")[1].value;
+        if (curs==0) {
+            document.getElementById("curs_e2").innerHTML="Selecciona un curs";
+            console.log("select error");
+            error=true;
+        }else{
+            var req = new XMLHttpRequest();
+            req.open("POST", "index.php?module=Grup&function=add_grup");
+            req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            data="data="+document.getElementsByName("curs")[1].value;
+            req.send(data);
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    console.log(req.responseText);
+                    location.href = "index.php?module=Grup&function=llistar";
+                }
+            }
+        }
+        
+    }
+
+    document.getElementById("delete").onclick=function (e) {
+        if (window.confirm("Tambe es borraran els alumnes asignats a ixe grup ¿Vols continuar?")) {
+            document.getElementById("curs_e2").innerHTML="";
+            curs=document.getElementsByName("curs")[1].value;
+            if (curs==0) {
+                document.getElementById("curs_e2").innerHTML="Selecciona un curs";
+                console.log("select error");
+                error=true;
+            }else{
+                var req = new XMLHttpRequest();
+                req.open("POST", "index.php?module=Grup&function=delete");
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                data="data="+document.getElementsByName("curs")[1].value;
+                req.send(data);
+                req.onreadystatechange = function () {
+                    if (req.readyState == 4) {
+                        console.log(req.responseText);
+                        location.href = "index.php?module=Grup&function=alta";
+                    }
+                }
+            }
+        }
+    }
 }

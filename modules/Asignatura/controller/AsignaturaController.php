@@ -42,7 +42,8 @@ class AsignaturaController {
             'asig' => $_SESSION['asig']
         ];
         $this->model->altaAlum($data);
-        header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_SESSION['asig'].'&modal=true');
+        echo json_encode($data);
+        // header('Location: index.php?module=Asignatura&function=add_alumne&asig='.$_SESSION['asig'].'&modal=true');
     }
 
     public function remove(){
@@ -110,6 +111,10 @@ class AsignaturaController {
         } else {
             include_once(VIEW_ASIGNATURA.'AsignaturaBaixa.php');
         }      
+    }
+
+    public function list_modal(){
+        echo json_encode($this->model->llistarAl2($_SESSION['asig']));
     }
 }
 ?>

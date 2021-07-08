@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS alumne(
 	tel INT NOT NULL,
 	email VARCHAR(50) NOT NULL,
 	nom_grup VARCHAR (15) NOT NULL,
-		foreign key (nom_grup) references grup (nom)
-		ON DELETE CASCADE
+	foreign key (nom_grup) references grup (nom)
+	ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS avaluable (
@@ -62,7 +62,10 @@ CREATE TABLE IF NOT EXISTS avaluable (
 	nom varchar(30) NOT NULL,
 	data_lliurament DATE  NOT NULL,
 	tipus varchar(10) NOT NULL,
-	avaluacio INT NOT NULL
+	avaluacio INT NOT NULL,
+	assignatura_code int NOT NULL,
+	foreign key (assignatura_code) references asignatura (codi)
+	ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS qualiflicacio (
@@ -93,4 +96,4 @@ INSERT INTO professor (dni,username,cognoms,email,password) VALUES ('12345678A',
 insert into asignatura (nom,hores,dni_prof) VALUE ('info', '20','12345678A');
 insert into grup (nom,curs) VALUES ('1DAW', 'GS');
 insert into alumne (NIA,nom,cognoms,tel,email,nom_grup) VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '1DAW');
-INSERT INTO avaluable (nom, data_lliurament, tipus, avaluacio) VALUES ("ex1", STR_TO_DATE("03-04-21","%d-%m-%y"), "activitat","3");
+INSERT INTO avaluable (nom, data_lliurament, tipus, avaluacio, assignatura_code) VALUES ("ex1", STR_TO_DATE("03-04-21","%d-%m-%y"), "activitat","3","1");

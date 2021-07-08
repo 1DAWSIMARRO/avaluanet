@@ -5,7 +5,6 @@
     <thead class="thead-dark">
 
       <tr>
-        <th>CODI</th>
         <th>NOM</th>
         <th>CURS</th>
         <th></th>

@@ -59,7 +59,7 @@
 
     function baixa() {
       $this->model->baixaM($_GET['nom']);
-      // header('Location: index.php?module=Grup&function=llistar');
+      header('Location: index.php?module=Grup&function=llistar');
     }
 
     function modificacio() {

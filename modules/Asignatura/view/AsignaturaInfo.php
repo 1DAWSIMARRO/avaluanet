@@ -112,7 +112,7 @@
   <div></div>
   <ul id="avaluables" class="list-group list-group-flush">
   </ul>
-  <a href="index.php?module=Avaluable&function=llistar" class="btn btn-outline-success">Agregar avaluable</a>
+  <a href="index.php?module=Avaluable&function=view_create" class="btn btn-outline-success">Agregar avaluable</a>
 </div>
 
 <!-- Modal for "eliminar" -->
@@ -179,10 +179,3 @@
   </div>
 </div>
 <!-- end -->
-
-<!-- Avoid close modal -->
-<?php
-if (isset($_REQUEST['modal'])) {
-  echo '<script src="' . VIEW_ASIGNATURA . '/js/script_modal.js"></script>';
-}
-?>

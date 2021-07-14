@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS avaluable (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nom varchar(30) NOT NULL,
 	data_lliurament DATE  NOT NULL,
+	descripcio TEXT  NOT NULL,
 	tipus varchar(10) NOT NULL,
 	avaluacio INT NOT NULL,
 	assignatura_code int NOT NULL,
@@ -96,4 +97,4 @@ INSERT INTO professor (dni,username,cognoms,email,password) VALUES ('12345678A',
 insert into asignatura (nom,hores,dni_prof) VALUE ('info', '20','12345678A');
 insert into grup (nom,curs) VALUES ('1DAW', 'GS');
 insert into alumne (NIA,nom,cognoms,tel,email,nom_grup) VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '1DAW');
-INSERT INTO avaluable (nom, data_lliurament, tipus, avaluacio, assignatura_code) VALUES ("ex1", STR_TO_DATE("03-04-21","%d-%m-%y"), "activitat","3","1");
+INSERT INTO avaluable (nom, data_lliurament, descripcio, tipus, avaluacio, assignatura_code) VALUES ("ex1", STR_TO_DATE("03-04-21","%d-%m-%y"), "test", "activitat","3","1");

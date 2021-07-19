@@ -1,19 +1,7 @@
 window.onload=function(){
     console.log("enter");
     document.getElementById("buscar").onkeyup=search;
-    // document.getElementsByClassName("btn_alu").onclick=add_student;
-    // var students = document.getElementsByClassName('btn_alu');
-    // for (let item of students) {
-    //     console.log(item);
-    //     item.onclick = function () {
-    //         add_student(item.id)
-    //     };
-    // }
     avaluable();
-}
-
-function test() {
-    console.log("testclick");
 }
 
 function search(e){
@@ -80,13 +68,13 @@ function avaluable() {
                 req.response.forEach(element => {
                     // avaluables.innerHTML+='<li class="list-group-item"><span class="h3">'+element['nom']+'</span>'+
                     // '<a type="button" href="index.php?module=Asignatura&function=baixa&codi='+element['id']+'" class="btn btn-success">Eliminar</a></li>';
-                    console.log(element['nom']);
+                    console.log(element);
                     avaluables.innerHTML+='<table class="table">'+
                     '<tbody>'+
                         '<tr>'+
-                        '<td><h2>'+element['nom']+'</h2></td>'+
+                        '<td style="width:80%"><a href="index.php?module=Avaluable&function=view_create&id='+element['id']+'"><h2>'+element['nom']+'</h2></a></td>'+
                         // '<td class="text-end">'+element['data_lliurament']+'</td>'+
-                        '<td class="text-end">'+element['data_lliurament']+'<a style="margin-left:10%" type="button" href="index.php?module=Avaluable&function=baixa&codi='+element['id']+'" class="btn btn-outline-danger">Ocultar</a></td>'+
+                        '<td>'+element['data_lliurament']+'<a style="margin-left:10%" type="button" href="index.php?module=Avaluable&function=baixa&codi='+element['id']+'" class="btn btn-outline-danger">Ocultar</a></td>'+
                         '</tr>'+
                     '</tbody>'+
                     '</table>'

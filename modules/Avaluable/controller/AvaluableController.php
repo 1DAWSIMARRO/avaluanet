@@ -17,16 +17,23 @@
     }
 
     function view_create(){
+      if (isset($_GET['id'])) { // Take data for edit
+        $_SESSION['id_ava']=$_GET['id'];
+        $data=$this->model->findM($_GET['id']);
+      }
       $ava=[1,2,3];
       $type=['Examen','Treball','Exercici'];
       include_once(VIEW_D.'header.php');
-      // $list = $this->Model->llistarM();
       include_once(VIEW_AVALUABLE.'AvaluableCrear.php');
       echo '<script src="'.VIEW_AVALUABLE.'js/AvaluableCrear.js"></script>';
     }
 
     function create(){
       echo json_encode($list = $this->model->createM($_POST));
+    }
+
+    function edit(){
+      echo json_encode($list = $this->model->editM($_POST));
     }
   }
 ?>

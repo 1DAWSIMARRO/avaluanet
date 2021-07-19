@@ -13,9 +13,14 @@ window.onload=function(){
 
 
         if (error==false) {
+            if (document.getElementById("send").className.includes("edit")) {
+                urlm="index.php?module=Avaluable&function=edit";
+            } else {
+                urlm="index.php?module=Avaluable&function=create";
+            }
             $.ajax({
                 type: 'POST',
-                url: "index.php?module=Avaluable&function=create",
+                url: urlm,
                 data: $("form").serialize(), 
                 success: function(response) {
                     console.log(response);

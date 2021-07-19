@@ -11,7 +11,6 @@
       <td><a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modaleliminar">Eliminar</a></td>
     </div>
   </div>
-
   <div class="row justify-content-between">
     <div class="col-7">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -99,7 +98,7 @@
       </table>
     </div>
   </div>
-
+            
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalagregaralumno">
     Agregar Alumne
@@ -109,9 +108,8 @@
 
 <div class="container mt-5">
   <h1>Avaluables</h1>
-  <div></div>
-  <ul id="avaluables" class="list-group list-group-flush">
-  </ul>
+  <div id="avaluables" class="list-group list-group-flush">
+  </div>
   <a href="index.php?module=Avaluable&function=view_create" class="btn btn-outline-success">Agregar avaluable</a>
 </div>
 

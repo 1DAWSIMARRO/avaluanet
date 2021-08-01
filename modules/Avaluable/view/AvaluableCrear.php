@@ -95,4 +95,6 @@
       echo '<input class="btn btn-outline-success mb-4" type="button" value="Afegir Avaluable" id="send">';
     }
   ?>
+
+  <a href="index.php?module=Avaluable&function=delete"><button type="button" class="btn btn-outline-danger mb-4">Eliminar</button></a>
 </div>

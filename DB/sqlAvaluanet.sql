@@ -75,9 +75,9 @@ CREATE TABLE IF NOT EXISTS qualiflicacio (
 	NIA int(8) NOT NULL,
 	codi_asignatura int NOT NULL,
 	primary key(id,NIA,codi_asignatura),
-		foreign key(NIA) references alumne(NIA),
-		foreign key(codi_asignatura) references asignatura(codi),
-		foreign key(id) references avaluable(id)
+	foreign key(NIA) references alumne(NIA),
+	foreign key(codi_asignatura) references asignatura(codi),
+	foreign key(id) references avaluable(id)
 );
 
 CREATE TABLE IF NOT EXISTS matricula (
@@ -98,3 +98,4 @@ insert into asignatura (nom,hores,dni_prof) VALUE ('info', '20','12345678A');
 insert into grup (nom,curs) VALUES ('1DAW', 'GS');
 insert into alumne (NIA,nom,cognoms,tel,email,nom_grup) VALUES ('88888888', 'Andreu', 'Mico Bleda', '999999999', 'andreu@gmail.com', '1DAW');
 INSERT INTO avaluable (nom, data_lliurament, descripcio, tipus, avaluacio, assignatura_code) VALUES ("ex1", STR_TO_DATE("03-04-21","%d-%m-%y"), "test", "activitat","3","1");
+INSERT INTO qualiflicacio (nota, id, NIA, codi_asignatura) VALUES ("8","1","88888888","1");

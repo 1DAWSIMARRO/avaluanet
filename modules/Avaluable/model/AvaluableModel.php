@@ -32,5 +32,11 @@
         $stmt->execute([$data['title'],$data['date'],$data['description'],$data['type'],$data['ava'],$_SESSION['id_ava']]);
     }
 
+    function deleteM(){
+        $sql="DELETE FROM avaluable WHERE id = ?";
+        $stmt=$this->DB->prepare($sql);
+        $stmt->execute([$_SESSION['id_ava']]);
+    }
+
   }
 ?>

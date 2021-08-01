@@ -56,11 +56,16 @@
               <tr>
                 <th scope="col">NIA</th>
                 <th scope="col">NOM</th>
-                <th scope="col">Avaluacio</th>
-                <th scope="col">Avaluable</th>
+                <th scope="col">Cognoms</th>
+                <!-- <th scope="col">Avaluable</th>
                 <th scope="col">Examen</th>
                 <th scope="col">Nota Final</th>
-                <th></th>
+                <th></th> -->
+                <?php
+                  foreach ($listAva as $key => $value) {
+                    echo '<th>' . $value['nom'] . '</th>';
+                  }
+                ?>
 
               </tr>
             </thead>
@@ -69,12 +74,21 @@
 
               foreach ($list as $key => $value) {
                 echo '<tr>';
-                foreach ($value as $key2 => $value2) {
-                  echo '<td>' . $value2 . '</td>';
+                echo '<td>' . $value['NIA'] . '</td>';
+                echo '<td>' . $value['nom'] . '</td>';
+                echo '<td>' . $value['cognoms'] . '</td>';
+                foreach ($listAva as $key => $valueAva) {
+                  foreach ($listQ as $key => $valueQ) {
+                    if (($valueAva['id']==$valueQ['id'])&&($value['NIA']==$valueQ['NIA'])) {
+                      $grade=$valueQ['nota'];
+                    }
+                  }
+                  echo '<td><input id="'.$valueAva['id'].$value['NIA'].'" type="number" value="'.$grade.'" style="width: 2em" min="0" max="10"></td>';
                 }
-                echo '<td><a class="btn btn-danger" href="index.php?module=Asignatura&function=remove&NIA=' . $value['NIA'] . '">Delete</a></td>';
+                echo '<td><a onclick="insertgrade('.$valueAva['id'].','.$value['NIA'].')" class="btn btn-outline-success gradebtn"><i class="bi bi-check"></i></a></td>';
                 echo '</tr>';
               }
+              
               ?>
             </tbody>
           </table>

@@ -64,4 +64,15 @@ class AsignaturaModel {
         return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function llistarQM(){
+        $sql='SELECT * from qualiflicacio WHERE codi_asignatura='.$_SESSION['asig'];
+        return $this->DB->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function insertGM(){
+        $sql="UPDATE qualiflicacio SET nota=? WHERE id=? AND NIA=? AND codi_asignatura=?";
+        $stmt=$this->DB->prepare($sql);
+        return $stmt->execute([$_POST['grade'],$_POST['ava'],$_POST['alu'],$_SESSION['asig']]);
+    }
+
 }

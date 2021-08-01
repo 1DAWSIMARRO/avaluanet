@@ -29,11 +29,16 @@
     }
 
     function create(){
-      echo json_encode($list = $this->model->createM($_POST));
+      echo json_encode($this->model->createM($_POST));
     }
 
     function edit(){
-      echo json_encode($list = $this->model->editM($_POST));
+      echo json_encode($this->model->editM($_POST));
+    }
+
+    function delete(){
+      $this->model->deleteM();
+      header('Location: index.php?module=Asignatura&function=add_alumne');
     }
   }
 ?>

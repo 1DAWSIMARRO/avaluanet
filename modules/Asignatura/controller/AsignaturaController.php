@@ -1,11 +1,13 @@
 <?php
 
 require_once(MODEL_ASIGNATURA."AsignaturaModel.php");
+require_once(MODEL_AVALUABLE."AvaluableModel.php");
 
 class AsignaturaController {
 
     function __construct() {
         $this->model = new AsignaturaModel();
+        $this->modelAva = new AvaluableModel();
     }
 
     public function llistar() {
@@ -30,6 +32,8 @@ class AsignaturaController {
         }
         $list=$this->model->llistarAl($_SESSION['asig']);
         $list2=$this->model->llistarAl2($_SESSION['asig']);
+        $listAva=$this->modelAva->listM($_SESSION['asig']);
+        $listQ=$this->model->llistarQM();
         $asignatura=$this->model->getEditar($_SESSION['asig']);
         include_once(VIEW_ASIGNATURA."AsignaturaInfo.php");
         echo '<script src="'.VIEW_ASIGNATURA.'/js/AsignaturaInfo.js"></script>';
@@ -115,6 +119,10 @@ class AsignaturaController {
 
     public function list_modal(){
         echo json_encode($this->model->llistarAl2($_SESSION['asig']));
+    }
+
+    function insertG(){
+        echo json_encode($this->model->insertGM());
     }
 }
 ?>

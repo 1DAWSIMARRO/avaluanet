@@ -1,9 +1,12 @@
 <?php
   require_once(MODEL_AVALUABLE.'AvaluableModel.php');
+  require_once(MODEL_ASIGNATURA."AsignaturaModel.php");
+
   class AvaluableController {
 
     function __construct(){
       $this->model = new AvaluableModel();
+      $this->modelAs = new AsignaturaModel();
     }
 
     // function llistar() {
@@ -29,7 +32,9 @@
     }
 
     function create(){
-      echo json_encode($this->model->createM($_POST));
+      $this->model->createM($_POST);
+      $alum=$this->modelAs->llistarAl($_SESSION['asig']);
+      echo json_encode($this->model->createQ($_POST,$alum));
     }
 
     function edit(){

@@ -20,6 +20,7 @@ window.onload=function(){
             }
             $.ajax({
                 type: 'POST',
+                dataType: 'JSON',
                 url: urlm,
                 data: $("form").serialize(), 
                 success: function(response) {

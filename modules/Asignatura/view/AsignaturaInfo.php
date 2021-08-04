@@ -80,12 +80,13 @@
                 foreach ($listAva as $key => $valueAva) {
                   foreach ($listQ as $key => $valueQ) {
                     if (($valueAva['id']==$valueQ['id'])&&($value['NIA']==$valueQ['NIA'])) {
-                      $grade=$valueQ['nota'];
+                      // $grade=$valueQ['nota'];
+                      echo '<td><input id="'.$valueAva['id'].$value['NIA'].'" type="number" value="'.$valueQ['nota'].'" style="width: 2em" min="0" max="10"></td>';
                     }
                   }
-                  echo '<td><input id="'.$valueAva['id'].$value['NIA'].'" type="number" value="'.$grade.'" style="width: 2em" min="0" max="10"></td>';
+                  // echo '<td><input id="'.$valueAva['id'].$value['NIA'].'" type="number" value="'.$grade.'" style="width: 2em" min="0" max="10"></td>';
                 }
-                echo '<td><a onclick="insertgrade('.$valueAva['id'].','.$value['NIA'].')" class="btn btn-outline-success gradebtn"><i class="bi bi-check"></i></a></td>';
+                echo '<td><a onclick="insertgrade('.$value['NIA'].')" class="btn btn-outline-success gradebtn"><i class="bi bi-check"></i></a></td>';
                 echo '</tr>';
               }
               

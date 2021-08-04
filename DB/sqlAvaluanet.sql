@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS avaluable (
 );
 
 CREATE TABLE IF NOT EXISTS qualiflicacio (
-	nota int NOT NULL,
+	nota int NOT NULL DEFAULT 0,
 	id int NOT NULL,
 	NIA int(8) NOT NULL,
 	codi_asignatura int NOT NULL,

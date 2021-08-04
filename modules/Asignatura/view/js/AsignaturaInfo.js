@@ -5,22 +5,47 @@ window.onload=function(){
     // document.getElementsByClassName("gradebtn")[0].onclick=insertgrade;
 }
 
-function insertgrade(ava,alu) {
-    // href="index.php?module=Asignatura&function=insertG&NIA='.$value['NIA'].'&ava='.$valueAva['id'].'"
-    console.log(ava,alu);
-    grade=document.getElementById(""+ava+alu).value;
-    console.log(grade);
-    dataA = {"ava":ava, "alu":alu, "grade":grade};
-    console.log(dataA);
+function insertgrade(nia) {
     $.ajax({
         type: 'POST',
-        url: 'index.php?module=Asignatura&function=insertG',
-        data: dataA, 
+        dataType: 'JSON',
+        url: 'index.php?module=Avaluable&function=list',
         success: function(response) {
             console.log(response);
-            toastr.success('S\'ha canviat la nota ', 'Success');
+            dataA =[];
+            response.forEach(element => {
+                grade=document.getElementById(""+element.id+nia).value;
+                console.log(grade);
+                dataA.push({"nia":nia, "ava":element.id, "grade":grade});
+            });
+            console.log(dataA);
+            $.ajax({
+                type: 'POST',
+                dataType: 'JSON',
+                url: 'index.php?module=Asignatura&function=insertG',
+                data: {dataA},
+                success: function(response) {
+                    console.log(response);
+                    toastr.success('S\'ha canviat la nota ', 'Success');
+                },
+            });
         },
     });
+    // href="index.php?module=Asignatura&function=insertG&NIA='.$value['NIA'].'&ava='.$valueAva['id'].'"
+    // console.log(ava,alu);
+    // grade=document.getElementById(""+ava+alu).value;
+    // console.log(grade);
+    // dataA = {"ava":ava, "alu":alu, "grade":grade};
+    // console.log(dataA);
+    // $.ajax({
+    //     type: 'POST',
+    //     url: 'index.php?module=Asignatura&function=insertG',
+    //     data: dataA, 
+    //     success: function(response) {
+    //         console.log(response);
+    //         toastr.success('S\'ha canviat la nota ', 'Success');
+    //     },
+    // });
 }
 
 function search(e){

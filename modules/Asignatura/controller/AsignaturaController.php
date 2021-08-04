@@ -122,7 +122,11 @@ class AsignaturaController {
     }
 
     function insertG(){
-        echo json_encode($this->model->insertGM());
+        // echo json_encode($_POST['dataA']);
+        foreach ($_POST['dataA'] as $key => $value) {
+           $this->model->insertGM($value);
+        }
+        echo json_encode("work");
     }
 }
 ?>

@@ -21,6 +21,16 @@
         $stmt->execute([$data['title'],$data['date'],$data['description'],$data['type'],$data['ava'],$_SESSION['asig']]);
     }
 
+    function createQ($data,$alum){
+        $sql="SELECT max(id) id FROM avaluable";
+        $id=$this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
+        foreach ($alum as $key => $value) {
+            $sql="INSERT INTO qualiflicacio (nota, id, NIA, codi_asignatura) VALUES (0,?,?,?);";
+            $stmt=$this->DB->prepare($sql);
+            $stmt->execute([$id['id'],$value['NIA'],$_SESSION['asig']]);
+        }
+    }
+
     function findM($data){
         $sql="SELECT * FROM avaluable WHERE id=".$data;
         return $this->DB->query($sql)->fetch(PDO::FETCH_ASSOC);
